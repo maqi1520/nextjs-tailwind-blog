@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-size: 16px;
+  }
+  :root {
+    --color-border: theme('colors.gray.200');
+    --color-text-base: theme('colors.black'); /* black */
+    --color-text-muted: theme('colors.gray.700'); /* gray-700 */
+    --color-text-inverted: theme('colors.gray.900'); /* gray-500 */
+    --color-base: theme('colors.white'); /* white */
+    --color-off-base: theme('colors.gray.50'); /* gray-50 */
+    --color-primary: theme('colors.blue.800'); /* blue-800 */
+    --color-secondary: theme('colors.blue.400'); /* blue-400 */
+  }
+
+  .theme-light {
+    --color-text-base: theme('colors.black'); /* black */
+    --color-text-muted: theme('colors.gray.700'); /* gray-700 */
+    --color-text-inverted: theme('colors.gray.500'); /* gray-500 */
+    --color-base: theme('colors.white'); /* white */
+    --color-off-base: theme('colors.gray.50'); /* gray-50 */
+    --color-primary: theme('colors.blue.800'); /* blue-800 */
+    --color-secondary: theme('colors.blue.400'); /* blue-400 */
+  }
+
+  .theme-dark {
+    --color-border: theme('colors.gray.800');
+    --color-text-base: theme('colors.gray.200'); /* gray-100 */
+    --color-text-muted: theme('colors.gray.400'); /* gray-200 */
+    --color-text-inverted: theme('colors.gray.50');
+    --color-base: #0d1017;
+    --color-off-base: theme('colors.gray.900'); /* gray-900 */
+    --color-primary: theme('colors.blue.400'); /* blue-300 */
+    --color-secondary: theme('colors.red.400'); /* blue-400 */
+  }
+
+  .theme-solar {
+    --color-text-base: theme('colors.red.800'); /* gray-100 */
+    --color-text-muted: theme('colors.red.200'); /* gray-200 */
+    --color-text-inverted: theme('colors.red.500');
+    --color-base: theme('colors.red.50'); /* gray-900 */
+    --color-off-base: theme('colors.red.200'); /* gray-800 */
+    --color-primary: theme('colors.orange.300'); /* blue-300 */
+    --color-secondary: theme('colors.orange.400'); /* blue-400 */
+  }
+
+  .theme-evergreen {
+    --color-text-base: theme('colors.green.100'); /* gray-100 */
+    --color-text-muted: theme('colors.green.200'); /* gray-200 */
+    --color-text-inverted: theme('colors.green.500');
+    --color-base: theme('colors.green.900'); /* gray-900 */
+    --color-off-base: theme('colors.green.800'); /* gray-800 */
+    --color-primary: theme('colors.amber.100'); /* blue-300 */
+    --color-secondary: theme('colors.amber.300'); /* blue-400 */
+  }
+  * {
+    border-color: var(--color-border);
+  }
+}
+
+@layer base {
+  [type='text'],
+  [type='email'],
+  [type='url'],
+  [type='password'],
+  [type='number'],
+  [type='date'],
+  [type='datetime-local'],
+  [type='month'],
+  [type='search'],
+  [type='tel'],
+  [type='time'],
+  [type='week'],
+  [multiple],
+  textarea,
+  select {
+    @apply w-full rounded-sm border focus:border-skin-primary shadow-sm bg-skin-base;
+  }
+
+  [type='checkbox'],
+  [type='radio'] {
+    @apply border text-skin-primary focus:border-skin-primary rounded-sm;
+  }
+}
+
+@layer utilities {
+  .btn {
+    @apply flex justify-center py-2 px-4 border text-sm font-medium rounded-sm focus:outline-none hover:border-skin-primary hover:text-skin-primary;
+  }
+  .btn-primary {
+    @apply text-skin-inverted bg-skin-primary border-transparent hover:text-skin-inverted;
+  }
+  .btn-lg {
+    @apply leading-6;
+  }
+}
+
+.markdown-body {
+  @apply prose prose-skin;
+}
