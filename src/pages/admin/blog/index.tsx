@@ -52,9 +52,9 @@ export default function BlogPage({}: Props): ReactElement {
         </ul>
       </Section>
       <Pagination
-        pageSize={pageSize}
+        pageSize={+pageSize}
         onChange={handlePageChange}
-        current={pageNum}
+        current={+pageNum}
         total={total}
       />
     </div>

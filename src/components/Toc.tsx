@@ -66,7 +66,7 @@ export const Toc: FC<ViewerProps> = ({
     } catch (err) {
       console.error(err);
     }
-  }, []);
+  }, [sanitize, value]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -87,7 +87,7 @@ export const Toc: FC<ViewerProps> = ({
     return () => {
       document.removeEventListener('scroll', handleScroll);
     };
-  }, [previewRef.current]);
+  }, [previewRef]);
 
   return (
     <div className={className || ''}>

@@ -22,9 +22,11 @@ export default function AdminLayout({ children }: Props): ReactElement {
         className="h-screen flex flex-col justify-center items-center"
       >
         <p>暂无权限，请先登录</p>
-        <a href="/login">
-          <button className="btn btn-primary mt-5">登录</button>
-        </a>
+        <Link href="/login">
+          <a>
+            <button className="btn btn-primary mt-5">登录</button>
+          </a>
+        </Link>
       </section>
     );
   }

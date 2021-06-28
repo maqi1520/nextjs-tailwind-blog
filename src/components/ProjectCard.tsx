@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 const ProjectCard = ({ project }) => {
   const { title, description, repoUrl, appUrl } = project;
   return (
