@@ -12,7 +12,7 @@ export default function Header({ children }: Props): ReactElement {
   return (
     <header
       id="header"
-      className="sticky top-0 z-50 right-0 left-0 bg-skin-off-base"
+      className="relative top-0 z-50 right-0 left-0 bg-skin-off-base"
     >
       <div className="mx-auto lg:max-w-4xl md:max-w-3xl h-16 flex justify-between items-center">
         <div className="flex-shrink-0 mr-24">

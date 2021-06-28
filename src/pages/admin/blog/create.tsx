@@ -7,7 +7,7 @@ import footnotes from '@bytemd/plugin-footnotes';
 import frontmatter from '@bytemd/plugin-frontmatter';
 import gfm from '@bytemd/plugin-gfm';
 import plugin_gfm from '@bytemd/plugin-gfm/lib/locales/zh_Hans.json';
-import highlight from '@bytemd/plugin-highlight';
+import highlight from '@bytemd/plugin-highlight-ssr';
 import math from '@bytemd/plugin-math';
 import plugin_math from '@bytemd/plugin-math/lib/locales/zh_Hans.json';
 import mediumZoom from '@bytemd/plugin-medium-zoom';
@@ -171,7 +171,7 @@ export default function Home() {
       <Head>
         <title>写文章-{title}</title>
       </Head>
-      <div className="flex flex-col h-screen">
+      <div className="flex flex-col h-screen custom-admin-preview">
         <div className="flex h-16 px-2 py-3 bg-skin-off-base">
           <input
             value={data.title}

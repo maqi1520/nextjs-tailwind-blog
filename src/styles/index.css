@@ -99,6 +99,11 @@
   }
 }
 
-.markdown-body {
-  @apply prose prose-skin;
+@layer components {
+  .custom-markdown-body .markdown-body {
+    @apply prose prose-skin;
+  }
+  .custom-admin-preview .markdown-body {
+    @apply prose prose-indigo;
+  }
 }
