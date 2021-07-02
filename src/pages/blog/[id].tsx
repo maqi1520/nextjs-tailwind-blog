@@ -1,12 +1,12 @@
 import Head from 'next/head';
 import { title } from '../../config';
-import React, { useMemo, useRef } from 'react';
-import axios from 'axios';
-import { useAsync } from 'react-use';
+import React, { useMemo, useRef, useEffect } from 'react';
 import { GetStaticPropsContext } from 'next';
 import { getAllSlugs, getPostBySlug } from '../../lib/posts';
+import { hits } from '../../lib/services';
 import { useRouter } from 'next/router';
 import { Toc } from '../../components/Toc';
+import { getLayout } from '../../components/Layout';
 import { Viewer } from '@bytemd/react';
 import footnotes from '@bytemd/plugin-footnotes';
 import frontmatter from '@bytemd/plugin-frontmatter';
@@ -29,12 +29,9 @@ export default function PostPage({ post }: Props) {
   const previewRef = useRef(null);
   const router = useRouter();
 
-  useAsync(async () => {
-    const res = await axios.post('/api/post/hits', {
-      id: post.id,
-    });
-    return res.data;
-  }, []);
+  useEffect(() => {
+    hits(post.id);
+  }, [post.id]);
 
   const plugins = useMemo(
     () => [
@@ -140,6 +137,8 @@ export default function PostPage({ post }: Props) {
     </>
   );
 }
+
+PostPage.getLayout = getLayout;
 
 export async function getStaticPaths() {
   const slugs = await getAllSlugs();

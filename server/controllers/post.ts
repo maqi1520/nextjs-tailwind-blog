@@ -178,4 +178,17 @@ router.post('/hits', async (req: Req, res) => {
   });
 });
 
+router.delete('/:id', protect, async (req: Req, res) => {
+  const { id } = req.params;
+  const data = await prisma.post.delete({
+    where: {
+      id: Number(id),
+    },
+  });
+  res.json({
+    data,
+    success: true,
+  });
+});
+
 export default router;

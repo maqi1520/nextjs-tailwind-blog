@@ -60,9 +60,10 @@ module.exports = {
                 backgroundColor: 'var(--color-text-base)',
               },
               hr: {
-                borderColor: 'var(--color-text-muted)',
+                borderColor: 'var(--color-border)',
               },
               blockquote: {
+                color: 'var(--color-text-base)',
                 borderLeftColor: 'var(--color-text-muted)',
               },
               'figure figcaption': {

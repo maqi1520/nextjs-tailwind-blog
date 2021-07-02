@@ -7,11 +7,11 @@ import { GetStaticProps } from 'next';
 import ProjectCard from '../components/ProjectCard';
 import PostPreview from '../components/PostPreview';
 import Hero from '../components/Hero';
+import { getLayout } from '../components/Layout';
 
 import { getPosts } from '../lib/posts';
 import { getProjects } from '../lib/projects';
-
-export default function Home({ projects = [], posts = [] }) {
+function Home({ projects = [], posts = [] }) {
   return (
     <>
       <Head>
@@ -41,7 +41,7 @@ export default function Home({ projects = [], posts = [] }) {
           </Link>
         </div>
       </Section>
-      <Section title="联系" id="contact">
+      <Section title="关于" id="about">
         <div className="grid grid-cols-2 mx-auto mt-20 text-skin-base">
           <div className="w-1/3 mx-auto text-lg font-semibold md:w-auto">
             <div className="flex justify-center">
@@ -98,6 +98,10 @@ export default function Home({ projects = [], posts = [] }) {
     </>
   );
 }
+
+Home.getLayout = getLayout;
+
+export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
   const [postRes, projects] = await Promise.all([

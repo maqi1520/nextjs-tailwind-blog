@@ -9,13 +9,13 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html className="theme-dark" lang="zh-CN">
+      <Html className="theme-light" lang="zh-CN">
         <Head>
           <meta name="description" content={description} />
           <meta name="keywords" content={keywords} />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <body className="text-skin-base transition-colors bg-skin-base">
+        <body className="text-skin-base transition-colors bg-skin-base text-sm">
           <Main />
           <NextScript />
         </body>

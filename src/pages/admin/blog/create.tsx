@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import axios from 'axios';
 import { useRouter } from 'next/router';
 import { Editor } from '@bytemd/react';
 import locale from 'bytemd/lib/locales/zh_Hans.json';
@@ -19,12 +18,8 @@ import { title } from '../../../config';
 import TagPanel from '../../../components/TagPanel';
 import DropDown from '../../../components/DropDown';
 
-import type { Post, Project, Category } from '@prisma/client';
-
-export const getArticle = async (id) => {
-  const res = await axios.get(`/api/post/${id}`);
-  return res.data;
-};
+import type { Post, Category } from '@prisma/client';
+import { getPost, createPost, updatePost } from '../../../lib/services';
 
 interface Tstate extends Partial<Post> {
   categories: Category[];
@@ -70,10 +65,8 @@ export default function Home() {
     categories: [],
   });
   useEffect(() => {
-    console.log(typeof id);
-
     if (id) {
-      getArticle(id as string).then((res) => {
+      getPost(+id).then((res) => {
         setArticle(res);
       });
     }
@@ -101,7 +94,7 @@ export default function Home() {
       }
       try {
         if (!data.id) {
-          const { data: res } = await axios.post('/api/post', {
+          const { data: res } = await createPost({
             ...data,
             published: Number(published),
           });
@@ -109,7 +102,7 @@ export default function Home() {
             router.back();
           }
         } else {
-          const { data: res } = await axios.put(`/api/post/${data.id}`, {
+          const { data: res } = await updatePost(data.id, {
             ...data,
             published: Number(published),
           });

@@ -1,24 +1,27 @@
 import React, { ReactElement } from 'react';
 import Pagination from '../../../components/Pagination';
-import PostPreview from '../../../components/PostPreview';
+import ProjectCard from '../../../components/ProjectCard';
 import Section from '../../../components/Section';
 import { getLayout } from '../../../components/AdminLayout';
-import { usePost } from '../../../hooks';
-import useSWR from 'swr';
+import { useProject } from '../../../hooks';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 interface Props {}
 
-export default function BlogPage({}: Props): ReactElement {
+export default function ProjectPage({}: Props): ReactElement {
   const router = useRouter();
   const { pageNum = 1, pageSize = 20 } = router.query;
-  const { data: res, mutate } = usePost(+pageNum, +pageSize);
+
+  const { data: res, mutate } = useProject(+pageNum, +pageSize);
+
+  console.log(res);
+
   const { data, total } = res || { data: [], total: 0 };
 
   const handlePageChange = (current: number, pageSize: number) => {
     router.push({
-      pathname: '/admin/blog',
+      pathname: '/admin/project',
       query: {
         pageSize,
         pageNum: current,
@@ -26,20 +29,20 @@ export default function BlogPage({}: Props): ReactElement {
     });
   };
   const AddButton = (
-    <Link href="/admin/blog/create">
+    <Link href="/admin/project/create">
       <a>
-        <button className="btn btn-primary">写文章</button>
+        <button className="btn btn-primary">新增</button>
       </a>
     </Link>
   );
 
   return (
     <div>
-      <Section extra={AddButton} title="全部文章" id="blog">
+      <Section extra={AddButton} title="项目管理" id="project">
         <ul className="flex flex-col mt-20 space-y-12">
-          {data.map((post) => (
-            <li key={post.id}>
-              <PostPreview reload={mutate} editable post={post} />
+          {data.map((project) => (
+            <li key={project.id}>
+              <ProjectCard reload={mutate} editable project={project} />
             </li>
           ))}
         </ul>
@@ -53,4 +56,5 @@ export default function BlogPage({}: Props): ReactElement {
     </div>
   );
 }
-BlogPage.getLayout = getLayout;
+
+ProjectPage.getLayout = getLayout;

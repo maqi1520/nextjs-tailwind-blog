@@ -12,6 +12,12 @@ export async function getPosts(opts?: getPostsArgs) {
       slug: true,
       title: true,
       summary: true,
+      categories: {
+        select: {
+          name: true,
+          id: true,
+        },
+      },
     },
     where,
     skip,

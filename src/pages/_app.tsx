@@ -3,28 +3,29 @@ import '../styles/index.css';
 import 'katex/dist/katex.css';
 import 'bytemd/dist/index.css';
 import 'highlight.js/styles/atom-one-dark.css';
-import Layout from '../components/Layout';
-import AdminLayout from '../components/AdminLayout';
-import { useRouter } from 'next/router';
+import { SWRConfig } from 'swr';
 
 function MyApp({ Component, pageProps }) {
-  const router = useRouter();
-  if (['/admin/blog/create', '/login', '/register'].includes(router.pathname)) {
-    return <Component {...pageProps} />;
-  }
-
-  if (router.pathname.includes('/admin')) {
-    return (
-      <AdminLayout>
-        <Component {...pageProps} />
-      </AdminLayout>
-    );
-  }
+  const getLayout = Component.getLayout;
 
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <SWRConfig
+      value={{
+        onErrorRetry: (error, key, config, revalidate, { retryCount }) => {
+          // 404 时不重试。
+          if (error.status === 404 || error.status === 401) return;
+
+          // 最多重试 10 次。
+          if (retryCount >= 10) return;
+        },
+      }}
+    >
+      {getLayout ? (
+        getLayout(<Component {...pageProps} />)
+      ) : (
+        <Component {...pageProps} />
+      )}
+    </SWRConfig>
   );
 }
 

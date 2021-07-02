@@ -1,16 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @layer base {
+  [type='text'],
+  [type='email'],
+  [type='url'],
+  [type='password'],
+  [type='number'],
+  [type='date'],
+  [type='datetime-local'],
+  [type='month'],
+  [type='search'],
+  [type='tel'],
+  [type='time'],
+  [type='week'],
+  [multiple],
+  textarea,
+  select {
+    @apply w-full rounded-sm border focus:border-skin-primary shadow-sm bg-skin-base;
+  }
+
+  [type='checkbox'],
+  [type='radio'] {
+    @apply border text-skin-primary focus:border-skin-primary rounded-sm;
+  }
   html {
     font-size: 16px;
   }
+
   :root {
     --color-border: theme('colors.gray.200');
-    --color-text-base: theme('colors.black'); /* black */
-    --color-text-muted: theme('colors.gray.700'); /* gray-700 */
-    --color-text-inverted: theme('colors.gray.900'); /* gray-500 */
+    --color-text-base: theme('colors.gray.800'); /* black */
+    --color-text-muted: theme('colors.gray.600'); /* gray-700 */
+    --color-text-inverted: theme('colors.gray.50'); /* gray-500 */
     --color-base: theme('colors.white'); /* white */
     --color-off-base: theme('colors.gray.50'); /* gray-50 */
     --color-primary: theme('colors.blue.800'); /* blue-800 */
@@ -18,9 +40,10 @@
   }
 
   .theme-light {
-    --color-text-base: theme('colors.black'); /* black */
-    --color-text-muted: theme('colors.gray.700'); /* gray-700 */
-    --color-text-inverted: theme('colors.gray.500'); /* gray-500 */
+    --color-border: theme('colors.gray.200');
+    --color-text-base: theme('colors.gray.800'); /* black */
+    --color-text-muted: theme('colors.gray.600'); /* gray-700 */
+    --color-text-inverted: theme('colors.gray.50'); /* gray-50 */
     --color-base: theme('colors.white'); /* white */
     --color-off-base: theme('colors.gray.50'); /* gray-50 */
     --color-primary: theme('colors.blue.800'); /* blue-800 */
@@ -59,31 +82,6 @@
   }
   * {
     border-color: var(--color-border);
-  }
-}
-
-@layer base {
-  [type='text'],
-  [type='email'],
-  [type='url'],
-  [type='password'],
-  [type='number'],
-  [type='date'],
-  [type='datetime-local'],
-  [type='month'],
-  [type='search'],
-  [type='tel'],
-  [type='time'],
-  [type='week'],
-  [multiple],
-  textarea,
-  select {
-    @apply w-full rounded-sm border focus:border-skin-primary shadow-sm bg-skin-base;
-  }
-
-  [type='checkbox'],
-  [type='radio'] {
-    @apply border text-skin-primary focus:border-skin-primary rounded-sm;
   }
 }
 

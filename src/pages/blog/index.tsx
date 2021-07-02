@@ -3,6 +3,7 @@ import { title } from '../../config';
 import PostPreview from '../../components/PostPreview';
 import Section from '../../components/Section';
 import Pagination from '../../components/Pagination';
+import { getLayout } from '../../components/Layout';
 import { getPosts } from '../../lib/posts';
 import { useRouter } from 'next/router';
 import { GetServerSidePropsContext } from 'next';
@@ -50,6 +51,7 @@ export default function Blog({ posts, pageSize, pageNum, total }: Props) {
     </>
   );
 }
+Blog.getLayout = getLayout;
 
 export async function getServerSideProps(ctx: GetServerSidePropsContext) {
   const { pageNum = 1, pageSize = 20 } = ctx.query;

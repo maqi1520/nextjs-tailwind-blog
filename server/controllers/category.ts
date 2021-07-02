@@ -3,7 +3,7 @@ import prisma from '../prisma';
 import { protect, Req } from '../middleware/auth';
 
 const router = express.Router();
-router.get('/query', protect, async (req: Req, res) => {
+router.get('/query', async (req: Req, res) => {
   const { pageNum = 1, pageSize = 20 } = req.query;
   const data = await prisma.category.findMany({
     skip: +pageSize * (+pageNum - 1),

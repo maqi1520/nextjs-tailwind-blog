@@ -1,38 +1,32 @@
-import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { useAsyncFn } from 'react-use';
 import cl from 'classnames';
-
-export interface RegisterData {
-  email: string;
-  password: string;
-  agree: boolean;
-}
+import { RegisterData, registerUser } from '../../lib/services';
 
 export default function Register() {
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const { register, handleSubmit, errors } = useForm<RegisterData>({
     defaultValues: {},
   });
   const router = useRouter();
-  const [state, doFetch] = useAsyncFn(async (data) => {
-    const response = await axios.post('/api/auth/register', data);
-    return response.data;
-  }, []);
   const onSubmit = async (data: RegisterData) => {
     if (!data.agree) {
       setError('请先同意使用条款！');
       return;
     }
-    const res = await doFetch(data);
+    setLoading(true);
+    const res = await registerUser<{ success: boolean; message?: string }>(
+      data
+    );
     if (res.success) {
       router.push('/login');
     } else {
       setError(res.message);
     }
+    setLoading(false);
   };
 
   return (
@@ -135,13 +129,13 @@ export default function Register() {
 
               <div className="mt-6">
                 <button
-                  disabled={state.loading}
+                  disabled={loading}
                   type="submit"
                   className={cl('btn w-full btn-primary btn-lg', {
-                    'opacity-50': state.loading,
+                    'opacity-50': loading,
                   })}
                 >
-                  {state.loading ? 'loading' : '注册'}
+                  {loading ? 'loading' : '注册'}
                 </button>
               </div>
 

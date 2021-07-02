@@ -32,9 +32,6 @@ export default function Header({}: Props): ReactElement {
         <a className="cursor-pointer" onClick={scrollTo('#about')}>
           关于
         </a>
-        <a className="cursor-pointer" onClick={scrollTo('#contact')}>
-          联系
-        </a>
       </div>
     );
   } else {

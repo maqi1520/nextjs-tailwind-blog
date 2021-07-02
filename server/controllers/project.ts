@@ -12,11 +12,25 @@ router.get('/', protect, async (req: Req, res) => {
     skip: +pageSize * (+pageNum - 1),
     take: +pageSize,
   });
-  const total = await prisma.project.count();
+  const total = await prisma.project.count({
+    where: {
+      userId: req.user.id,
+    },
+  });
   res.json({
     data,
     total,
   });
+});
+
+router.get('/:id', async (req: Req, res) => {
+  const { id } = req.params;
+  const post = await prisma.project.findUnique({
+    where: {
+      id: Number(id),
+    },
+  });
+  res.json(post);
 });
 
 router.post('/', protect, async (req: Req, res) => {
@@ -33,6 +47,19 @@ router.post('/', protect, async (req: Req, res) => {
   });
   res.json({
     data: newUser,
+    success: true,
+  });
+});
+
+router.delete('/:id', protect, async (req: Req, res) => {
+  const { id } = req.params;
+  const data = await prisma.project.delete({
+    where: {
+      id: Number(id),
+    },
+  });
+  res.json({
+    data,
     success: true,
   });
 });

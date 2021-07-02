@@ -26,9 +26,12 @@ export default function Pagination({
           上一页
         </button>
       )}
-      <span className="border px-4 py-2 leading-5 text-skin-primary m-2">
-        {current}
-      </span>
+      {total > 0 && (
+        <span className="border px-4 py-2 leading-5 text-skin-primary m-2">
+          {current}
+        </span>
+      )}
+
       {total > pageSize * current && (
         <button
           onClick={() => onChange(+current + 1, pageSize)}

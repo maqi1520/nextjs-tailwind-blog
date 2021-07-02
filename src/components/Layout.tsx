@@ -11,3 +11,6 @@ export default function Layout({ children }) {
     </>
   );
 }
+
+export const getLayout = page => <Layout>{page}</Layout>;
+

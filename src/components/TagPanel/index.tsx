@@ -7,14 +7,8 @@ import React, {
 } from 'react';
 import Tag from './Tag';
 import { Category } from '@prisma/client';
-import axios from 'axios';
+import { getCategorys } from '../../lib/services';
 
-export const getCategorys = async () => {
-  try {
-    const res = await axios.get(`/api/category/query`);
-    return res.data;
-  } catch (error) {}
-};
 
 type TTags = Pick<Category, 'name'>[];
 

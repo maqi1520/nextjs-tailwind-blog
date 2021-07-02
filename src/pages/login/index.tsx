@@ -1,20 +1,15 @@
-import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
-import { useAsyncFn } from 'react-use';
 import cl from 'classnames';
-import { useMe } from '../../hooks';
 import Link from 'next/link';
 
-export interface SigninData {
-  email: string;
-  password: string;
-}
+import { SigninData, signin } from '../../lib/services';
 
 export default function Login() {
   const [error, setError] = useState('');
-  const { user, getUser } = useMe();
+  const [loading, setLoading] = useState(false);
+
   const { register, handleSubmit, errors } = useForm<SigninData>({
     defaultValues: {
       email: 'admin@admin.com',
@@ -22,19 +17,15 @@ export default function Login() {
     },
   });
   const history = useRouter();
-  const [state, doFetch] = useAsyncFn(async (data) => {
-    const response = await axios.post('/api/auth/signin', data);
-    return response.data;
-  }, []);
   const onSubmit = async (data: SigninData) => {
-    const res = await doFetch(data);
+    setLoading(true);
+    const res = await signin<{ success: boolean; message?: string }>(data);
     if (res.success) {
-      getUser().then(() => {
-        history.push('/admin');
-      });
+      history.push('/admin');
     } else {
       setError(res.message);
     }
+    setLoading(false);
   };
 
   return (
@@ -139,13 +130,13 @@ export default function Login() {
 
               <div className="mt-6">
                 <button
-                  disabled={state.loading}
+                  disabled={loading}
                   type="submit"
                   className={cl('btn w-full btn-primary btn-lg', {
-                    'opacity-50': state.loading,
+                    'opacity-50': loading,
                   })}
                 >
-                  {state.loading ? 'loading' : '登录'}
+                  {loading ? 'loading' : '登录'}
                 </button>
               </div>
 

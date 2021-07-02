@@ -3,6 +3,10 @@ const rewrites = [
     source: '/admin/blog/:id',
     destination: `/admin/blog/create`,
   },
+  {
+    source: '/admin/project/:id',
+    destination: `/admin/project/create`,
+  },
 ];
 
 module.exports = {
