@@ -122,4 +122,7 @@
   .animation-fadeInDown {
     animation: fadeInDown 1s linear;
   }
+  .transition-in > span {
+    opacity: 1;
+  }
 }

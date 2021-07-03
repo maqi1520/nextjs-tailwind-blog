@@ -102,8 +102,8 @@ function onMousemove(e) {
 function render() {
   if (ctx.running) {
     ctx.globalCompositeOperation = 'source-over';
-    ctx.fillStyle = 'rgba(8,5,16,0.4)';
-    ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    //ctx.fillStyle = '#065f46';
+    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     ctx.globalCompositeOperation = 'lighter';
     ctx.strokeStyle = 'hsla(' + Math.round(f.update()) + ',90%,50%,0.25)';
     ctx.lineWidth = 1;

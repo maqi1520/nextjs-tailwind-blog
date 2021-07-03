@@ -8,6 +8,7 @@ export const wechat = 'maqibin1990';
 export const github = 'https://github.com/maqi1520';
 export const copyright = '@copyright 2016-2021';
 export const record = '浙ICP备17007919号-1';
+export const welcome = '自在，轻盈，我本不想停留';
 
 export const about = `
 *   昵称：狂奔滴小马
