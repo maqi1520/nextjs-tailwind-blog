@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import cl from 'classnames';
 import { RegisterData, registerUser } from '../../lib/services';
+import Icon from '../../components/Icon';
 
 export default function Register() {
   const [error, setError] = useState('');
@@ -40,21 +41,7 @@ export default function Register() {
           {error && (
             <div className="p-3 border border-red-500 text-red-600 bg-red-100 flex justify-between items-center">
               <span>{error}</span>
-              <svg
-                onClick={() => setError('')}
-                className="w-5 h-5 cursor-pointer"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
+              <Icon className="cursor-pointer" type="close" onClick={() => setError('')} />
             </div>
           )}
           <div className="mt-6">

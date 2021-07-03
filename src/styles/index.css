@@ -62,23 +62,25 @@
   }
 
   .theme-solar {
-    --color-text-base: theme('colors.red.800'); /* gray-100 */
-    --color-text-muted: theme('colors.red.200'); /* gray-200 */
-    --color-text-inverted: theme('colors.red.500');
-    --color-base: theme('colors.red.50'); /* gray-900 */
-    --color-off-base: theme('colors.red.200'); /* gray-800 */
-    --color-primary: theme('colors.orange.300'); /* blue-300 */
-    --color-secondary: theme('colors.orange.400'); /* blue-400 */
+    --color-border: theme('colors.red.100');
+    --color-text-base: theme('colors.gray.800'); /* gray-100 */
+    --color-text-muted: theme('colors.gray.600'); /* gray-200 */
+    --color-text-inverted: theme('colors.gray.50');
+    --color-base: theme('colors.red.100'); /* gray-900 */
+    --color-off-base: theme('colors.red.100'); /* gray-800 */
+    --color-primary: theme('colors.red.700'); /* blue-300 */
+    --color-secondary: theme('colors.yellow.500'); /* blue-400 */
   }
 
   .theme-evergreen {
-    --color-text-base: theme('colors.green.100'); /* gray-100 */
+    --color-border: theme('colors.green.700');
+    --color-text-base: theme('colors.green.50'); /* gray-100 */
     --color-text-muted: theme('colors.green.200'); /* gray-200 */
-    --color-text-inverted: theme('colors.green.500');
+    --color-text-inverted: theme('colors.green.50');
     --color-base: theme('colors.green.900'); /* gray-900 */
     --color-off-base: theme('colors.green.800'); /* gray-800 */
-    --color-primary: theme('colors.amber.100'); /* blue-300 */
-    --color-secondary: theme('colors.amber.300'); /* blue-400 */
+    --color-primary: theme('colors.orange.500'); /* blue-300 */
+    --color-secondary: theme('colors.green.400'); /* blue-400 */
   }
   * {
     border-color: var(--color-border);
@@ -103,5 +105,21 @@
   }
   .custom-admin-preview .markdown-body {
     @apply prose prose-indigo;
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .animation-fadeInDown {
+    animation: fadeInDown 1s linear;
   }
 }

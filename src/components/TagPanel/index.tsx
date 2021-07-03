@@ -6,9 +6,9 @@ import React, {
   useRef,
 } from 'react';
 import Tag from './Tag';
+import Icon from '../Icon';
 import { Category } from '@prisma/client';
 import { getCategorys } from '../../lib/services';
-
 
 type TTags = Pick<Category, 'name'>[];
 
@@ -92,21 +92,7 @@ export default function CategoryPanel({
           className="bg-skin-primary  text-skin-inverted"
           onClick={() => setInputVisible(true)}
         >
-          <svg
-            className="w-5 h-5 inline-block"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-            />
-          </svg>{' '}
-          New Tag
+          <Icon className="h-4 w-4 inline-block" type="plus" /> New Tag
         </Tag>
       )}
     </div>

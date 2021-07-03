@@ -9,7 +9,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html className="theme-light" lang="zh-CN">
+      <Html lang="zh-CN">
         <Head>
           <meta name="description" content={description} />
           <meta name="keywords" content={keywords} />

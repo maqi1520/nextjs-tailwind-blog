@@ -17,6 +17,7 @@ import { useMemo, useState, useCallback, useEffect } from 'react';
 import { title } from '../../../config';
 import TagPanel from '../../../components/TagPanel';
 import DropDown from '../../../components/DropDown';
+import Icon from '../../../components/Icon';
 
 import type { Post, Category } from '@prisma/client';
 import { getPost, createPost, updatePost } from '../../../lib/services';
@@ -128,32 +129,15 @@ export default function Home() {
       <TagPanel selectedTags={data.categories} onChange={setCategories} />
       <div className="border-t my-2"></div>
       <div className="flex space-x-4">
-        <button
-          className="btn flex-1"
-          onClick={() => handleSave(false)}
-          style={{ marginRight: 20 }}
-        >
+        <button className="btn flex-1" onClick={() => handleSave(false)}>
           保存草稿
         </button>
         <button
           className="btn btn-primary flex-1"
           onClick={() => handleSave(true)}
         >
-          <svg
-            className="w-5 h-5 inline-block mr-2"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"
-            />
-          </svg>
-          确认发布
+          <Icon className="w-5 h-5 inline-block" type="save" />
+          <span className="ml-2">确认发布</span>
         </button>
       </div>
     </div>

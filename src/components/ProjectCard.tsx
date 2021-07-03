@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { Project } from '@prisma/client';
 import { deleteProject } from '../lib/services';
+import Icon from '../components/Icon';
 interface Props {
   project: Project;
   editable?: boolean;
@@ -14,8 +15,8 @@ const ProjectCard = ({ project, editable, reload }: Props) => {
   const handleDelete = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (window.confirm('确认删除吗?')) {
-      deleteProject(id).then(()=>{
-        reload()
+      deleteProject(id).then(() => {
+        reload();
       });
     }
   };
@@ -44,39 +45,12 @@ const ProjectCard = ({ project, editable, reload }: Props) => {
             href={repoUrl}
             className="transition-colors text-skin-primary hover:text-skin-secondary"
           >
-            <svg
-              className="w-5 h-5 inline-block"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-              />
-            </svg>{' '}
-            code
+            <Icon className="w-5 h-5 inline-block" type="code" /> code
           </a>
         ) : null}
         {editable ? (
           <button onClick={handleDelete} className="btn text-skin-secondary">
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-              />
-            </svg>
+            <Icon type="delete" />
           </button>
         ) : null}
       </div>

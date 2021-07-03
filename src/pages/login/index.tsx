@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import cl from 'classnames';
 import Link from 'next/link';
 
+import Icon from '../../components/Icon';
 import { SigninData, signin } from '../../lib/services';
 
 export default function Login() {
@@ -39,21 +40,11 @@ export default function Login() {
           {error && (
             <div className="py-2 px-3 text-sm border border-red-500 text-red-500 bg-red-100 flex justify-between items-center">
               <span>{error}</span>
-              <svg
+              <Icon
+                className="cursor-pointer"
                 onClick={() => setError('')}
-                className="w-5 h-5 cursor-pointer"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
+                type="close"
+              />
             </div>
           )}
           <div className="mt-6">

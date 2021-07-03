@@ -1,13 +1,15 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { title } from '../config';
+import { title, email, wechat, about } from '../config';
 import Section from '../components/Section';
 import React, { useEffect } from 'react';
 import { GetStaticProps } from 'next';
 import ProjectCard from '../components/ProjectCard';
 import PostPreview from '../components/PostPreview';
 import Hero from '../components/Hero';
+import Icon from '../components/Icon';
 import { getLayout } from '../components/Layout';
+import { Viewer } from '@bytemd/react';
 
 import { getPosts } from '../lib/posts';
 import { getProjects } from '../lib/projects';
@@ -42,56 +44,30 @@ function Home({ projects = [], posts = [] }) {
         </div>
       </Section>
       <Section title="关于" id="about">
-        <div className="grid grid-cols-2 mx-auto mt-20 text-skin-base">
-          <div className="w-1/3 mx-auto text-lg font-semibold md:w-auto">
+        <div className="custom-markdown-body mt-20">
+          <Viewer value={about} />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-20 text-skin-base">
+          <div className=" text-lg font-semibold">
             <div className="flex justify-center">
-              <svg
-                className="w-6 h-6 text-skin-base"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                />
-              </svg>
+              <Icon className="w-6 h-6" type="email" />
               <span className="ml-2">Email</span>
             </div>
             <a
-              href="mailto:maqi1520@163.com"
-              className="mt-1 transition-colors text-skin-primary hover:text-skin-secondary"
+              href={`mailto:${email}`}
+              className="mt-1 text-center block transition-colors text-skin-primary hover:text-skin-secondary"
             >
-              maqi1520@163.com
+              {email}
             </a>
           </div>
-          <div className="w-1/3 mx-auto text-lg font-semibold md:w-auto">
+          <div className="text-lg font-semibold">
             <div className="flex justify-center items-center">
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                />
-              </svg>
+              <Icon className="w-6 h-6" type="wechat" />
               <span className="ml-2">Wechat</span>
             </div>
-            <a
-              href="mailto:maqi1520@163.com"
-              className="mt-1 transition-colors text-skin-primary hover:text-skin-secondary"
-            >
-              maqibin1990
-            </a>
+            <div className="mt-1 text-center transition-colors text-skin-primary hover:text-skin-secondary">
+              {wechat}
+            </div>
           </div>
         </div>
       </Section>

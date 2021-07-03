@@ -14,7 +14,9 @@ export default function Hero({}: Props): ReactElement {
         id="canvas"
       ></canvas>
       <div className="h-screen relative z-10 flex justify-center items-center">
-        <h1 className="text-4xl">自在，轻盈，我本不想停留</h1>
+        <h1 className="text-4xl animation-fadeInDown">
+          自在，轻盈，我本不想停留
+        </h1>
       </div>
     </div>
   );
