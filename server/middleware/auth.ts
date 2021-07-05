@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken';
 import prisma from '../prisma';
 
 export interface Req extends Request {
-  user: User;
+  user: Omit<User, 'password'>;
 }
 
 export async function protect(
@@ -21,9 +21,14 @@ export async function protect(
 
   try {
     const token = req.cookies.token;
-    const decoded = jwt.verify(token, process.env.JWT_SECRET) as User;
+    const decoded = jwt.verify(token, process.env.JWT_SECRET) as { id: number };
     if (decoded.id) {
       const user = await prisma.user.findUnique({
+        select: {
+          id: true,
+          name: true,
+          email: true,
+        },
         where: {
           id: decoded.id,
         },

@@ -7,7 +7,6 @@ import Icon from '../Icon';
 interface Props {
   children: ReactElement;
 }
-
 export default function Header({ children }: Props): ReactElement {
   const { user } = useMe();
   const [current, setCurrent] = useState('');
@@ -21,11 +20,6 @@ export default function Header({ children }: Props): ReactElement {
   useEffect(() => {
     const skin = localStorage.getItem('skin');
     if (skin) {
-      setCurrent(skin);
-      document.documentElement.classList.add(skin);
-    } else {
-      document.documentElement.classList.add('theme-light');
-      localStorage.setItem('skin', 'theme-light');
       setCurrent(skin);
     }
   }, []);

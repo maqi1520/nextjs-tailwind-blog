@@ -54,10 +54,7 @@ authRouter.post('/signin', async (req, res) => {
   //检查密码是否匹配
   const pwdMatchFlag = bcrypt.compareSync(password, user.password);
   if (pwdMatchFlag) {
-    const token = jwt.sign(
-      { ...user, password: undefined },
-      process.env.JWT_SECRET
-    );
+    const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET);
     res.cookie('token', token, { httpOnly: true });
     res.json({
       token: token,
