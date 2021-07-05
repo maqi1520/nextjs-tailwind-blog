@@ -14,9 +14,6 @@
 
 https://nextjs-tailwind-blog.vercel.app/
 
-
-
-
 ## 部署
 
 Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
@@ -26,7 +23,6 @@ Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_mediu
 ### 其他云服务器
 
 更新网站配置 `./src/config/index.ts`
-
 
 - 修改数据库
 
@@ -42,9 +38,9 @@ datasource db {
 新建`.env` 文件
 
 ```js
-DATABASE_URL="postgresql://user:passwort@localhost:5432/blog?schema=public"
+DATABASE_URL = 'postgresql://user:passwort@localhost:5432/blog?schema=public';
 
-JWT_SECRET="your JWT_SECRET"
+JWT_SECRET = 'your JWT_SECRET';
 ```
 
 - 初始化数据库
@@ -52,4 +48,3 @@ JWT_SECRET="your JWT_SECRET"
 ```bash
 yarn prisma:init
 ```
-
