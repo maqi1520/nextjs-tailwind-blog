@@ -41,7 +41,7 @@ export default function Login() {
             <div className="py-2 px-3 text-sm border border-red-500 text-red-500 bg-red-100 flex justify-between items-center">
               <span>{error}</span>
               <Icon
-                className="cursor-pointer"
+                className="cursor-pointer w-5 h-5"
                 onClick={() => setError('')}
                 type="close"
               />

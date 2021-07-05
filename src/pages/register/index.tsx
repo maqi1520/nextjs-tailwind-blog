@@ -41,7 +41,11 @@ export default function Register() {
           {error && (
             <div className="p-3 border border-red-500 text-red-600 bg-red-100 flex justify-between items-center">
               <span>{error}</span>
-              <Icon className="cursor-pointer" type="close" onClick={() => setError('')} />
+              <Icon
+                className="cursor-pointer w-5 h-5"
+                type="close"
+                onClick={() => setError('')}
+              />
             </div>
           )}
           <div className="mt-6">
