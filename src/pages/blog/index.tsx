@@ -7,12 +7,14 @@ import { getLayout } from '../../components/Layout';
 import { getPosts } from '../../lib/posts';
 import { useRouter } from 'next/router';
 import { GetServerSidePropsContext } from 'next';
-import { Post } from '@prisma/client';
+import { Post, Category } from '@prisma/client';
+
+type TPost = Post & { categories: Category[] };
 
 interface Props {
   pageSize: number;
   pageNum: number;
-  posts: Post[];
+  posts: TPost[];
   total: number;
 }
 
