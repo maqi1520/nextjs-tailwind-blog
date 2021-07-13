@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { title, email, wechat, about } from '../config';
 import Section from '../components/Section';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { GetStaticProps } from 'next';
 import ProjectCard from '../components/ProjectCard';
 import PostPreview from '../components/PostPreview';
@@ -81,7 +81,7 @@ export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
   const [postRes, projects] = await Promise.all([
-    getPosts({ take: 3, orderBy: { hits: 'desc' } }),
+    getPosts({ take: 3, orderBy: { createdAt: 'desc' } }),
     getProjects(),
   ]);
 
@@ -90,5 +90,6 @@ export const getStaticProps: GetStaticProps = async () => {
       projects,
       posts: postRes.data,
     },
+    revalidate: 1,
   };
 };

@@ -23,6 +23,7 @@ router.get('/', protect, async (req: Req, res) => {
     where: {
       userId: req.user.id,
     },
+    orderBy: { createdAt: 'desc' },
     skip: +pageSize * (+pageNum - 1),
     take: +pageSize,
     ...opts,
@@ -93,7 +94,7 @@ router.post('/', protect, async (req: Req, res) => {
       },
     };
   });
-  const newUser = await prisma.post.create({
+  const newPost = await prisma.post.create({
     data: {
       title,
       summary,
@@ -114,7 +115,7 @@ router.post('/', protect, async (req: Req, res) => {
     },
   });
   res.json({
-    data: newUser,
+    data: newPost,
     success: true,
   });
 });
@@ -133,7 +134,7 @@ router.put('/:id', protect, async (req: Req, res) => {
       },
     };
   });
-  const newUser = await prisma.post.update({
+  const newPost = await prisma.post.update({
     where: {
       id: +id,
     },
@@ -152,7 +153,7 @@ router.put('/:id', protect, async (req: Req, res) => {
     },
   });
   res.json({
-    data: newUser,
+    data: newPost,
     success: true,
   });
 });
