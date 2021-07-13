@@ -133,8 +133,8 @@ export default function Register() {
               <div className="mt-6">
                 <div className="mt-6">
                   已有账号，去
-                  <Link href="/register">
-                    <a className="text-skin-primary">注册</a>
+                  <Link href="/login">
+                    <a className="text-skin-primary">登录</a>
                   </Link>
                 </div>
               </div>

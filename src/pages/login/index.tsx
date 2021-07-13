@@ -131,7 +131,7 @@ export default function Login() {
                 </button>
               </div>
 
-              <div className="mt-6">
+              <div className="mt-6 hidden">
                 还没有账号？去
                 <Link href="/register">
                   <a className="text-skin-primary">注册</a>
