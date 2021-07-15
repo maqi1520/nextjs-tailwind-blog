@@ -9,6 +9,7 @@ import { Toc } from '../../components/Toc';
 import Icon from '../../components/Icon';
 import { getLayout } from '../../components/Layout';
 import { Viewer } from '@bytemd/react';
+import { linkNofollow } from '../../utils/remark-plugin';
 import footnotes from '@bytemd/plugin-footnotes';
 import frontmatter from '@bytemd/plugin-frontmatter';
 import gfm from '@bytemd/plugin-gfm';
@@ -36,6 +37,7 @@ export default function PostPage({ post }: Props) {
 
   const plugins = useMemo(
     () => [
+      linkNofollow(),
       footnotes(),
       frontmatter(),
       gemoji(),
@@ -90,7 +92,10 @@ export default function PostPage({ post }: Props) {
         </div>
         <div className="mt-8 flex">
           <div className="flex-auto custom-markdown-body" ref={previewRef}>
-            <Viewer plugins={plugins} value={post.content} />
+            <Viewer
+              plugins={plugins}
+              value={post.content}
+            />
           </div>
           <div className="w-60 flex-shrink-0">
             <Toc
