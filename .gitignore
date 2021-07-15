@@ -36,3 +36,5 @@ yarn-error.log*
 .env
 
 *.sql
+/pgdata
+docker-compose.yml

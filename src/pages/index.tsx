@@ -81,7 +81,13 @@ export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
   const [postRes, projects] = await Promise.all([
-    getPosts({ take: 3, orderBy: { createdAt: 'desc' } }),
+    getPosts({
+      take: 3,
+      where: {
+        published: 1,
+      },
+      orderBy: { createdAt: 'desc' },
+    }),
     getProjects(),
   ]);
 
