@@ -25,17 +25,17 @@ router.get('/', protect, async (req: Req, res) => {
 
 router.get('/:id', async (req: Req, res) => {
   const { id } = req.params;
-  const post = await prisma.project.findUnique({
+  const project = await prisma.project.findUnique({
     where: {
       id: Number(id),
     },
   });
-  res.json(post);
+  res.json(project);
 });
 
 router.post('/', protect, async (req: Req, res) => {
   const { title, description, order, repoUrl, appUrl } = req.body;
-  const newUser = await prisma.project.create({
+  const newProject = await prisma.project.create({
     data: {
       userId: req.user.id,
       title,
@@ -46,7 +46,22 @@ router.post('/', protect, async (req: Req, res) => {
     },
   });
   res.json({
-    data: newUser,
+    data: newProject,
+    success: true,
+  });
+});
+
+router.put('/:id', protect, async (req: Req, res) => {
+  const { id } = req.params;
+  const { title, description, order, repoUrl, appUrl } = req.body;
+  const updatedProject = await prisma.project.update({
+    where: {
+      id: +id,
+    },
+    data: { title, description, order, repoUrl, appUrl },
+  });
+  res.json({
+    data: updatedProject,
     success: true,
   });
 });

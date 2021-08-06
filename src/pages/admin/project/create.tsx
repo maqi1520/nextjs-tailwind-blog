@@ -36,7 +36,7 @@ const fields = [
   },
   {
     name: '项目地址',
-    code: 'repoUrl',
+    code: 'appUrl',
     type: 'text',
     required: false,
   },
@@ -77,7 +77,9 @@ export default function CreatePage() {
   return (
     <div>
       <Head>
-        <title>新建项目-{title}</title>
+        <title>
+          {id ? '新建' : '编辑'}项目-{title}
+        </title>
       </Head>
       <div className="mt-6 max-w-2xl mx-auto">
         <form onSubmit={handleSubmit(onSubmit)}>
