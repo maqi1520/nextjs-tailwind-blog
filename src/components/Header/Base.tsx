@@ -29,16 +29,16 @@ export default function Header({ children }: Props): ReactElement {
       className="relative top-0 z-50 right-0 left-0 bg-skin-off-base shadow"
     >
       <div className="px-3 mx-auto lg:max-w-4xl md:max-w-3xl h-16 flex justify-between items-center">
-        <div className="flex-shrink-0">
+        <div className="flex">
           <Link href="/">
             <a className="flex items-center">
               <span className="text-3xl font-extrabold mr-2">M</span>
               <span>{name}</span>
             </a>
           </Link>
+          <nav className="hidden ml-20 md:flex items-center">{children}</nav>
         </div>
-        <nav className="hidden flex-1 md:flex items-center">{children}</nav>
-        <div className="flex-1 flex items-center justify-end space-x-3">
+        <div className="flex items-center justify-end space-x-3">
           <span
             aria-label="换肤"
             className="transition-colors hover:text-skin-primary relative group pl-2"
