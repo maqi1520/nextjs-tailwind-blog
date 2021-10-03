@@ -73,8 +73,12 @@ export default function PostPage({ post }: Props) {
         <title>
           {post.title}-{title}
         </title>
+        <meta
+          name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+        />
       </Head>
-      <article className="flex flex-col justify-around pb-16 mx-auto space-y-10 text-base">
+      <article className="flex flex-col justify-around pb-16 px-4 mx-auto space-y-10 text-base">
         <div className="flex flex-col space-y-4">
           <h1 className="inline pt-10 text-4xl text-skin-primary">
             {post.title}
@@ -91,16 +95,16 @@ export default function PostPage({ post }: Props) {
           </div>
         </div>
         <div className="mt-8 flex">
-          <div className="flex-auto custom-markdown-body" ref={previewRef}>
-            <Viewer
-              plugins={plugins}
-              value={post.content}
-            />
+          <div
+            className="w-full flex-auto custom-markdown-body"
+            ref={previewRef}
+          >
+            <Viewer plugins={plugins} value={post.content} />
           </div>
-          <div className="w-60 flex-shrink-0">
+          <div className="hidden md:block w-60 flex-shrink-0">
             <Toc
               previewRef={previewRef}
-              className="sticky top-0 "
+              className="sticky top-0"
               onClick={handleClick}
               plugins={plugins}
               value={post.content}

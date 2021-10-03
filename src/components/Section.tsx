@@ -2,7 +2,7 @@ const Section = (props) => {
   return (
     <div
       id={props.id}
-      className={`w-full py-12 leading-loose ${props.className || ''}`}
+      className={`px-4 w-full py-12 leading-loose ${props.className || ''}`}
     >
       <div className="max-w-6xl mx-auto">
         <div className="flex justify-between items-center">

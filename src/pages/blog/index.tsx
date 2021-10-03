@@ -34,6 +34,10 @@ export default function Blog({ posts, pageSize, pageNum, total }: Props) {
     <>
       <Head>
         <title>全部文章-{title}</title>
+        <meta
+          name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+        />
       </Head>
       <Section title="全部文章" id="blog">
         <ul className="flex flex-col mt-20 space-y-20">

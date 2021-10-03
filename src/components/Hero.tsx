@@ -17,7 +17,7 @@ export default function Hero({}: Props): ReactElement {
         id="canvas"
       ></canvas>
       <div className="h-screen relative z-10 flex justify-center items-center">
-        <div ref={ref} className="text-4xl">
+        <div ref={ref} className="text-3xl md:text-4xl px-4">
           {welcome.split('').map((latter, index) => (
             <span
               style={{ transitionDelay: 0.2 * (index + 1) + 's' }}
