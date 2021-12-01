@@ -28,7 +28,7 @@ export default function Header({ children }: Props): ReactElement {
       id="header"
       className="relative top-0 z-50 right-0 left-0 bg-skin-off-base shadow"
     >
-      <div className="px-3 mx-auto lg:max-w-4xl md:max-w-3xl h-16 flex justify-between items-center">
+      <div className="px-3 mx-auto lg:max-w-5xl md:max-w-3xl h-16 flex justify-between items-center">
         <div className="flex">
           <Link href="/">
             <a className="flex items-center">
