@@ -9,6 +9,8 @@ type PostBody = Post & {
 
 const router = express.Router();
 router.get('/', protect, async (req: Req, res) => {
+  console.log(req.user);
+
   const { pageNum = 1, pageSize = 20, ...opts } = req.query;
   const allPostsData = await prisma.post.findMany({
     select: {
@@ -33,6 +35,8 @@ router.get('/', protect, async (req: Req, res) => {
       userId: req.user.id,
     },
   });
+  console.log(allPostsData);
+
   res.json({
     data: allPostsData,
     total,
