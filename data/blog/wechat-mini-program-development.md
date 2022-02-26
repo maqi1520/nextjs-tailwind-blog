@@ -10,17 +10,6 @@ authors: ['default']
 layout: PostLayout
 ---
 
----
-
-# 主题列表：juejin, github, smartblue, cyanosis, channing-cyan, fancy, hydrogen, condensed-night-purple, greenwillow, v-green, vue-pro
-
-# 贡献主题：https://github.com/xitu/juejin-markdown-themes
-
-theme: juejin
-highlight:
-
----
-
 > 前言：2020 年，现在小程序虽然不是最火的时间段，但是小程序“触手可及，用完即走”的理念对于未知开发者保持一定的神秘和吸引力，应后端同学对小程序开发的热情，笔者在疫情期间也开发上线了一个款小程序[《听读说》](https://github.com/maqi1520/taro-video-english)，虽然只是功能非常简单，但凭着一点学习经验给大家带来分享。
 
 ## 小程序是什么
@@ -438,5 +427,3 @@ Remax 的运行时本质是一个通过 react-reconciler 实现的一个小程�
 [代码仓库](https://github.com/maqi1520/learn-wechat)
 
 [ppt.pdf](http://oss.maqib.cn/1000/2020/11/1/ppt.pdf)
-
-感谢您的阅读，如若转载，请注明出处：狂奔小马的博客 <http://maqib.cn/post/1013>

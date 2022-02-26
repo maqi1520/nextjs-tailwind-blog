@@ -33,7 +33,7 @@ layout: PostLayout
 
 1.  在掘金发布 [12](https://juejin.cn/user/2189882895384093/posts) 篇文章
 2.  【全栈】第三次重构我的[个人博客](https://maqib.cn/)
-3.  【全栈】模仿在线流程图  <processon.com>，目前已经下线，[掘金实现文章](https://juejin.cn/post/7028902468956192781)
+3.  【全栈】模仿在线流程图  `processon.com`，目前已经下线，[掘金实现文章](https://juejin.cn/post/7028902468956192781)
 4.  【全栈】实现一个简易版 react 低代码平台 https://low-code.runjs.cool/， 目前只实现了视图层，后面的逻辑有些复杂，没有继续下去。
 5.  在 https://dev.to/ 发布 1 篇 [英文文章](https://dev.to/maqi1520/using-the-postcss-plugin-let-your-webapp-support-dark-mode-1nnp) 其实就是中文翻译的。
 6.  发布 2 个 npm 包，
@@ -93,7 +93,7 @@ layout: PostLayout
 
 ## 关于学习
 
-前端框架层出不穷，2021 年，云栖大会上，阿里巴巴重磅发布前端知识图谱 <https://f2e.tech/>， 那么有了图谱，我们应该怎样学习呢？ 以下是我的学习方式排列
+前端框架层出不穷，2021 年，云栖大会上，阿里巴巴重磅发布前端知识图谱 `https://f2e.tech/`， 那么有了图谱，我们应该怎样学习呢？ 以下是我的学习方式排列
 
 1. 最快的方式还是直接写官网直接写 demo，类似写个 Todo List 等
 2. 根据视频学习，如今视频教程满天飞，B 站搜索一大堆。看视频也是离实战最近的方式，相当于别人是视角学习，学习效率也挺高的。
@@ -115,7 +115,7 @@ layout: PostLayout
 
 首先我会跟面试者的简历先想好面试的问题：
 
-- 首先是 ES6 相关问题。这一点是无论什么技术栈都得掌握的。主要是 promise proxy 等，如果能说 [ Promise.allSettled](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled) 大概就可以了。
+- 首先是 ES6 相关问题。这一点是无论什么技术栈都得掌握的。主要是 promise proxy 等，如果能说 [Promise.allSettled](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled) 大概就可以了。
 - 如果简历中包含移动端，就会问 “自适应方案”，“高清方案”等类似问题。
 - 如果简历中包含 react， 就问 react 性能优化、 react 全家桶等
 - 如果包含 webpack，就问下 loader 和 plugin 区别和实现方式等

@@ -150,7 +150,7 @@ vsce publish
 
 发布成功后可能需要一两分钟，才可以在 VS Code 中搜索到，可以直接通过 url 访问
 
-https://marketplace.visualstudio.com/items?itemName=<publisher name>.<extension name>
+`https://marketplace.visualstudio.com/items?itemName=<publisher name>.<extension name>`
 
 也可以使用以下命令 **取消发布**
 

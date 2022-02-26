@@ -96,7 +96,7 @@ const BenchmarkMemo = ({level}) => {
 export default BenchmarkMemo;
 ```
 
-然后，我们在 App.js 中添加这些组件，当按下按钮时显示。我们还使用 React 的 <Profiler> 来计算渲染时间。
+然后，我们在 App.js 中添加这些组件，当按下按钮时显示。我们还使用 React 的 `<Profiler>` 来计算渲染时间。
 
 ```js
 function onRenderCallback(
