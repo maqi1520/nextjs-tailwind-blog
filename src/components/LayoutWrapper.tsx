@@ -8,14 +8,11 @@ import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
 import { ReactNode } from 'react'
 
-import { useTheme } from 'next-themes'
-
 interface Props {
   children: ReactNode
 }
 
 const LayoutWrapper = ({ children }: Props) => {
-  const { theme } = useTheme()
   return (
     <SectionContainer>
       <div className="flex h-screen flex-col justify-between">
@@ -24,7 +21,7 @@ const LayoutWrapper = ({ children }: Props) => {
             <Link href="/" aria-label={siteMetadata.headerTitle}>
               <div className="flex items-center justify-between">
                 <div className="mr-3">
-                  <Logo fill="none" stroke={theme === 'dark' ? '#fff' : '#000'} />
+                  <Logo />
                 </div>
                 {typeof siteMetadata.headerTitle === 'string' ? (
                   <div className="hidden h-6 text-2xl font-semibold sm:block">
