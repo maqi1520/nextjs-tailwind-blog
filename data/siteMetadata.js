@@ -1,8 +1,8 @@
 const siteMetadata = {
   title: '狂奔小马的博客',
   author: '狂奔滴小马',
-  headerTitle: '狂奔滴小马',
-  description: '狂奔小马的博客,前端工程师,Web 全栈开发者',
+  headerTitle: '狂奔小马的博客',
+  description: '狂奔小马的博客,前端工程师, Web全栈开发者',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://maqib.cn',
