@@ -29,7 +29,7 @@ const TOCInline = ({
   indentDepth = 3,
   fromHeading = 1,
   toHeading = 6,
-  asDisclosure = false,
+  asDisclosure = true,
   exclude = '',
 }: TOCInlineProps) => {
   const re = Array.isArray(exclude)
@@ -55,7 +55,7 @@ const TOCInline = ({
     <>
       {asDisclosure ? (
         <details open>
-          <summary className="ml-6 pt-2 pb-2 text-xl font-bold">Table of Contents</summary>
+          <summary className="ml-6 pt-2 pb-2 text-xl font-bold">目录</summary>
           <div className="ml-6">{tocList}</div>
         </details>
       ) : (
