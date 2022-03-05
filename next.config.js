@@ -8,7 +8,7 @@ const ContentSecurityPolicy = `
   script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app www.googletagmanager.com;
   style-src 'self' 'unsafe-inline';
   img-src * blob: data:;
-  media-src 'none';
+  media-src 'self';
   connect-src *;
   font-src 'self';
   frame-src giscus.app
@@ -69,6 +69,25 @@ module.exports = withBundleAnalyzer({
       },
     ]
   },
+  async redirects() {
+    return [
+      {
+        source: '/blog/1',
+        destination: '/blog/Refactoring-my-blog-using-NextJS-and-TailwindCSS',
+        permanent: true,
+      },
+      {
+        source: '/blog/4',
+        destination: '/blog/Implement-a-vscode-translation-extension',
+        permanent: true,
+      },
+      {
+        source: '/blog/6',
+        destination: '/blog/how-to-deploy-a-dynamic-website-for-free',
+        permanent: true,
+      },
+    ]
+  },
   typescript: {
     // !! WARN !!
     // Dangerously allow production builds to successfully complete even if
@@ -78,7 +97,7 @@ module.exports = withBundleAnalyzer({
   },
   webpack: (config, { dev, isServer }) => {
     config.module.rules.push({
-      test: /\.(png|jpe?g|gif|mp4)$/i,
+      test: /\.(png|jpe?g|gif|mp4|mp3)$/i,
       use: [
         {
           loader: 'file-loader',
