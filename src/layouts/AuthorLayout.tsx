@@ -25,7 +25,7 @@ export default function AuthorLayout({ children, frontMatter }: Props) {
           <div className="flex flex-col items-center space-x-2 pt-8">
             <Image
               src={avatar}
-              alt="avatar"
+              alt="头像"
               width="192px"
               height="192px"
               className="h-48 w-48 rounded-full"
