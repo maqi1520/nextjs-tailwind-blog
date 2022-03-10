@@ -1,7 +1,7 @@
 ---
 title: '盘点掘金 2021 高赞 Vue 文章'
 date: '2021/12/31'
-lastmod: '2021/12/31'
+lastmod: '2022/03/10'
 tags: [前端, Vue.js]
 draft: false
 summary: 'vue 接口封装、vue 面试题、vue 源码解读、vue 组件通信、vue性能优化技巧、vue 工程搭建。'
@@ -313,3 +313,9 @@ layout: PostLayout
     收藏 662  
     阅读 25859  
     分类 前端
+
+---
+
+以上就是本文全部内容，希望这篇文章对大家有所帮助，也可以参考我往期的文章或者在评论区交流你的想法和心得，欢迎一起探索前端。
+
+本文首发掘金平台，来源[小马博客](https://maqib.cn/blog/2021-juejin-vue-article)
