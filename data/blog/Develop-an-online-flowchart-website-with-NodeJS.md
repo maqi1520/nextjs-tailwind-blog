@@ -1,10 +1,10 @@
 ---
 title: '用 NodeJS 开发一版在线流程图网站'
 date: '2021/11/10'
-lastmod: '2022/1/21'
+lastmod: '2022/03/11'
 tags: [JavaScript, Node.js]
 draft: false
-summary: '体验：http://cp.maqib.cn/ 对于程序员来说，每天除了写代码，接触较多的可能是各种图表了，诸如流程图、原型图、拓扑图、UML 图以及思维导图等等，我们较为熟悉的是 ProcessOn了'
+summary: '对于程序员来说，每天除了写代码，接触较多的可能是各种图表了，诸如流程图、原型图、拓扑图、UML 图以及思维导图等等，我们较为熟悉的是 ProcessOn了'
 images:
   [
     'https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1ea3a9199f34447cb00c1532a54ce8fb~tplv-k3u1fbpfcp-watermark.image?',
@@ -23,20 +23,20 @@ layout: PostLayout
 
 说干就干，使用 chrome 右键另存为 ，可以直接将这个网站使用到的静态文件保存下来，但是保存下来的静态资源目录都自动替换了本地，但我想要的是跟线上一样的目录结构。
 
-![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4991b21f3e62459f8366dcd8a63dfb66~tplv-k3u1fbpfcp-watermark.image?)
+![chrome devtools 查看源码](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4991b21f3e62459f8366dcd8a63dfb66~tplv-k3u1fbpfcp-watermark.image?)
 难道右键一个一个 JS 另存为吗？
 
 并不是，可以使用一个 chrome 插件 [Save All Resources ](https://chrome.google.com/webstore/detail/save-all-resources/abpdnfjocnmdomablahdcfnoggeeiedb) 把整个网站的静态资源 down 下来，
 
 安装之后在 chrome devTools 会多出一栏
 
-![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/75d7352e265e4eb5915748186bfa5a70~tplv-k3u1fbpfcp-watermark.image?)
+![chrome 插件 Save All Resources ](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/75d7352e265e4eb5915748186bfa5a70~tplv-k3u1fbpfcp-watermark.image?)
 
 点击 `save All Resources` 就可以了，全部 down 下来了.
 
 解压之后，我们一起来看看目录
 
-![image.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7e044968ae3344d48b132fdf9758c450~tplv-k3u1fbpfcp-watermark.image?)
+![下载够解压的文件](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7e044968ae3344d48b132fdf9758c450~tplv-k3u1fbpfcp-watermark.image?)
 
 不光这个域名下的静态资源，其他域下的静态资源也都 down 下来了，其实这已经完成一半了。
 
@@ -53,13 +53,13 @@ layout: PostLayout
 
 又然后根据官网[ Using eval in Chrome extensions](https://developer.chrome.com/docs/extensions/mv3/sandboxingEval/)，根据里面的介绍，将 html 放入一个 `iframe` 中， 这样可以就可以了。略微开心了一下，一起看下我们的 hello Word Chrome extensions。
 
-![Nov-10-2021 15-53-08.gif](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a3037d1f319d4814894908c9545eb74c~tplv-k3u1fbpfcp-watermark.image?)
+![流程图在线演示.gif](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a3037d1f319d4814894908c9545eb74c~tplv-k3u1fbpfcp-watermark.image?)
 
 接下来准备保存数据。
 
 iframe 内部想要跟父容器的通信可以使用 parent，又遇到了问题。
 
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8107461ff02d47eaa58fcf12549aa261~tplv-k3u1fbpfcp-watermark.image?)
+![chrome 控制台报错](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8107461ff02d47eaa58fcf12549aa261~tplv-k3u1fbpfcp-watermark.image?)
 
 因为 chrome extension iframe 是直接打开的，并不是在一个 http 服务下，然后我又试了 `postMessage` 等方法，还是不能通信。
 
@@ -83,9 +83,9 @@ iframe 内部想要跟父容器的通信可以使用 parent，又遇到了问题
 
 接下来就是根据接口，进行建表
 
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/202931e82683455ea9b41af0957e8c00~tplv-k3u1fbpfcp-watermark.image?)
+![chrome 控制台查看接口数据](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/202931e82683455ea9b41af0957e8c00~tplv-k3u1fbpfcp-watermark.image?)
 
-![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9e6310b129524a1b867278f240883d40~tplv-k3u1fbpfcp-watermark.image?)
+![chrome 控制台查看接口返回的json](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9e6310b129524a1b867278f240883d40~tplv-k3u1fbpfcp-watermark.image?)
 
 根据首次加载查看详情的 get 请求 可以看到请求数据，他是将 Json 作为字符串返回的，我估计他使用的是 MongoDB 数据库，id 跟 MongoDB id 长度一致。
 
@@ -181,4 +181,8 @@ model History {
 
 本篇记录了实现的主要步骤，但是对于一些细节，还有一些特殊代码操作没有记录，希望喜欢的同学点个小赞，加个小星 ✨，后续可以出更多的文章
 
-希望这篇文章对大家有所帮助，也可以参考我往期的文章或者在评论区交流你的想法和心得，欢迎一起探索前端。
+---
+
+以上就是本文全部内容，希望这篇文章对大家有所帮助，也可以参考我往期的文章或者在评论区交流你的想法和心得，欢迎一起探索前端。
+
+本文首发掘金平台，来源[小马博客](https://maqib.cn/blog/Develop-an-online-flowchart-website-with-NodeJS)

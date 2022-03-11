@@ -1,8 +1,8 @@
 ---
 title: '9 年小厂老前端的年终总结'
 date: '2021/12/11'
-lastmod: '2021/12/31'
-tags: [年终总结, 前端]
+lastmod: '2022/03/11'
+tags: [年终总结]
 draft: false
 summary: '时光飞逝，岁月如梭，转眼来到 2021 年底，这一年少了些理性，多了点感性，少了些自由，多了一份责任，这一年视乎没做什么事情，但又过得非常充实，最欣慰的是回家有个人等待着我的拥抱，最快乐的是...'
 images:
@@ -17,7 +17,7 @@ layout: PostLayout
 
 时光飞逝，岁月如梭，转眼来到 2021 年底，这一年少了些理性，多了点感性，少了些自由，多了一份责任，这一年视乎没做什么事情，但又过得非常充实，最欣慰的是回家有个人等待着我的拥抱，最快乐的是耳边多了几声喃喃 ——— “爸爸”。
 
-![image.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/89f970bfca4b4322ac689ad1418cb957~tplv-k3u1fbpfcp-watermark.image?)
+![我跟我儿子出游照片](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/89f970bfca4b4322ac689ad1418cb957~tplv-k3u1fbpfcp-watermark.image?)
 
 ## 简单介绍一下自己
 
@@ -29,7 +29,7 @@ layout: PostLayout
 
 除了完成开发工作之外，还完成了:
 
-![image.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0dc81511e6a245a2b08c408f3f3a37fc~tplv-k3u1fbpfcp-watermark.image?)
+![掘金后台统计](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0dc81511e6a245a2b08c408f3f3a37fc~tplv-k3u1fbpfcp-watermark.image?)
 
 1.  在掘金发布 [12](https://juejin.cn/user/2189882895384093/posts) 篇文章
 2.  【全栈】第三次重构我的[个人博客](https://maqib.cn/)
@@ -44,7 +44,7 @@ layout: PostLayout
 
 7.  收到了一次老外给我提的 PR，也就是 [postcss-multiple-themes](https://www.npmjs.com/package/postcss-multiple-themes) 这个插件；
 
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/20b9814702564aedabd0e0e804429e67~tplv-k3u1fbpfcp-watermark.image?)
+![老外给的评论](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/20b9814702564aedabd0e0e804429e67~tplv-k3u1fbpfcp-watermark.image?)
 
 8.  公司内部完成 3 次前端分享
 
@@ -63,19 +63,19 @@ layout: PostLayout
 
 ❎ 没完整的看完一本书
 
-![image.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fa9d2b7f6c674d7794d065d23dd324f5~tplv-k3u1fbpfcp-watermark.image?)
+![2021要看的书](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fa9d2b7f6c674d7794d065d23dd324f5~tplv-k3u1fbpfcp-watermark.image?)
 
 这几本书放在衣柜了，偶尔翻看一下，真的是没时间细看，有些原理还是要恶补下。
 
 **收藏的电子书**
 
-![image.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/101336a30c024191b709f1da7ba5b281~tplv-k3u1fbpfcp-watermark.image?)
+![2011收藏的电子书](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/101336a30c024191b709f1da7ba5b281~tplv-k3u1fbpfcp-watermark.image?)
 
 《深入 React 技术栈》
 
 这本是前 2 年看的纸质书，在 React 出 hooks 之前，这本书 react 全家桶讲的很全面。
 
-![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/21fcc6adb37e4ccbb027b4bb2090808a~tplv-k3u1fbpfcp-watermark.image?)
+![2021收藏的其他书](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/21fcc6adb37e4ccbb027b4bb2090808a~tplv-k3u1fbpfcp-watermark.image?)
 
 《格林童话》
 
@@ -136,7 +136,7 @@ layout: PostLayout
 
 ### 如何面试比你资深的人？
 
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6e913f3472234c4ea6054c38486b7737~tplv-k3u1fbpfcp-watermark.image?)
+![今天你被内卷了吗](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6e913f3472234c4ea6054c38486b7737~tplv-k3u1fbpfcp-watermark.image?)
 
 当然我也是有被面试的，尤其是有了娃之后，2021 “内卷“如此严重的这一年。所以我总结了 10 个问题，可能会被问到：
 
@@ -171,7 +171,7 @@ layout: PostLayout
 
 除了工作学习当然也要好好的生活啦。21 年收到了老婆的 1 份生日礼物 Apple watch，虽然有了娃，也要记得礼尚往来。我也淘汰之前 6 年的 Macbook，换了台新的 14 寸。
 
-![image.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e79c5c37ff90486b8c286834d20a720e~tplv-k3u1fbpfcp-watermark.image?)
+![MacBook 14 and iwatch](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e79c5c37ff90486b8c286834d20a720e~tplv-k3u1fbpfcp-watermark.image?)
 
 ## 2022 年未来展望
 
@@ -191,4 +191,8 @@ layout: PostLayout
 
 各位，一起共勉加油 💪🏻
 
-希望这篇文章对大家有所帮助，也可以参考我往期的文章或者在评论区交流你的想法和心得，欢迎一起探索前端。
+---
+
+以上就是本文全部内容，希望这篇文章对大家有所帮助，也可以参考我往期的文章或者在评论区交流你的想法和心得，欢迎一起探索前端。
+
+本文首发掘金平台，来源[小马博客](https://maqib.cn/blog/2021-year-end-summary)

@@ -1,7 +1,7 @@
 ---
 title: '一个 create-react-app v5 的问题'
 date: '2022/2/16'
-lastmod: '2022/2/17'
+lastmod: '2022/3/11'
 tags: [React.js]
 draft: false
 summary: '前两天我准备用 create-react-app 创建一个新项目，然后遇到了一个问题，涉及到 npx'
@@ -133,3 +133,5 @@ npx create-react-app my-app
 ---
 
 以上就是本文全部内容，希望这篇文章对大家有所帮助，也可以参考我往期的文章或者在评论区交流你的想法和心得，欢迎一起探索前端。
+
+本文首发掘金平台，来源[小马博客](https://maqib.cn/blog/a-create-react-app-v5-problem)
