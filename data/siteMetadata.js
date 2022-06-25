@@ -1,7 +1,7 @@
 const siteMetadata = {
-  title: '狂奔小马的博客',
+  title: '狂奔的小马 | 前端工程师成长部落阁',
   author: '狂奔滴小马',
-  headerTitle: '狂奔小马的博客',
+  headerTitle: '小马部落阁',
   description: '分享 JavaScript 以及热门框架，记录前端工程师学习成长历程。',
   language: 'en-us',
   theme: 'system', // system, dark or light

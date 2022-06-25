@@ -149,7 +149,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                   href="/blog"
                   className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                 >
-                  &larr; 返回博客列表
+                  &larr; 返回文章列表
                 </Link>
               </div>
             </footer>
