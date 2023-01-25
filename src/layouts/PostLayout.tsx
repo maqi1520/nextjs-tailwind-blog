@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
 import SectionContainer from '@/components/SectionContainer'
@@ -30,7 +31,8 @@ interface Props {
 }
 
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }: Props) {
-  const { slug, fileName, date, title, tags } = frontMatter
+  const { slug, fileName, date, title, tags, images } = frontMatter
+  const src = Array.isArray(images) ? images[0] : images
 
   return (
     <SectionContainer>
@@ -88,9 +90,14 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                 </ul>
               </dd>
             </dl>
-            <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
+            <div className="xl:col-span-3 xl:row-span-2 xl:pb-0">
+              {src ? (
+                <div className="mt-6">
+                  <img alt={title} className="w-full rounded object-cover shadow-lg" src={src} />
+                </div>
+              ) : null}
               <div className="prose max-w-none pt-10 pb-8 dark:prose-dark">{children}</div>
-              <div className="pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300">
+              <div className="border-t border-gray-200 pt-6 pb-6 text-sm text-gray-700 dark:border-gray-700 dark:text-gray-300">
                 <div className="mb-3">
                   <Image
                     alt="runjs-cool"
