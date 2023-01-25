@@ -13,8 +13,6 @@ authors: ['default']
 layout: PostLayout
 ---
 
-![Iconfont 还是不能上传，如何维护你的 Icon？](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f176aaf6430a4bfa93de8782b7de03f7~tplv-k3u1fbpfcp-zoom-crop-mark:3024:3024:3024:1702.awebp?)
-
 使用 iconfont 有很多优势，比如只需要加载一次，全部图标都可以设置字号大小，颜色、透明度等，可以随意变换字体的形态，并且图标是矢量的，不会随着字体大小的变化失真，得益于 [iconfont.cn](https://www.iconfont.cn/ 'iconfont.cn') 提供的便利，大多情况下，我们不必上传自己的图标，只需要便捷的搜索，就可以将图标加入到自己的项目图标库中，但最近工作中却遇到了比较严重的问题。
 
 ## 现在做的事情

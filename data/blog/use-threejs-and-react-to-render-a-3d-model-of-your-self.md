@@ -5,6 +5,10 @@ lastmod: '2022/03/12'
 tags: [JavaScript, React.js]
 draft: false
 summary: 在本文中，我将介绍如何在 react 项目中使用 react-three-fiber 创建的一个3D 软件程序，配置3D 参数(如 Blender 或 Maya ) 。在本文结束时，您将能够在您的网站上渲染一个3D模型 (gltf / glb)。
+images:
+  [
+    https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/03e816da47944c2da6ed00f76e0a7419~tplv-k3u1fbpfcp-zoom-crop-mark:3024:3024:3024:1702.awebp?,
+  ]
 layout: PostLayout
 ---
 

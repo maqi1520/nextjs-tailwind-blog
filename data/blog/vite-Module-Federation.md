@@ -13,8 +13,6 @@ authors: ['default']
 layout: PostLayout
 ---
 
-![vite](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7d4b5a0d48f642e982cd5c481ce92d8d~tplv-k3u1fbpfcp-zoom-crop-mark:3024:3024:3024:1702.awebp?)
-
 ## 前言
 
 之前写过一篇文章，[《将 React 应用迁移至 Vite》](https://juejin.cn/post/7110535158863757319 'https://juejin.cn/post/7110535158863757319')介绍了 Vite 的优势，并且和 webpack 做对比，但 webpack5 有个很重要的功能，就是模块联邦，那么什么是模块联邦？Vite 中也可以实现吗？ 我们一起来探究下。

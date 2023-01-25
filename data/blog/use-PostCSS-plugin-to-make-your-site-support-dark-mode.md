@@ -5,12 +5,13 @@ lastmod: '2021/10/16'
 tags: [JavaScript]
 draft: false
 summary: '最近公司需要给多个 webapp（大概20+）加上多皮肤的功能，原先默认是白色皮肤，我们先从暗黑模式入手，从而逐渐实现多皮肤功能。本篇记录下实现思路。'
-images: ['']
+images:
+  [
+    https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9de6b5fc1f804a88b6c6bb9025db04a0~tplv-k3u1fbpfcp-watermark.image?,
+  ]
 authors: ['default']
 layout: PostLayout
 ---
-
-![image.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9de6b5fc1f804a88b6c6bb9025db04a0~tplv-k3u1fbpfcp-watermark.image?)
 
 最近公司需要给多个 webapp（大概 20+）加上**多皮肤**的功能，原先默认是白色皮肤，我们先从暗黑模式入手，从而逐渐实现多皮肤功能。本篇记录下实现思路。
 

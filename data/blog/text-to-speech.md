@@ -5,12 +5,13 @@ lastmod: '2021/03/10'
 tags: [JavaScript]
 draft: false
 summary: '哈喽，大家好，我是小马，这两天在研究文本转音的功能，有时候担心自己的普通话不标准，比方说要录制一个视频，即兴讲可能会卡壳，这个时候我们就可以先准备好文本，然后再利用人工智能来生成音频，下面就分享下我的研究成果吧！'
-images: ['/static/text-to-voice/banner.png']
+images:
+  [
+    https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9dd2c7b008ce4253abdae8d63f3f0474~tplv-k3u1fbpfcp-zoom-crop-mark:3024:3024:3024:1702.awebp?,
+  ]
 authors: ['default']
 layout: PostLayout
 ---
-
-![文本转语言教程](/static/text-to-voice/banner.png)
 
 <audio controls>
   <source src="/static/text-to-voice/开头.mp3" type="audio/mpeg"/>

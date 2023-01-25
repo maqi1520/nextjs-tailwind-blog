@@ -13,8 +13,6 @@ authors: ['default']
 layout: PostLayout
 ---
 
-![【油猴脚本】在 Iconfont 上直接复制 React component 代码](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9a6b0cf5711a4ca0b9a9bb16f0689cb1~tplv-k3u1fbpfcp-zoom-crop-mark:3024:3024:3024:1702.awebp?)
-
 本文接上一篇[《如何在项目中管理你的图标？》](https://juejin.cn/post/7114589614186168350 'https://juejin.cn/post/7114589614186168350')
 
 ## Iconfont 和 SVG 优缺点对比

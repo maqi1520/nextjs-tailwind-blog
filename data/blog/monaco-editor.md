@@ -13,8 +13,6 @@ authors: ['default']
 layout: PostLayout
 ---
 
-![代码编辑器](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7fd86ebea36a4ea5af29c54db38f52d7~tplv-k3u1fbpfcp-watermark.image?)
-
 ## 前言
 
 有时候我们会有在需要在网页中写代码或者改代码配置的需求，这个时候就需要用到代码编辑器，常规的代码编辑器有 `CodeMirror` 和 `Monaco Editor`，

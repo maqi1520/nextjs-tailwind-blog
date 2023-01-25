@@ -5,7 +5,10 @@ lastmod: '2022/5/12'
 tags: [JavaScript, React.js]
 draft: false
 summary: '在 webpack 5 中推出了 experiments 配置，目的是为了给用户赋能去开启并试用一些实验的特性。Lazy Compilation 是只有在用户访问时才编译。'
-images: []
+images:
+  [
+    https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b786a15d8cd74839b7774c454d02d69b~tplv-k3u1fbpfcp-zoom-crop-mark:3024:3024:3024:1702.awebp?,
+  ]
 authors: ['default']
 layout: PostLayout
 ---

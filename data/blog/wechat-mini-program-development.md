@@ -1,20 +1,22 @@
 ---
-title: '微信小程序开发'
-date: '2020/11/30'
-lastmod: '2020/12/1'
-tags: [微信小程序]
+title: 小程序开发入门及多端开发浅析
+date: 2020/11/30 17:26:40
+lastmod: 2023/1/25 21:43:32
+tags: [微信小程序, JavaScript]
 draft: false
-summary: '大家可以扫描上方二维码（也可以搜索“小程序示例”）体验下微信小程序的功能。 虽然开发的时候可以使用测试号，但为了开发上线，注册 APPID 也是必须的。 下载完成后，点击选择小程序，初次使用，先不使用云服务，点击完成，就会帮我们初始化一个简单小程序项目。 我们看到小程序的初始化…'
-images: ['']
+summary: 本部通过一个demo 入门介绍微信小程序云开发，并引申出跨端开发的现状，简要介绍各跨端开发框架，并简述其跨端开发原理。
+images: []
 authors: ['default']
 layout: PostLayout
 ---
 
-> 前言：2020 年，现在小程序虽然不是最火的时间段，但是小程序“触手可及，用完即走”的理念对于未知开发者保持一定的神秘和吸引力，应后端同学对小程序开发的热情，笔者在疫情期间也开发上线了一个款小程序[《听读说》](https://github.com/maqi1520/taro-video-english)，虽然只是功能非常简单，但凭着一点学习经验给大家带来分享。
+## 前言
+
+现在小程序虽然不是最火的时间段，但是小程序“触手可及，用完即走”的理念对于未知开发者保持一定的神秘和吸引力，应后端同学对小程序开发的热情，笔者在疫情期间也开发上线了一个款小程序[面试狗](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3e79ba7971fc4bfbb539676438a66ef4~tplv-k3u1fbpfcp-watermark.image?)，虽然只是功能非常简单，但凭着一点学习经验给大家带来分享。
 
 ## 小程序是什么
 
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9ff1ee9fe5fe4e819ac7963ec65354b5~tplv-k3u1fbpfcp-zoom-1.image)
+![小程序介绍](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9ff1ee9fe5fe4e819ac7963ec65354b5~tplv-k3u1fbpfcp-zoom-1.image)
 
 - 类 web，但又不是 HTML5
 - 基于微信 跨平台
@@ -38,7 +40,7 @@ layout: PostLayout
 
 ### 创建项目
 
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1f9c55a916e94458a749cb950e3b6ddf~tplv-k3u1fbpfcp-zoom-1.image)
+![微信开发者工具](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1f9c55a916e94458a749cb950e3b6ddf~tplv-k3u1fbpfcp-zoom-1.image)
 
 下载完成后，点击选择小程序，初次使用，先不使用云服务，点击完成，就会帮我们初始化一个简单小程序项目。
 
@@ -110,7 +112,7 @@ wx.setNavigationBarTitle({
 
 ### WXML 视图文件
 
-![1000/2020/11/1/3.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/129f9b38d8984f7a80f7aa63f9a32da8~tplv-k3u1fbpfcp-zoom-1.image)
+![WXML 视图文件 对比 html](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/129f9b38d8984f7a80f7aa63f9a32da8~tplv-k3u1fbpfcp-zoom-1.image)
 
 视图 WXML 文件类似 HTML 文件，用来构建出小程序的页面结构，不同于 HTML 的是:
 
@@ -122,7 +124,7 @@ wx.setNavigationBarTitle({
 
 ### WXSS 样式文件
 
-![1000/2020/11/1/4.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bf48d5d6d17b46b3a0951dbc4abc4612~tplv-k3u1fbpfcp-zoom-1.image)
+![WXSS 样式文件列表](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bf48d5d6d17b46b3a0951dbc4abc4612~tplv-k3u1fbpfcp-zoom-1.image)
 
 WXSS 样式文件等同于 CSS 文件，但是也是有一些区别的：
 
@@ -235,7 +237,8 @@ Component({
 同 react 和 vue 一样小程序框架也有自己的生命周期函数，但是小程序的页面生命周期和组件生命周期是不同的
 我们不必去记上面的生命周期函数，使用开发者工具新建页面的时候，工具会帮我们自动建立一个最简单的页面。
 当鼠标移动到生命周期函数时，工具会给我们提示函数的作用。
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/14896eeb15b0442b9a37a604197dcc2e~tplv-k3u1fbpfcp-zoom-1.image)
+
+![微信开发者工具提示](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/14896eeb15b0442b9a37a604197dcc2e~tplv-k3u1fbpfcp-zoom-1.image)
 
 ### 事件绑定
 
@@ -280,7 +283,7 @@ Page({
 
 使用小程序开发的一个最大优势就是，可以借助微信的用户系统。我们不必单独在做注册登录这些功能，通过小程序对所有用户都有一个 openid，来建立自己的用户系统，如果你小程序是认证的，就可以通过`getPhoneNumber` 获取微信用户绑定的手机号。
 
-![image](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6a9968fc53304b1fb2cc660137ea2ee5~tplv-k3u1fbpfcp-zoom-1.image)
+![小程序登录流程](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6a9968fc53304b1fb2cc660137ea2ee5~tplv-k3u1fbpfcp-zoom-1.image)
 
 小程序代码，登录后发送 res.code 到后台换取 openId, sessionKey, unionId
 
@@ -328,7 +331,7 @@ router.post('/login', async (ctx, next) => {
 
 ### 编写 todo 代码
 
-具体代码，大家可以看[代码仓库](https://github.com/maqi1520/learn-wechat)，很简单，每次操作后通过接口请求，把数据同步到云端。遍历 todos 的时候，可以把 todo-item 封装成一个自定义组件，需要注意的是：
+具体代码，大家可以看[代码仓库](https://github.com/maqi1520/learn-wechat 'demo 代码仓库')，很简单，每次操作后通过接口请求，把数据同步到云端。遍历 todos 的时候，可以把 todo-item 封装成一个自定义组件，需要注意的是：
 
 - 因为 WXML 节点标签名只能是小写字母、中划线和下划线的组合，所以自定义组件的标签名也只能包含这些字符。
 - 自定义组件也是可以引用自定义组件的，引用方法类似于页面引用自定义组件的方式（使用 usingComponents 字段）。
@@ -344,7 +347,7 @@ router.post('/login', async (ctx, next) => {
 
 ### nodejs 云函数空白模板
 
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/132fd8ed91974ded9346bb759f74052c~tplv-k3u1fbpfcp-zoom-1.image)
+![新建云函数](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/132fd8ed91974ded9346bb759f74052c~tplv-k3u1fbpfcp-zoom-1.image)
 
 下面我们创建一个云函数, cloudbase 帮我们生成了下面代码
 
@@ -360,7 +363,7 @@ exports.main = async (event, context) => {
 ```
 
 将云函数关联 HTTP 访问服务
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b8c2b45602a94d83abe89b05d0570eb9~tplv-k3u1fbpfcp-zoom-1.image)
+![云函数关联 HTTP 访问服务](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b8c2b45602a94d83abe89b05d0570eb9~tplv-k3u1fbpfcp-zoom-1.image)
 
 然后访问这个[Http 服务](https://next-5g925nky83ece5ae-1256585691.ap-shanghai.app.tcloudbase.com/login)
 我们就可以看到 HTTP 请求 header 等信息，结合云数据库，我们就可以写出 todos 相关的增删查改的接口了
@@ -369,7 +372,7 @@ exports.main = async (event, context) => {
 
 我们习惯了使用 express、koa 等 nodjs 框架开发接口，如果要将所有接口一个一个分开写，肯定有些不习惯，不用担心，腾讯云[cloudbase-framework](https://github.com/Tencent/cloudbase-framework)提供了传统框架向云开发迁移和部署的能力，相信熟悉大家只需要按官方项目实例，开发部署即可。
 
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e31621f7aa0c497b8db048af619fb55e~tplv-k3u1fbpfcp-zoom-1.image)
+![云开发 CloudBase Framework 流程](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e31621f7aa0c497b8db048af619fb55e~tplv-k3u1fbpfcp-zoom-1.image)
 
 ## 多端开发
 
@@ -381,20 +384,21 @@ exports.main = async (event, context) => {
 
 ### 多端开发框架
 
-- taro，京东凹凸实验室出品，[官网地址](http://taro.jd.com/),使用 react 和 vue 开发，跨端都支持
-- uni-app，DCloud 团队出品，[官网地址](http://niapp.dcloud.net.cn)，使用 vue 开发，跨端都支持
-- kbone，腾讯微信团队出品，[官网地址](http://wechat-miniprogram.github.io/kbone/docs/)
+- taro，京东凹凸实验室出品，[官网地址](http://taro.jd.com/ 'taro 官网'),使用 react 和 vue 开发，跨端都支持
+- uni-app，DCloud 团队出品，[官网地址](http://niapp.dcloud.net.cn 'uni-app 官网')，使用 vue 开发，跨端都支持
+- kbone，腾讯微信团队出品，[官网地址](http://wechat-miniprogram.github.io/kbone/docs/ 'kbone 官网')
   使用 react 和 vue 开发，但是只支持 web 和微信小程序
-- remax，阿里团队出品，[官网地址](https://remaxjs.org/)使用 react 开发，跨端都支持
+- remax，阿里团队出品，[官网地址](https://remaxjs.org/ 'remax 官网')使用 react 开发，跨端都支持
 
 我们可以看下昨天的测评文章，跟着 demo 学习下跨端的实现。
-[uni-app 作者测评地址](https://github.com/dcloudio/test-framework)
-[taro 作者测评地址](https://developers.weixin.qq.com/community/develop/article/doc/000eaadb944de06374485c3ed51813)
+[uni-app 作者测评地址](https://github.com/dcloudio/test-framework 'uni-app 作者测评地址')
+[taro 作者测评地址](https://developers.weixin.qq.com/community/develop/article/doc/000eaadb944de06374485c3ed51813 'taro 作者测评地址')
 
 ### taro2 实现原理
 
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/320b4fa6dcbf4167afbd7febded0d74c~tplv-k3u1fbpfcp-zoom-1.image)
-有过 Babel 插件开发经验的应该对一下流程十分熟悉，Taro 的编译时也是遵循了此流程，使用 [babel-parser](https://babeljs.io/docs/en/babel-parser) 将 Taro 代码解析成抽象语法树，然后通过 [babel-types](https://babeljs.io/docs/en/babel-types) 对抽象语法树进行一系列修改、转换操作，最后再通过 [babel-generate](https://babeljs.io/docs/en/babel-generator) 生成对应的目标代码。
+![babel 编译原理](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/320b4fa6dcbf4167afbd7febded0d74c~tplv-k3u1fbpfcp-zoom-1.image)
+
+有过 Babel 插件开发经验的应该对一下流程十分熟悉，Taro 的编译时也是遵循了此流程，使用 [babel-parser](https://babeljs.io/docs/en/babel-parser 'babel-parser') 将 Taro 代码解析成抽象语法树，然后通过 [babel-types](https://babeljs.io/docs/en/babel-types 'babel-types') 对抽象语法树进行一系列修改、转换操作，最后再通过 [babel-generate](https://babeljs.io/docs/en/babel-generator 'babel-generator') 生成对应的目标代码。
 
 **taro2 特点**
 
@@ -406,24 +410,28 @@ exports.main = async (event, context) => {
 
 用 react 写 Web 、可以写小程序 、可以写原生应用
 
-![1000/2020/11/1/6.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/699ecc1f39d24ad189dea3e061ef9dac~tplv-k3u1fbpfcp-zoom-1.image)
+![react 多端开发](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/699ecc1f39d24ad189dea3e061ef9dac~tplv-k3u1fbpfcp-zoom-1.image)
 
 Remax 的运行时本质是一个通过 react-reconciler 实现的一个小程序端的渲染器
 
-![1000/2020/11/1/6.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4c202f4e6f4441728bb48598bb43d37b~tplv-k3u1fbpfcp-zoom-1.image)
+![Remax 编译原理](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4c202f4e6f4441728bb48598bb43d37b~tplv-k3u1fbpfcp-zoom-1.image)
 
 ### 扩展阅读
 
-- [《史上最贴心 React 渲染器开发辅导》](https://cloud.tencent.com/developer/article/1664392)
-- [《小程序跨框架开发的探索与实践》](https://aotu.io/notes/2020/01/02/gmtc/index.html)
-- [《Remax 实现原理》](https://remaxjs.org/guide/implementation-notes)
+- [《史上最贴心 React 渲染器开发辅导》](https://cloud.tencent.com/developer/article/1664392 '史上最贴心 React 渲染器开发辅导')
+- [《小程序跨框架开发的探索与实践》](https://aotu.io/notes/2020/01/02/gmtc/index.html '小程序跨框架开发的探索与实践')
+- [《Remax 实现原理》](https://remaxjs.org/guide/implementation-notes 'Remax 实现原理')
 
 ## 总结和思考
 
-- 距离真正的生产环境还有很长的路要走：我们着手使用云开发开发了一个 Todo app 微信小程序，但这仅仅是一个 hello world，小程序还有支付、关联公账号等功能，只有开发了这些功能，才能体现小程序的优势。
+- 距离真正的生产环境还有很长的路要走
 
-- 跨端开发并不难：我们了解了跨端开发框架，并熟悉其实现原理，从开发者的角度看，我们需要开发微信支付宝等多个小程序；然而站在浏览器的角度看，它们的差别其实没那么大，都是调用了 BOM/DOM 那几个常用的 API。站在在 React 的角度，我们仅需要实现一个渲染层，更何况现在我们可以使用现成的框架开发。
+我们着手使用云开发开发了一个 Todo app 微信小程序，但这仅仅是一个 hello world，小程序还有支付、关联公账号等功能，只有开发了这些功能，才能体现小程序的优势。
 
-[代码仓库](https://github.com/maqi1520/learn-wechat)
+- 跨端开发并不难
 
-[ppt.pdf](http://oss.maqib.cn/1000/2020/11/1/ppt.pdf)
+我们了解了跨端开发框架，并熟悉其实现原理，从开发者的角度看，我们需要开发微信支付宝等多个小程序；然而站在浏览器的角度看，它们的差别其实没那么大，都是调用了 BOM/DOM 那几个常用的 API。站在在 React 的角度，我们仅需要实现一个渲染层，更何况现在我们可以使用现成的框架开发。
+
+以上就是本文全部内容，希望这篇文章对大家有所帮助，也可以参考我往期的文章或者在评论区交流你的想法和心得，欢迎一起探索前端。
+
+本文首发掘金平台，来源[小马博客](https://maqib.cn/)

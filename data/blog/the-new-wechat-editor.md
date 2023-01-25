@@ -5,12 +5,13 @@ lastmod: '2022/5/16'
 tags: [JavaScript, React.js, 微信]
 draft: false
 summary: '我写了一个微信排版编辑器，使用 MDX，可自定义组件、样式、生成二维码、代码 diff 高亮，可导出 markdown 和 PDF。'
-images: []
+images:
+  [
+    https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/714602a53c704bcabcc2703ca532791b~tplv-k3u1fbpfcp-zoom-crop-mark:3024:3024:3024:1702.awebp?,
+  ]
 authors: ['default']
 layout: PostLayout
 ---
-
-![MDX Editor LOGO](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a3a1082e44d549458d84d8aaf6ba6582~tplv-k3u1fbpfcp-watermark.image?)
 
 > MDX Editor 一个好用的排版编辑器
 

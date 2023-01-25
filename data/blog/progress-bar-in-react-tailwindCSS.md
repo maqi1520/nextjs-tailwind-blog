@@ -15,8 +15,6 @@ layout: PostLayout
 
 <TOCInline toc={props.toc}  toHeading={2} />
 
-![image.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e5ca9595ccd1479f86d71903184a4d0b~tplv-k3u1fbpfcp-watermark.image?)
-
 ## 前言
 
 我们在上网的时候经常会看到一些优秀的博客顶部有个进度条，这个进度条有助于读者衡量阅读进度，我认为这个功能可以带来良好的用户体验，所以，应该将其添加到我个人博客上的文章中。那么，一起来实现吧。

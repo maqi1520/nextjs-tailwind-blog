@@ -5,7 +5,7 @@ lastmod: '2021/6/17'
 tags: [CSS]
 draft: false
 summary: '最近在网上看到 Tailwind Labs的实现的[换肤视频]，决定使用 Tailwind css 实现博客列表主题换肤。'
-images: ['']
+images: []
 authors: ['default']
 layout: PostLayout
 ---

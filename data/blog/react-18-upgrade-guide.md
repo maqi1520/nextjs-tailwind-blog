@@ -13,8 +13,6 @@ authors: ['default']
 layout: PostLayout
 ---
 
-![React 18 rc](/static/images/20220315184336.png)
-
 <TOCInline toc={props.toc}  toHeading={2} />
 
 上周 react 官网 发布了 react@rc 版本，该版本是候选版本(Release Candidate)，这意味 API 已经基本稳定，跟最终版本不会有太大差别，官网也发布博客[《如何升级到 react18 RC 版本》](https://reactjs.org/blog/2022/03/08/react-18-upgrade-guide.html)，鼓励大家尝试升级，所以我们可以在项目组中使用了！下面内容来自是官方文档的翻译。
