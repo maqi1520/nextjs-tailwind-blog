@@ -14,13 +14,15 @@ export default function Article({ slug, date, title, summary, tags, images }: Po
           <dl className="xl:col-span-1">
             {src ? (
               <dt className="mb-4">
-                <Link href={`/blog/${slug}`} title={title} className="w-full xl:w-auto">
+                <Link
+                  href={`/blog/${slug}`}
+                  className="block overflow-hidden rounded shadow-lg"
+                  title={title}
+                >
                   <img
                     alt={title}
-                    className="rounded object-cover shadow-lg"
+                    className="transform  object-cover duration-200 hover:scale-110"
                     src={src}
-                    width={640}
-                    height={400}
                   />
                 </Link>
               </dt>

@@ -96,7 +96,9 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                   <img alt={title} className="w-full rounded object-cover shadow-lg" src={src} />
                 </div>
               ) : null}
-              <div className="prose max-w-none pt-10 pb-8 dark:prose-dark">{children}</div>
+              <div className="prose max-w-none break-words pt-10 pb-8 dark:prose-dark">
+                {children}
+              </div>
               <div className="border-t border-gray-200 pt-6 pb-6 text-sm text-gray-700 dark:border-gray-700 dark:text-gray-300">
                 <div className="mb-3">
                   <Image
