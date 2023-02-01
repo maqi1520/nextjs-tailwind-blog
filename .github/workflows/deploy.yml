@@ -36,7 +36,7 @@ jobs:
       - run: yarn build
       - run: npx next export
       - name: deploy
-        uses: hujiulong/action-qiniu-upload@master
+        uses: maqi1520/action-qiniu-upload@master
         with:
           # Your qiniu access key, required.
           access_key: ${{ secrets.QINIU_ACCESS_KEY }}
