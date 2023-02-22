@@ -21,7 +21,7 @@ interface JSONResponse {
 function download(url: string) {
   const items = url.split('/')
   return new Promise<string>((reslove) => {
-    http.get(url, (res) => {
+    http.get(url + '@640w_400h', (res) => {
       const path = `./public/static/images/${items[items.length - 1]}`
       const filePath = fs.createWriteStream(path)
       res.pipe(filePath)
