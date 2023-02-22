@@ -95,6 +95,10 @@ module.exports = withBundleAnalyzer({
     // !! WARN !!
     ignoreBuildErrors: true,
   },
+  images: {
+    loader: 'custom',
+    loaderFile: './image-loader.js',
+  },
   webpack: (config, { dev, isServer }) => {
     config.module.rules.push({
       test: /\.(png|jpe?g|gif|mp4|mp3)$/i,

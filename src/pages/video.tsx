@@ -41,6 +41,7 @@ export default function Vodeo({ videos }: InferGetStaticPropsType<typeof getStat
                       width="640"
                       height="420"
                       className="block w-full rounded-t-xl"
+                      unoptimized
                       alt=""
                     />
                   </a>
