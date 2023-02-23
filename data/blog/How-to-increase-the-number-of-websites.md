@@ -1,10 +1,10 @@
 ---
 title: '【对话ChatGPT】如何提高网站的访问量？'
 date: '2023/2/22'
-lastmod: '2023/2/22'
+lastmod: '2023/2/23'
 tags: [ChatGPT]
 draft: false
-summary: '上周给博客开通的 Google adsense，收益bi微信公众号好一些，收益跟访问量成正比，于是我问了 ChatGPT 这个问题。'
+summary: '上周给博客开通的 Google adsense，收益比微信公众号好一些，收益跟访问量成正比，于是我问了 ChatGPT 这个问题。'
 images:
   [
     'https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9cc6b5dd3879466393fc3065ed62e7fd~tplv-k3u1fbpfcp-watermark.image?',
