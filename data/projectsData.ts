@@ -25,7 +25,7 @@ const projectsData = [
   },
   {
     title: 'New Bing AI',
-    description: `基于New Bing的自建平台，让你无限制和 GPT4 畅聊`,
+    description: `基于New Bing的自建AI Chat平台，让你无限制和 GPT4 畅聊`,
     imgSrc: '/static/images/lowcode.png',
     href: 'https://bing.ruankao.eu.org',
   },
