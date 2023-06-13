@@ -5,7 +5,7 @@ lastmod: 2023/06/13 14:23:42
 tags: [谷歌免费认证课程, Google FREE Certification Courses, Python, AI, 人工智能]
 draft: false
 summary: 本文介绍了谷歌在2023年新推出的免费认证课程，课程包含人工智能，Python自动化，数字营销等课程，课程内容涵盖了谷歌的最佳实践，课程结束后可以获得谷歌的认证证书。
-images: https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0792a1f5176f4617b6c6829e3c62bac0~tplv-k3u1fbpfcp-watermark.image?
+images: https://fastly.jsdelivr.net/gh/filess/img0@main/2023/06/13/1686639810182-eea30969-152f-410c-82b5-0bd259082b18.png
 authors: ['default']
 layout: PostLayout
 ---
