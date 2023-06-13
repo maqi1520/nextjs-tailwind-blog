@@ -6,7 +6,7 @@ const siteMetadata = {
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://blog.ruankao168.top',
-  siteRepo: 'https://github.com/maqi1520/nextjs-tailwind-blog',
+  siteRepo: 'https://github.com/zhuima/nextjs-tailwind-blog',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
   socialBanner: '/static/images/twitter-card.png',
