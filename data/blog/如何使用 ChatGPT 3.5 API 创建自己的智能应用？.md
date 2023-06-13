@@ -190,12 +190,10 @@ const messages = [
 
 贴一下文本的代码仓库和预览地址
 
-代码仓库：https://github.com/maqi1520/openai-helper
+代码仓库：<https://github.com/maqi1520/openai-helper>
 
-预览地址：https://openai.maqib.cn/
+预览地址：<https://openai.maqib.cn/>
 
 如果对你有帮助，记得给个三连，感谢你的阅读。
 
 ---
-
-**_本文正在参加[「金石计划」](https://juejin.cn/post/7207698564641996856/ 'https://juejin.cn/post/7207698564641996856/')_**

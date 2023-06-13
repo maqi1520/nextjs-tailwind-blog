@@ -115,7 +115,7 @@ export default function PostLayout(props: Props) {
                     alt="runjs-cool"
                     width={384}
                     height={140}
-                    src={`/static/images/runjs-cool.webp`}
+                    src={`/static/images/wechat.png`}
                   />
                 </div>
 
