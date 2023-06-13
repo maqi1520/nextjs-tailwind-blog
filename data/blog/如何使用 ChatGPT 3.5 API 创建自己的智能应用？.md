@@ -195,5 +195,3 @@ const messages = [
 预览地址：<https://openai.maqib.cn/>
 
 如果对你有帮助，记得给个三连，感谢你的阅读。
-
----
