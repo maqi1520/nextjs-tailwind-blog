@@ -1,14 +1,14 @@
 import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
-import { getVideos, VItem } from '@/lib/video'
+// import { getVideos, VItem } from '@/lib/video'
 import Image from 'next/image'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 
-export const getStaticProps: GetStaticProps<{ videos: VItem[] }> = async () => {
-  const videos = await getVideos()
-  console.log(videos)
-  return { props: { videos: JSON.parse(JSON.stringify(videos)) } }
-}
+// export const getStaticProps: GetStaticProps<{ videos: VItem[] }> = async () => {
+//   const videos = await getVideos()
+//   console.log(videos)
+//   return { props: { videos: JSON.parse(JSON.stringify(videos)) } }
+// }
 
 export default function Vodeo({ videos }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
