@@ -35,7 +35,7 @@ function download(url: string) {
 
 export async function getVideos() {
   const response = await fetch(
-    'https://api.bilibili.com/x/space/wbi/arc/search?mid=43664526&ps=30&tid=0&pn=1&keyword=&order=pubdate&platform=web&web_location=1550101&order_avoided=true&w_rid=544a071bbb1fef686b39302af0667dab&wts=1685324181',
+    'https://api.bilibili.com/x/space/wbi/arc/search?mid=43664526&ps=30&tid=0&pn=1&keyword=&order=pubdate&platform=web&web_location=1550101&order_avoided=true&w_rid=189e3168c6d493b6ecf6c9c205cbd0e3&wts=1689815990',
     {
       headers: {
         'user-agent':
