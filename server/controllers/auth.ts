@@ -14,7 +14,7 @@ authRouter.post('/register', async (req, res) => {
   });
   if (user) {
     res.json({
-      message: '该邮箱已经注册！',
+      message: '该邮箱已经注册!!!！',
       success: false,
     });
   }
