@@ -1,4 +1,8 @@
 User-agent: *
 Disallow: 
 Disallow: /bin/
+<<<<<<< HEAD
 Sitemap: https://blog.ruankao168.top/sitemap.xml
+=======
+Sitemap: https://maqib.com/sitemap.xml
+>>>>>>> 60e5e48a8406b6928881a43fff3274ae381115a2
