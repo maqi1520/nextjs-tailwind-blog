@@ -1,0 +1,60 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Get yarn cache
+        id: yarn-cache
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.yarn-cache.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - run: yarn install
+      - run: yarn build
+      - run: npx next export
+      - name: deploy
+        uses: maqi1520/action-qiniu-upload@master
+        with:
+          # Your qiniu access key, required.
+          access_key: ${{ secrets.QINIU_ACCESS_KEY }}
+
+          # Your qiniu secret key, required.
+          secret_key: ${{ secrets.QINIU_SECRET_KEY }}
+
+          # Bucket name, required.
+          bucket: ${{ secrets.QINIU_BUCKET }}
+
+          # The local directory (or file) you want to upload to bucket.
+          # Default: './'
+          source_dir: 'out'
+
+          # The directory inside of the bucket you want to upload to, namely key prefix prepended to dest file key.
+          # Default: '/'
+          dest_dir: '/'
+
+          # Whether to ignore source maps.
+          # Default: true
+          ignore_source_map: true
