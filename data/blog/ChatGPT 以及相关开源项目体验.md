@@ -203,7 +203,7 @@ GitHub 上一位来自马来西亚的开发者 Antonio Cheong，在 ChatGPT 发�
 
 ![图片](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/11109a890b9648c7b098f92582d143ab~tplv-k3u1fbpfcp-zoom-1.image)
 
-GitHub：<https://github.com/acheong08/ChatGPT>
+GitHub：https://github.com/acheong08/ChatGPT
 
 ## Mac 软件
 
