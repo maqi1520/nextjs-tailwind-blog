@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+Disallow: /bin/
+Sitemap: https://blog.ruankao168.top/sitemap.xml
