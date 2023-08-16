@@ -5,17 +5,11 @@ lastmod: 2023/3/17 15:21:13
 tags: [ChatGPT, JavaScript, Node.js]
 draft: false
 summary: ChatGPT 大家应该都已经用了一段时间了，功能非常强大，作为开发人员，我用它写文档、写日报、润色 OKR，知识搜索等等，它给我带来了极大的帮助，但我在使用过程中最大的痛点就是网络。
-images: https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0dcb0b737c9c4c5f948c9fea03d97089~tplv-k3u1fbpfcp-watermark.image?
+images: https://img.techrk1688.eu.org/file/4bab7df67e893f70668a1.png
 authors: ['default']
 layout: PostLayout
 ---
 
----
-
-highlight: monokai-sublime
-theme: vuepress
-
----
 
 ## 前言
 
@@ -31,7 +25,8 @@ ChatGPT 大家应该都已经用了一段时间了，功能非常强大，作为
 
 首先来说一下原理：
 
-https://chat.openai.com/ 这个网站必须是国外节点才可以访问，而我们使用官方的 api，就可以使用香港节点访问。
+https://chat.openai.com/ 这个网站必须是国外节点才可以访问，而我们使用官方的 api，就可以使用香港节点访问
+
 
 比如我们使用以下代码，这样就可以在 Nodejs 中调用 ChatGPT API 了。
 
@@ -186,6 +181,5 @@ cloud.shared.get('parentMessageId')
 好了，以上就是本文全部内容，如果对你有帮助，随手点个赞吧
 
 参考 [《 三分钟拥有自己的 ChatGPT (从开发到上线)》](https://mp.weixin.qq.com/s/Z4dFYECnicvvTOWhuL8F-Q)
-
 
 ---

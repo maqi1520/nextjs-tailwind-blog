@@ -5,7 +5,7 @@ lastmod: 2023/1/25 11:42:11
 tags: [前端, OpenAI, 掘金·金石计划]
 draft: false
 summary: 本月初，ChatGPT 以惊人的速度问世，在技术圈中引起了广泛讨论。在 GitHub 上近期还诞生了多个 ChatGPT 相关的开源项目，数量之多令人瞠目结舌。
-images: https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/361b95e87f774692a2c0cf5924a28d6d~tplv-k3u1fbpfcp-watermark.image?
+images: https://img.techrk1688.eu.org/file/1fa907217ee47e3969871.png
 authors: ['default']
 layout: PostLayout
 ---
@@ -226,6 +226,5 @@ GitHub：https://github.com/vincelwt/chatgpt-mac
 对于 2021 年以后得知识了解有限。我们可以使用它来强化自己的搜索能力，至于答案是否采纳，还的自己甄辨。
 
 以上就是本文全部内容，如果对你有帮助，可以随手点个赞，这对我真的很重要，希望这篇文章对大家有所帮助，也可以参考我往期的文章或者在评论区交流你的想法和心得，欢迎一起探索前端。
-
 
 ---

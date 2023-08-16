@@ -5,7 +5,7 @@ lastmod: 2023/4/6 09:03:51
 tags: [React.js, OpenAI]
 draft: false
 summary: 本文介绍了 openai 的 api 使用方法，以及如何使用 openai 的 playground 生成需要的 messages 信息。并且通过一个 Next.js 实战例子，结合 ChatGPT
-images: https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0792a1f5176f4617b6c6829e3c62bac0~tplv-k3u1fbpfcp-watermark.image?
+images: https://img.techrk1688.eu.org/file/bac75f8b9ee70853ae1f2.png
 authors: ['default']
 layout: PostLayout
 ---
