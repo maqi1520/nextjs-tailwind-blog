@@ -121,7 +121,7 @@ async function example() {
 
 ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c520af5430c841328f6e7f1bf5f3b472~tplv-k3u1fbpfcp-zoom-1.image)
 
-GitHub：<https://github.com/transitive-bullshit/chatgpt-api>
+GitHub：https://github.com/transitive-bullshit/chatgpt-api
 
 - chatgpt 模拟的是 ChatGPT 网页版，需要使用 node 服务器（一般来说是海外的），使用了 stream ，当前尝试还无法部署到 vercel
 
@@ -139,7 +139,7 @@ GitHub：<https://github.com/transitive-bullshit/chatgpt-api>
 
 ![接入公众号](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9ac5831a388f45b781d36bb7005b6045~tplv-k3u1fbpfcp-zoom-1.image)
 
-GitHub：<https://github.com/fuergaosi233/wechat-chatgpt>
+GitHub：https://github.com/fuergaosi233/wechat-chatgpt
 
 ### WeChat Bot
 
@@ -159,7 +159,7 @@ git 克隆项目后执行 `npm install`，修改 env 相关配置，
 
 ![微信接入演示](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/87128f65e0e846eabd0b7785e66177f5~tplv-k3u1fbpfcp-watermark.image?)
 
-GitHub：<https://github.com/wangrongding/wechat-bot>
+GitHub：https://github.com/wangrongding/wechat-bot
 
 ## 浏览器插件
 
@@ -171,7 +171,7 @@ GitHub：<https://github.com/wangrongding/wechat-bot>
 
 ![搜索演示](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/52d3cee74a73421bb0c06e6c25fb5ba4~tplv-k3u1fbpfcp-watermark.image?)
 
-GitHub：<https://github.com/wong2/chat-gpt-google-extension>
+GitHub：https://github.com/wong2/chat-gpt-google-extension
 
 ### ChatGPT Chrome Extension
 
@@ -183,7 +183,7 @@ ChatGPT 会根据当前文本框中的内容，进行搜索。这个的扩展还
 
 ![插件演示](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/81e0359cca40494595cf475f41c0e89e~tplv-k3u1fbpfcp-watermark.image?)
 
-GitHub：<https://github.com/gragland/chatgpt-chrome-extension>
+GitHub：https://github.com/gragland/chatgpt-chrome-extension
 
 ## 油猴脚本
 
@@ -191,7 +191,7 @@ GitHub：<https://github.com/gragland/chatgpt-chrome-extension>
 
 他在 [B 站有视频讲解](https://www.bilibili.com/video/BV12P411K7gc/?vd_source=93efb77f3c9b0f1580f0a8d631b74ce2 'ChatGPT 语音油猴脚本')，大家可以观看下，非常有意思。
 
-GitHub：<https://github.com/doggy8088/TampermonkeyUserscripts>
+GitHub：https://github.com/doggy8088/TampermonkeyUserscripts
 
 ## 逆向工程
 
@@ -211,7 +211,7 @@ GitHub：<https://github.com/acheong08/ChatGPT>
 
 ![图片](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5f7201753ce14bb28e59736255b3bbfb~tplv-k3u1fbpfcp-zoom-1.image)
 
-GitHub：<https://github.com/vincelwt/chatgpt-mac>
+GitHub：https://github.com/vincelwt/chatgpt-mac
 
 ## 最后
 

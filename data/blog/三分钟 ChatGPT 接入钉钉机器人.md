@@ -25,8 +25,8 @@ ChatGPT 大家应该都已经用了一段时间了，功能非常强大，作为
 
 首先来说一下原理：
 
-<https://chat.openai.com/> 这个网站必须是国外节点才可以访问，而我们使用官方的 api，就可以使用香港节点访问
-=======
+https://chat.openai.com/ 这个网站必须是国外节点才可以访问，而我们使用官方的 api，就可以使用香港节点访问
+
 
 比如我们使用以下代码，这样就可以在 Nodejs 中调用 ChatGPT API 了。
 
@@ -64,7 +64,7 @@ const res = await fetch('https://api.openai.com/v1/chat/completions', {
 
 Laf 是一个完全开源的一站式云开发平台，提供了开箱即用的云函数，云数据库，对象存储等能力，让你可以像写博客一样写代码。
 
-> GitHub：<https://github.com/labring/laf>
+> GitHub：https://github.com/labring/laf
 
 最重要的是云服务可用区在香港，那么我们就可以搭建一个自己的 ChatGPT 了。
 
