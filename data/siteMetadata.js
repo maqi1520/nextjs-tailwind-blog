@@ -2,7 +2,7 @@ const siteMetadata = {
   title: '追马 | 全干工程师成长部落阁',
   author: '追马',
   headerTitle: '追马部落阁',
-  description: '分享 ChatGPT 热门信息，记录全干工程师学习成长历程。',
+  description: '分享 AI 和 JS 热门信息，记录全干工程师学习成长历程。',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://blog.ruankao168.top',
