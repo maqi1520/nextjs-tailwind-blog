@@ -7,11 +7,25 @@
 
 /* Code title styles */
 .remark-code-title {
-  @apply rounded-t bg-gray-700 px-5 py-3 font-mono text-sm font-bold text-gray-200;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  background-color: rgb(55 65 81);
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  color: rgb(229 231 235);
 }
 
 .remark-code-title + div > pre {
-  @apply mt-0 rounded-t-none;
+  margin-top: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
 }
 
 /* Code block styles */

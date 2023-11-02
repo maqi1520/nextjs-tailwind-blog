@@ -10,10 +10,6 @@ authors: ['default']
 layout: PostLayout
 ---
 
----
-
-## highlight: monokai-sublime
-
 Vercel 是一个流行的 React.js、Next.js 等前端应用部署平台，我们可以一键将 Github 上的应用部署上线，但它缺少一个重要部分：数据库。不过现在已经有了四种新数据库可供选择。
 
 数据是 Web 应用中不可或缺的一部分，在这之前我们可以配合使用 Heroku 的数据库服务，但后来 Heroku 收费，不再提供免费的数据库，社区中也一直寻找免费试用的数据库方案，现在我们可以直接选择 Vercel 来上线一个动态网站， 并且使用 JavaScript 和 TypeScript 框架服务端渲染实时数据会比以往任何时候都更容易。
@@ -32,7 +28,7 @@ Vercel 是一个流行的 React.js、Next.js 等前端应用部署平台，我�
 
 **使用示例**
 
-```js
+```js:title:test.js
 import kv from '@vercel/kv'
 
 export async function getPrefs() {
