@@ -10,7 +10,7 @@ export const getStaticProps: GetStaticProps<{ videos: VItem[] }> = async () => {
   return { props: { videos: JSON.parse(JSON.stringify(videos)) } }
 }
 
-export default function Vodeo({ videos }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Video({ videos }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <PageSEO title={`视频 - ${siteMetadata.author}`} description="我的B站视频" />
@@ -37,7 +37,7 @@ export default function Vodeo({ videos }: InferGetStaticPropsType<typeof getStat
                     title={v.title}
                   >
                     <Image
-                      src={'/static/images/' + v.pic}
+                      src={'/static/images/video/' + v.pic}
                       width="640"
                       height="420"
                       className="block w-full rounded-t-xl"
