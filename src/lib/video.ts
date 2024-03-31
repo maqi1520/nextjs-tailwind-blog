@@ -36,11 +36,10 @@ function download(url: string) {
 
 export async function getVideos() {
   const videos = res.data.list.vlist
-
   for (let index = 0; index < videos.length; index++) {
     const vitem = videos[index]
-    const pic = await download(vitem.pic)
-    vitem.pic = pic
+    const items = vitem.pic.split('/')
+    vitem.pic = items[items.length - 1]
   }
 
   return videos

@@ -6,7 +6,6 @@ import { GetStaticProps, InferGetStaticPropsType } from 'next'
 
 export const getStaticProps: GetStaticProps<{ videos: VItem[] }> = async () => {
   const videos = await getVideos()
-  console.log(videos)
   return { props: { videos: JSON.parse(JSON.stringify(videos)) } }
 }
 
