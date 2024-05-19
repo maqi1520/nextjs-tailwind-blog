@@ -13,10 +13,6 @@ authors: ['default']
 layout: PostLayout
 ---
 
----
-
-## title: 将 Node 应用 Express.js 部署到 Vercel
-
 ## 前言
 
 之前有期视频介绍过，在 Vercel 上可以免费部署很多应用，包括 Next.js、Nuxt、Remix。除了 Node.js 甚至还支持其他语言，包括 Go、 Python、Ruby，但在 Node.js 中有一个老牌的框架 Express.js，很多应用都是通过 Express.js 创建的，本文将记录下，如何将 Express.js 应用部署到 Vercel，以及它在 serverless 环境中应该考虑的因素。
@@ -54,7 +50,7 @@ app.get('/', (req, res) => res.send('Hello Express'))
 app.listen(3000, () => console.log('Server ready on port 3000.'))
 ```
 
-现在，我们运行 `node src/index.js` 便可以在本地启动 Express.js 服务。访问 <http://localhost:3000/> 页面显示 Hello Express。
+现在，我们运行 `node src/index.js` 便可以在本地启动 Express.js 服务。访问 http://localhost:3000/ 页面显示 Hello Express。
 
 ### 适配 vercel
 
@@ -69,7 +65,7 @@ export default function handler(request, response) {
 }
 ```
 
-部署到 Vercel 之后，访问 <https://example.vercel.app/api/hello?name=Vercel>
+部署到 Vercel 之后，访问 https://example.vercel.app/api/hello?name=Vercel
 
 页面就会显示 Hello Vercel。
 
@@ -132,7 +128,7 @@ vercel dev
 
 运行 `vercel dev` 会问你一些问题，随意回答即可。
 
-回答完问题后，您现在应该在 <http://localhost:3000> 上有一个本地运行的服务器，我们可以在部署到 Vercel 之前测试该应用程序是否正常运行。
+回答完问题后，您现在应该在 `http://localhost:3000` 上有一个本地运行的服务器，我们可以在部署到 Vercel 之前测试该应用程序是否正常运行。
 
 ## 部署
 
@@ -180,4 +176,4 @@ vercel
 }
 ```
 
-参考：<https://vercel.com/guides/using-express-with-vercel>
+参考：https://vercel.com/guides/using-express-with-vercel

@@ -1,15 +1,25 @@
 ---
 title: '30+ 图片压缩工具集合，包含在线压缩和CLI工具'
 date: '2022/7/22'
-lastmod: '2022/2/25'
+lastmod: '2024/6/23'
 tags: [工具]
 draft: false
+images:
+  [
+    'https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/932d63ba505b4662a2e89e29616e0932~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=3248&h=2112&s=996870&e=png&a=1&b=fefefe',
+  ]
 summary: '许多开发人员花费了大量时间优化网页性能，比如优化 js、css、减少http 请求等等，但减小图片大小产生的优化比其他所有领域加起来影响更大。'
 authors: ['default']
 layout: PostLayout
 ---
 
 许多开发人员花费了大量时间优化网页性能，比如优化 js、css、减少 http 请求等等，但减小图片大小产生的优化比其他所有领域加起来影响更大。
+
+## Website planet
+
+![Website planet](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/932d63ba505b4662a2e89e29616e0932~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=3248&h=2112&s=996870&e=png&a=1&b=fefefe)
+
+[Website planet](https://www.websiteplanet.com/webtools/imagecompressor/)可以将您的 PNG/JPG 文件压缩高达 80%，并保持完全透明
 
 ## WebUtils Bulk Image Compress 
 
