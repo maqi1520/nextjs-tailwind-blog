@@ -151,7 +151,7 @@ p 和 s 元素分别用于表示段落和句子
 周末到了，学习的同时也该放松下，一起来欣赏一个视频吧
 
 <video width="100%" controls>
-  <source src="/static/text-to-voice/长津湖之水门桥.mp4" type="video/mp4"/>
+  <source src="https://img.maqib.cn/img/%E9%95%BF%E6%B4%A5%E6%B9%96%E4%B9%8B%E6%B0%B4%E9%97%A8%E6%A1%A5.mp4" type="video/mp4"/>
 Your browser does not support the video tag.
 </video>
 
