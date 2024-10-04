@@ -801,7 +801,7 @@ this.scene.start("ui-scene");
 
 同理我还部署了以下应用
 
-https://editor.runjs.cool/ MDX 排版编辑器
+https://mdxnotes.com/ MDX 排版编辑器
 https://cv.runjs.cool/ 在线简历生成器
 https://low-code.runjs.cool/ 简易版低代码平台
 并且都是开源的，若对你有帮助记得点个 star，感谢！

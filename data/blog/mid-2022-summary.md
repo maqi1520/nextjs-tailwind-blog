@@ -51,7 +51,7 @@ layout: PostLayout
 
 不过通过技术更文，我也开源了：
 
-- [MDX Editor](https://github.com/maqi1520/mdx-editor 'https://github.com/maqi1520/mdx-editor') —— 一个微信排版编辑器，获得了 129 个 star
+- [MDX Notes](https://github.com/maqi1520/mdx-notes 'https://github.com/maqi1520/mdx-notes') —— 一个微信排版编辑器，获得了 129 个 star
 - [next-resume](https://github.com/maqi1520/next-resume 'https://github.com/maqi1520/next-resume') —— 在线简历生成器
 - [next-code-pen](https://github.com/maqi1520/next-code-pen 'https://github.com/maqi1520/next-code-pen') —— 一个纯前端的在线代码实时预览工具，支持 Less、Scss、JavaScript、Typescript
 
@@ -63,9 +63,9 @@ layout: PostLayout
 
 感兴趣的朋友可以查看，都有相关文章介绍，下半年继续努力吧！
 
-![MDX Editor 首页](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f0fbf1b7e4bd4b41bf1ebc165b2f201d~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp?)
+![MDX Notes 首页](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f0fbf1b7e4bd4b41bf1ebc165b2f201d~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp?)
 
-个人比较满意的是这个 MDX Editor 的首页，模仿的是 tailwind css 和 slidev 的首页效果。
+个人比较满意的是这个 MDX Notes 的首页，模仿的是 tailwind css 和 slidev 的首页效果。
 
 ## 关于工作
 

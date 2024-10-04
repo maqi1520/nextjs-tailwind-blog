@@ -12,7 +12,7 @@ layout: PostLayout
 
 ## 前言
 
-通常我们在开发博客网站或者技术社区（类似掘金）这类网站的时候，就会有需求“对代码进行语法高亮”，我在开发 [mdx editor](https://editor.runjs.cool/ '微信排版编辑器')（微信排版编辑器） 的时候，也有这个功能。
+通常我们在开发博客网站或者技术社区（类似掘金）这类网站的时候，就会有需求“对代码进行语法高亮”，我在开发 [MDX Notes](https://mdxnotes.com/ '微信排版编辑器')（微信排版编辑器） 的时候，也有这个功能。
 
 社区对应语法高亮比较流行的有 `highlight.js` 和 `Prism.js`。`Prism.js` 使用非常简单，只需要引一行`<script>`就可以对文档中的代码进行高亮， 然而，它有一个比较严重的问题。文档虽然简单，而我的项目是 React 项目，当想要增加一种语法高亮就会变得有些麻烦了，下面介绍下我的实现方式。
 
@@ -208,7 +208,7 @@ render((
 
 ## 代码行高亮
 
-我在[mdx editor](https://editor.runjs.cool/) 中也使用了 prism-react-renderer，当我把代码开源后，本以为完成了这个功能， 在这里感谢`@蓝色的秋风` 提的 [issues](https://github.com/maqi1520/mdx-editor/issues/5)，就是要支持代码行高亮。
+我在[MDX Notes](https://mdxnotes.com/) 中也使用了 prism-react-renderer，当我把代码开源后，本以为完成了这个功能， 在这里感谢`@蓝色的秋风` 提的 [issues](https://github.com/maqi1520/mdx-notes/issues/5)，就是要支持代码行高亮。
 ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e625a117b4f1405fb2150bef8fe1b741~tplv-k3u1fbpfcp-zoom-1.image)
 
 其实 Prism.js 本来就支持[diff-highlight](https://prismjs.com/plugins/diff-highlight/)， 但我使用的 prism-react-renderer，还没支持，官方还有个 [issues](https://github.com/FormidableLabs/prism-react-renderer/issues/90) 没有 close，总不能等官方实现这个功能在来实现吧？接下来就得自己实现了。
@@ -247,13 +247,13 @@ if (isDiff) {
 
 ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2c433188baaa4834a294347b758268c0~tplv-k3u1fbpfcp-zoom-1.image)
 
-这里我就不贴代码了，感兴趣的小伙伴可以移步 github [查看源码](https://github.com/maqi1520/mdx-editor/blob/main/src/components/MDX/CodeBlock.jsx 'github 源码')
+这里我就不贴代码了，感兴趣的小伙伴可以移步 github [查看源码](https://github.com/maqi1520/mdx-notes/blob/main/src/components/MDX/CodeBlock.jsx 'github 源码')
 
 ---
 
 推荐下我的开源程序
 
-- https://editor.runjs.cool/ MDX 排版编辑器
+- https://mdxnotes.com/ MDX 排版编辑器
 
 若对你有帮助记得点个 star，感谢！
 

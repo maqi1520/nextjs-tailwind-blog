@@ -13,7 +13,7 @@ authors: ['default']
 layout: PostLayout
 ---
 
-> MDX Editor 一个好用的排版编辑器
+> MDX Notes 一个好用的排版编辑器
 
 ## 前言
 
@@ -37,7 +37,7 @@ Markdown 适合写技术文档，但 Markdown 已不再适合当下的写作场�
 然后再切换到 [mdnice](https://www.mdnice.com/) 再切换微信后台，
 这样来回切换，然后之前编辑好的往期推荐又得重新编辑。。。
 
-![https://editor.runjs.cool/](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/91416780afb745aaaaa738e680f54ac1~tplv-k3u1fbpfcp-zoom-1.image)
+![https://mdxnotes.com/](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/91416780afb745aaaaa738e680f54ac1~tplv-k3u1fbpfcp-zoom-1.image)
 
 ## 实现一个编辑器
 
@@ -173,20 +173,20 @@ export default {
 
 - 数据存储
 
-MDX Editor 不会存储数据，只使用`localStorage`存储到本地，
+MDX Notes 不会存储数据，只使用`localStorage`存储到本地，
 如你想分享你的文章，可以点击左上角的分享按钮，同时文章将存储到云数据库中，但不保证永久存储。建议下载 MDX 存储在本地。
 
-mdx 的功能远不止于此，甚至我们可以根据它写一个[简历模板](https://editor.runjs.cool/624688ccb6fe2900015728ac)，然后我们就可以使用 markdown 来排版简历了！
+mdx 的功能远不止于此，甚至我们可以根据它写一个[简历模板](https://mdxnotes.com/624688ccb6fe2900015728ac)，然后我们就可以使用 markdown 来排版简历了！
 
 ![打印简历效果](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2a81c7a71dd74e929934640daefac16a~tplv-k3u1fbpfcp-zoom-1.image)
 
 ## 体验地址
 
-https://editor.runjs.cool/
+https://mdxnotes.com/
 
 ## 开源
 
-目前代码已经开源在我的 [Github](https://github.com/maqi1520/mdx-editor)，点击右上角链接直达！
+目前代码已经开源在我的 [Github](https://github.com/maqi1520/mdx-notes)，点击右上角链接直达！
 
 若这个小工具对你有帮助，欢迎点个 star ✨。
 

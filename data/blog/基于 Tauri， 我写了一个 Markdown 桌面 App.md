@@ -4,7 +4,7 @@ date: 2023/7/13 18:23:59
 lastmod: 2023/7/20 09:10:14
 tags: [JavaScript]
 draft: false
-summary: 本文视频地址 前言 大家好，我是小马。 去年，我开发了一款微信排版编辑器 MDX Editor。它可以自定义组件、样式，生成二维码，代码 Diff 高亮，并支持导出 Markdown 和 PDF 等功
+summary: 本文视频地址 前言 大家好，我是小马。 去年，我开发了一款微信排版编辑器 MDX Notes。它可以自定义组件、样式，生成二维码，代码 Diff 高亮，并支持导出 Markdown 和 PDF 等功
 images: https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/213c0d296112436cae85c4c9c88d6f59~tplv-k3u1fbpfcp-watermark.image?
 authors: ['default']
 layout: PostLayout
@@ -14,7 +14,7 @@ layout: PostLayout
 
 大家好，我是小马。
 
-去年，我开发了一款微信排版编辑器 MDX Editor。它可以自定义组件、样式，生成二维码，代码 Diff 高亮，并支持导出 Markdown 和 PDF 等功能。然而，作为一个微信排版编辑器，它的受众面比较有限，并不适用于每个人。因此，我基于该编辑器开发了 MDX Editor 桌面版，它支持 Mac、Windows 和 Linux，并且非常轻量，整个应用的大小只有 7M。现在，MDX Editor 桌面版已经成为我的创作工具。如果你对它感兴趣，可以在文末获取。
+去年，我开发了一款微信排版编辑器 MDX Notes。它可以自定义组件、样式，生成二维码，代码 Diff 高亮，并支持导出 Markdown 和 PDF 等功能。然而，作为一个微信排版编辑器，它的受众面比较有限，并不适用于每个人。因此，我基于该编辑器开发了 MDX Notes 桌面版，它支持 Mac、Windows 和 Linux，并且非常轻量，整个应用的大小只有 7M。现在，MDX Notes 桌面版已经成为我的创作工具。如果你对它感兴趣，可以在文末获取。
 
 ## 演示
 
@@ -22,7 +22,7 @@ layout: PostLayout
 
 ## 技术选型
 
-开发 MDX Editor 桌面 App，我使用了如下核心技术栈:
+开发 MDX Notes 桌面 App，我使用了如下核心技术栈:
 
 - React (Next.js)
 
@@ -52,7 +52,7 @@ function Gallery({ children }) {
 
 ### 2. 深色皮肤
 
-对于笔记软件来说，深色皮肤已经成为一个不可或缺的部分。MDX Editor 使用 `Tailwind CSS` 实现了深色皮肤。
+对于笔记软件来说，深色皮肤已经成为一个不可或缺的部分。MDX Notes 使用 `Tailwind CSS` 实现了深色皮肤。
 
 ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/61bac318e79d4e698c96b98424625590~tplv-k3u1fbpfcp-zoom-1.image)
 
@@ -82,10 +82,10 @@ const contents = await readTextFile('app.conf', { dir: BaseDirectory.AppConfig }
 
 ### 5. 文档格式化
 
-在文档写作的过程中，格式往往会打断你的创作思路。虽然 Markdown 已经完全舍弃了格式操作，但有时你仍然需要注意中英文之间的空格、段落之间的空行等细节。MDX Editor 使用了 [prettier](https://prettier.io/ 'prettier') 来格式化文档，只需按下 `command+s` 就能自动格式化文档。
+在文档写作的过程中，格式往往会打断你的创作思路。虽然 Markdown 已经完全舍弃了格式操作，但有时你仍然需要注意中英文之间的空格、段落之间的空行等细节。MDX Notes 使用了 [prettier](https://prettier.io/ 'prettier') 来格式化文档，只需按下 `command+s` 就能自动格式化文档。
 
 ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/333d527b57194ebda5d246e15cc54ab1~tplv-k3u1fbpfcp-zoom-1.image)
 
 ## 最后
 
-如果你对这个编辑器感兴趣，可以在 [Github](https://github.com/maqi1520/mdx-editor 'Github') 下载桌面版体验。如果你对实现过程感兴趣，也可以直接查看源码。如果您有任何好的建议，可以在上面提出 Issues，或者关注微信公众号 "JS 酷" 并留言反馈。
+如果你对这个编辑器感兴趣，可以在 [Github](https://github.com/maqi1520/mdx-notes 'Github') 下载桌面版体验。如果你对实现过程感兴趣，也可以直接查看源码。如果您有任何好的建议，可以在上面提出 Issues，或者关注微信公众号 "JS 酷" 并留言反馈。

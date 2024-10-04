@@ -24,7 +24,7 @@ layout: PostLayout
 
 ![uniCloud web 控制台](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1936f89da56946efa15b3adc4675140a~tplv-k3u1fbpfcp-zoom-1.image)
 
-并且关联好云服务空间，一个项目中可以有 50 个云函数，由于我之前的项目没几个云函数，所以我这里关联的是另外一个项目 [mdx-editor](https://editor.runjs.cool/ 'mdx-editor')
+并且关联好云服务空间，一个项目中可以有 50 个云函数，由于我之前的项目没几个云函数，所以我这里关联的是另外一个项目 mdx-notes
 
 选择 uniCloud 目录右键，可以打开 uniCloud web 控制台。
 

@@ -22,10 +22,10 @@ layout: PostLayout
 
 ## 前言
 
-其实应该叫微信公众号 MDX 排版编辑器，因为知道 markdown 的人很多，而知道 MDX 的人却很少，之前也写过一篇文章[《[MDX Editor] 微信排版工具新选择》](https://juejin.cn/post/7081948276169113631)，介绍了我开发这款编辑器的初衷，以及它的功能，阅读量那是相当的低，今天，我们将从技术实现的角度，来记录它的实现过程，没体验过的朋友可以先体验下。
+其实应该叫微信公众号 MDX 排版编辑器，因为知道 markdown 的人很多，而知道 MDX 的人却很少，之前也写过一篇文章[《[MDX Notes] 微信排版工具新选择》](https://juejin.cn/post/7081948276169113631)，介绍了我开发这款编辑器的初衷，以及它的功能，阅读量那是相当的低，今天，我们将从技术实现的角度，来记录它的实现过程，没体验过的朋友可以先体验下。
 
-- [在线地址](https://editor.runjs.cool/)
-- [Github 地址](https://github.com/maqi1520/mdx-editor)
+- [在线地址](https://mdxnotes.com/)
+- [Github 地址](https://github.com/maqi1520/mdx-notes)
 
 那标题为什么要叫 “Markdown 排版编辑器呢”？ 因为 MDX 是 markdown 和 JSX 的结合，它让我们的文档即可以写 markdown 也可以写 React 组件，于是我想用 MDX 的强大功能来扩展微信公众号编辑器的不足。其实编辑器部分可以是纯 React 实现，而我选择使用 Next.js + 云开发，让它从单纯的编辑器晋升为我的写作工具，拥有了云端保存数据能力，本文收录在[《 Next.js 全栈开发实战》](https://juejin.cn/column/7140121965360054308) 专栏中。
 
@@ -106,7 +106,7 @@ require(['vs/editor/editor.main'], function () {
 
 ### monaco-editor 实现多文件编辑
 
-在 mdx editor 中，除了 markdown 编辑器，还需要有 css 和 js，因此，我们将初始的 value 改成一个对象
+在 MDX Notes 中，除了 markdown 编辑器，还需要有 css 和 js，因此，我们将初始的 value 改成一个对象
 
 ```js
 const [value, setValue] = useState({

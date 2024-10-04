@@ -320,10 +320,10 @@ watch([code, paused], () => {
 
 ## 学以致用
 
-我之前使用 MDX 写了一个微信排版编辑器 [MDX Editor](https://editor.runjs.cool/ 'https://editor.runjs.cool/')，正好少了一个首页，能否加上打字机效果呢？
+我之前使用 MDX 写了一个微信排版编辑器 [MDX Notes](https://mdxnotes.com/ 'https://mdxnotes.com/')，正好少了一个首页，能否加上打字机效果呢？
 
-![mdx-editor](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9d5a02e1e5574d0382ebed74f23c2c2a~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
+![mdx-notes](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9d5a02e1e5574d0382ebed74f23c2c2a~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
 
-可自定义组件、样式、生成二维码、代码 diff 高亮，一键拷贝到微信，可导出 markdown 和 PDF。 关于代码和原理就就不贴了，大致和 Sildev 差不多，只不过我使用的是 react 来实现，代码已经[开源](https://github.com/maqi1520/mdx-editor 'https://github.com/maqi1520/mdx-editor')，若对你有帮助， 可以点个 star，感谢您的支持！
+可自定义组件、样式、生成二维码、代码 diff 高亮，一键拷贝到微信，可导出 markdown 和 PDF。 关于代码和原理就就不贴了，大致和 Sildev 差不多，只不过我使用的是 react 来实现，代码已经[开源](https://github.com/maqi1520/mdx-notes 'https://github.com/maqi1520/mdx-notes')，若对你有帮助， 可以点个 star，感谢您的支持！
 
 以上就是本文全部内容，希望这篇文章对大家有所帮助，也可以参考我往期的文章或者在评论区交流你的想法和心得，欢迎一起探索前端。

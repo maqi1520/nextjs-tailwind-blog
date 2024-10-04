@@ -6,10 +6,10 @@ const projectsData = [
     href: 'https://code.runjs.cool/',
   },
   {
-    title: 'MDX-Editor',
+    title: 'MDX-Notes',
     description: `微信排版编辑器，使用MDX，可自定义组件、样式、生成二维码、代码 diff 高亮，可导出 markdown 和 PDF。`,
-    imgSrc: '/static/images/mdx-editor.png',
-    href: 'https://editor.runjs.cool/',
+    imgSrc: '/static/images/mdx-notes.jpg',
+    href: 'https://mdxnotes.com/',
   },
   {
     title: '在线简历生成器',
