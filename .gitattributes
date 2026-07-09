@@ -156,6 +156,8 @@ Procfile          text
 *.mp3             binary
 *.ogg             binary
 *.ra              binary
+*.wav             binary
+*.wave            binary
 
 # Video
 *.3gpp            binary
