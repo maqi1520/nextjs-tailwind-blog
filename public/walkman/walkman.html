@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>WALKMAN '26 · 3D 磁带随身听</title>
+  <meta name="description" content="一台面向 2026 的 3D Walkman 磁带播放器 —— 打开舱门、装入磁带、按下播放。">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📼</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="app">
+    <canvas id="scene"></canvas>
+    <div class="vignette"></div>
+
+    <header class="hud hud-top">
+      <div class="brand">W-26<span>FIELD DECK · 2026</span></div>
+      <div class="tips">拖动旋转视角 · 滚轮缩放</div>
+    </header>
+
+    <footer class="hud hud-bottom">
+      <div class="keys">
+        <span><kbd>空格</kbd>播放 / 暂停</span>
+        <span><kbd>◀</kbd><kbd>▶</kbd>长按快退快进 · 短按切歌</span>
+        <span><kbd>E</kbd>弹出 / 插入磁带</span>
+        <span><kbd>▲</kbd><kbd>▼</kbd>音量</span>
+        <span class="drop-tip">拖入 MP3 即可换带</span>
+      </div>
+    </footer>
+
+    <div id="drop-hint"><div>📼<br>松手 · 装载新磁带</div></div>
+
+    <div id="loader">
+      <div class="cassette-load"><i></i><i></i></div>
+      <p>正在装配 WALKMAN '26 …</p>
+    </div>
+  </div>
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

@@ -2,8 +2,194 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'JosefinSlab';
+  src: url('/fonts/JosefinSlab-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root,
+html[data-theme='sage'],
+body[data-theme='sage'] {
+  --bg: #f8f8f3;
+  --surface: #fbfbf7;
+  --hero: #c8dea5;
+  --hero-soft: #dceac1;
+  --dark: #050505;
+  --text: #050505;
+  --muted: #6e6e64;
+  --accent: #c8dea5;
+  --accent-2: #bdefff;
+  --card: #ffffff;
+  --border: rgba(0, 0, 0, 0.15);
+}
+
+html[data-theme='cream'],
+body[data-theme='cream'] {
+  --bg: #fbf7ef;
+  --surface: #fffdf8;
+  --hero: #ead7b7;
+  --hero-soft: #f5e8d3;
+  --dark: #1c140d;
+  --text: #1c140d;
+  --muted: #7a6a58;
+  --accent: #d8a85f;
+  --accent-2: #9bc4b2;
+  --card: #fffaf2;
+  --border: rgba(61, 42, 24, 0.18);
+}
+
+html[data-theme='blue'],
+body[data-theme='blue'] {
+  --bg: #f3f7fb;
+  --surface: #fbfdff;
+  --hero: #cfe3f5;
+  --hero-soft: #e4f1fb;
+  --dark: #07111f;
+  --text: #07111f;
+  --muted: #607086;
+  --accent: #7eb6e8;
+  --accent-2: #b7e4d4;
+  --card: #ffffff;
+  --border: rgba(7, 17, 31, 0.14);
+}
+
+html[data-theme='mint'],
+body[data-theme='mint'] {
+  --bg: #f3faf6;
+  --surface: #fbfffd;
+  --hero: #bfe8d4;
+  --hero-soft: #dcf5e8;
+  --dark: #061b13;
+  --text: #061b13;
+  --muted: #5e7469;
+  --accent: #6fd0a3;
+  --accent-2: #d7c7ff;
+  --card: #ffffff;
+  --border: rgba(6, 27, 19, 0.15);
+}
+
+html[data-theme='purple'],
+body[data-theme='purple'] {
+  --bg: #f8f5fb;
+  --surface: #fffaff;
+  --hero: #dcd0f3;
+  --hero-soft: #eee7fb;
+  --dark: #160d22;
+  --text: #160d22;
+  --muted: #71667b;
+  --accent: #bba3f0;
+  --accent-2: #bce7de;
+  --card: #ffffff;
+  --border: rgba(22, 13, 34, 0.15);
+}
+
+html[data-theme='mono'],
+body[data-theme='mono'] {
+  --bg: #f6f6f1;
+  --surface: #ffffff;
+  --hero: #e5e5dc;
+  --hero-soft: #f0f0e7;
+  --dark: #050505;
+  --text: #050505;
+  --muted: #666666;
+  --accent: #d8d8cc;
+  --accent-2: #bcbcbc;
+  --card: #ffffff;
+  --border: rgba(0, 0, 0, 0.18);
+}
+
 html {
   font-size: 16px;
+}
+
+body {
+  /* 英文优先 Josefin Slab；缺字（中文）回落霞鹜文楷 */
+  font-family: 'JosefinSlab', 'LXGWWenKaiGB', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+    sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.serif {
+  font-family: 'JosefinSlab', 'LXGWWenKaiGB', Georgia, 'Times New Roman', serif;
+}
+
+.grain {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.045) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+.spark {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+}
+
+.spark::before,
+.spark::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  background: var(--dark);
+  border-radius: 999px;
+}
+
+.spark::before {
+  width: 5px;
+  height: 26px;
+}
+
+.spark::after {
+  width: 26px;
+  height: 5px;
+}
+
+.theme-btn {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+  background: var(--card);
+  color: var(--text);
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.theme-btn:hover {
+  transform: translateY(-1px);
+}
+
+.theme-btn.active {
+  background: var(--dark);
+  color: white;
+  border-color: var(--dark);
+}
+
+.qr {
+  background: linear-gradient(90deg, #000 10px, transparent 10px) 0 0 / 28px 28px,
+    linear-gradient(#000 10px, transparent 10px) 0 0 / 28px 28px,
+    radial-gradient(circle at center, #000 45%, transparent 46%) 7px 7px / 22px 22px, #fff;
+  image-rendering: pixelated;
+}
+
+.walkman-frame {
+  border: 1px solid rgba(20, 20, 20, 0.55);
+  box-shadow: 0 2px 0 rgba(255, 255, 255, 0.5) inset, 0 30px 55px -22px rgba(0, 0, 0, 0.55),
+    0 12px 28px -18px rgba(0, 0, 0, 0.45);
+}
+
+.walkman-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06) inset;
 }
 
 .task-list-item::before {
@@ -15,7 +201,7 @@ html {
 }
 
 .footnotes {
-  @apply mt-12 border-t border-gray-200 pt-8 dark:border-gray-700;
+  @apply mt-12 border-t border-gray-200 pt-8;
 }
 
 .csl-entry {

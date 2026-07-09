@@ -5,14 +5,15 @@
   "scripts": {
     "start": "cross-env SOCKET=true node ./scripts/next-remote-watch.js ./data",
     "dev": "next dev",
-    "build": "next build && node ./scripts/generate-sitemap",
+    "build": "npm run ensure:fonts && next build && node ./scripts/generate-sitemap",
     "serve": "next start",
     "analyze": "cross-env ANALYZE=true next build",
     "lint": "next lint --fix --dir src --dir scripts",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "generate:fonts": "node scripts/generate-fonts.mjs",
+    "ensure:fonts": "node -e \"require('fs').accessSync('public/fonts/dist/lxgw-wenkai-gb/result.css')\" || npm run generate:fonts"
   },
   "dependencies": {
-    "@fontsource/inter": "4.5.2",
     "@mailchimp/mailchimp_marketing": "^3.0.58",
     "@tailwindcss/forms": "^0.4.0",
     "@tailwindcss/typography": "^0.5.0",
@@ -47,6 +48,7 @@
     "@svgr/webpack": "^6.1.2",
     "@types/node": "^17.0.21",
     "@types/react": "^17.0.39",
+    "cn-font-split": "^7.4.1",
     "cross-env": "^7.0.3",
     "dedent": "^0.7.0",
     "eslint": "^7.24.0",

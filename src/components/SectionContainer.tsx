@@ -2,8 +2,9 @@ import { ReactNode } from 'react'
 
 interface Props {
   children: ReactNode
+  wide?: boolean
 }
 
-export default function SectionContainer({ children }: Props) {
-  return <div className="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">{children}</div>
+export default function SectionContainer({ children, wide = false }: Props) {
+  return <div className={`mx-auto max-w-site px-6`}>{children}</div>
 }

@@ -3,7 +3,7 @@ import Document, { Html, Head, Main, NextScript } from 'next/document'
 class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en" className="scroll-smooth">
+      <Html lang="zh-CN" className="scroll-smooth" data-theme="sage">
         <Head>
           <link rel="apple-touch-icon" sizes="76x76" href="/static/favicons/apple-touch-icon.png" />
           <link
@@ -24,8 +24,25 @@ class MyDocument extends Document {
           <meta name="theme-color" content="#000000" />
           <meta name="referrer" content="no-referrer" />
           <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+          <link rel="stylesheet" href="/fonts/dist/lxgw-wenkai-gb/result.css" />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                (function () {
+                  try {
+                    var key = 'blog-theme';
+                    var allowed = ['sage','cream','blue','mint','purple','mono'];
+                    var saved = localStorage.getItem(key);
+                    var theme = allowed.indexOf(saved) > -1 ? saved : 'sage';
+                    document.documentElement.setAttribute('data-theme', theme);
+                    document.documentElement.style.background = 'var(--bg)';
+                  } catch (e) {}
+                })();
+              `,
+            }}
+          />
         </Head>
-        <body className="bg-white text-black antialiased dark:bg-gray-900 dark:text-white">
+        <body className="bg-skin-bg text-skin-text antialiased" data-theme="sage">
           <Main />
           <NextScript />
         </body>

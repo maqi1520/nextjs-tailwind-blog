@@ -1,4 +1,5 @@
 import Article from '@/components/Article'
+import SectionContainer from '@/components/SectionContainer'
 import { ComponentProps, useState } from 'react'
 import Pagination from '@/components/Pagination'
 import { PostFrontMatter } from 'types/PostFrontMatter'
@@ -21,8 +22,8 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
     initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredBlogPosts
 
   return (
-    <>
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
+    <SectionContainer>
+      <div className="divide-y divide-gray-200 py-8">
         <div className="space-y-2 pb-8 pt-6 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             {title}
@@ -62,6 +63,6 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
       {pagination && pagination.totalPages > 1 && !searchValue && (
         <Pagination currentPage={pagination.currentPage} totalPages={pagination.totalPages} />
       )}
-    </>
+    </SectionContainer>
   )
 }

@@ -3,7 +3,7 @@ const colors = require('tailwindcss/colors')
 
 /** @type {import("tailwindcss/tailwind-config").TailwindConfig } */
 module.exports = {
-  content: ['./src/**/*.tsx'],
+  content: ['./src/**/*.tsx', './data/**/*.{js,ts}'],
   darkMode: 'class',
   theme: {
     extend: {
@@ -16,13 +16,33 @@ module.exports = {
         13: '3.25rem',
         14: '3.5rem',
       },
+      maxWidth: {
+        site: '1180px',
+      },
+      boxShadow: {
+        soft: '0 12px 35px rgba(0,0,0,.08)',
+      },
       fontFamily: {
-        sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
+        sans: ['JosefinSlab', 'LXGWWenKaiGB', ...defaultTheme.fontFamily.sans],
+        serif: ['JosefinSlab', 'LXGWWenKaiGB', 'Georgia', 'Times New Roman', 'serif'],
       },
       colors: {
         primary: colors.indigo,
         //@ts-ignore
         gray: colors.neutral, // TODO: Remove ts-ignore after tw types gets updated to v3
+        skin: {
+          bg: 'var(--bg)',
+          surface: 'var(--surface)',
+          hero: 'var(--hero)',
+          'hero-soft': 'var(--hero-soft)',
+          dark: 'var(--dark)',
+          text: 'var(--text)',
+          muted: 'var(--muted)',
+          accent: 'var(--accent)',
+          'accent-2': 'var(--accent-2)',
+          card: 'var(--card)',
+          border: 'var(--border)',
+        },
       },
       typography: (theme) => ({
         DEFAULT: {
