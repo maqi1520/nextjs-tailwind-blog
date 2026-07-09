@@ -16,12 +16,12 @@ export default function Article({ slug, date, title, summary, tags, images }: Po
               <dt className="mb-4">
                 <Link
                   href={`/blog/${slug}`}
-                  className="block overflow-hidden rounded shadow-lg"
+                  className="group block aspect-video overflow-hidden rounded shadow-lg"
                   title={title}
                 >
                   <img
                     alt={title}
-                    className="transform  object-cover duration-200 hover:scale-110"
+                    className="h-full w-full object-cover object-top transition-[object-position] duration-[3000ms] ease-linear group-hover:object-bottom"
                     src={src}
                   />
                 </Link>
