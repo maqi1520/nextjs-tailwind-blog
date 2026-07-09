@@ -1,10 +1,10 @@
 export const THEME_OPTIONS = [
-  { key: 'sage', label: '青绿' },
-  { key: 'cream', label: '奶油' },
-  { key: 'blue', label: '蓝灰' },
-  { key: 'mint', label: '薄荷' },
-  { key: 'purple', label: '紫雾' },
-  { key: 'mono', label: '黑白' },
+  { key: 'sage', label: '青绿', swatch: '#c8dea5' },
+  { key: 'cream', label: '奶油', swatch: '#ead7b7' },
+  { key: 'blue', label: '蓝灰', swatch: '#cfe3f5' },
+  { key: 'mint', label: '薄荷', swatch: '#bfe8d4' },
+  { key: 'purple', label: '紫雾', swatch: '#dcd0f3' },
+  { key: 'mono', label: '黑白', swatch: '#e5e5dc' },
 ] as const
 
 export type ThemeKey = (typeof THEME_OPTIONS)[number]['key']
@@ -21,9 +21,9 @@ export const heroContent = {
 }
 
 export const heroStats = [
-  { value: '100+', label: '技术文章', hint: '深度原创干货' },
+  { value: '200+', label: '技术文章', hint: '深度原创干货' },
   { value: '20+', label: '开源项目', hint: '持续迭代维护' },
-  { value: '50K+', label: '累计阅读', hint: '来自读者的认可' },
+  { value: '1168K+', label: '累计阅读', hint: '来自读者的认可' },
 ]
 
 export const metrics = {
@@ -106,7 +106,8 @@ export const contactContent = {
     { label: '技术落地', icon: 'code' },
     { label: '持续迭代', icon: 'rocket' },
   ],
-  qrHint: '微信 / 企业微信\n期待与你交流',
+  wechat: 'maqi1520',
+  qrHint: '期待与你交流，备注来意',
   qrImage: '/static/images/wechat-qr.png',
 }
 

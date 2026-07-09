@@ -2,16 +2,12 @@
   "name": "MIXTAPE '26",
   "tracks": [
     {
+      "title": "欢迎语",
+      "file": "欢迎语.wav"
+    },
+    {
       "title": "湘女多情",
       "file": "湘女多情.mp3"
-    },
-    {
-      "title": "Neon Drive",
-      "file": "neon-drive.mp3"
-    },
-    {
-      "title": "Paper Moon",
-      "file": "paper-moon.mp3"
     }
   ]
 }

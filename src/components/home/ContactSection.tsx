@@ -59,7 +59,8 @@ export default function ContactSection() {
 
           <div>
             <h4 className="mb-3 text-2xl font-black">扫码联系我</h4>
-            <p className="whitespace-pre-line leading-7 text-skin-muted">{contactContent.qrHint}</p>
+            <p className="mb-3 font-sans text-2xl font-black">{contactContent.wechat}</p>
+            <p className="leading-7 text-skin-muted">{contactContent.qrHint}</p>
           </div>
         </div>
       </div>

@@ -453,14 +453,24 @@ function volText(v) {
   return 'VOL [' + '='.repeat(n) + '-'.repeat(10 - n) + ']'
 }
 
-// 键盘
-window.addEventListener('keydown', (e) => {
-  if (e.repeat) return
+// 键盘（本页直接按键 + 父页 postMessage 转发，供首页 embed 使用）
+const WALKMAN_KEY_CODES = new Set([
+  'Space',
+  'ArrowRight',
+  'ArrowLeft',
+  'ArrowUp',
+  'ArrowDown',
+  'KeyE',
+  'KeyS',
+])
+
+function handleKeyDown(code, { preventDefault } = {}) {
+  if (!WALKMAN_KEY_CODES.has(code)) return false
   audio.ensureCtx()
-  switch (e.code) {
+  switch (code) {
     case 'Space':
-      e.preventDefault()
-      doAction('play', e)
+      preventDefault?.()
+      doAction('play', { preventDefault() {} })
       walkman.pressVisual('play')
       setTimeout(() => walkman.releaseVisual('play'), 130)
       break
@@ -476,8 +486,8 @@ window.addEventListener('keydown', (e) => {
       break
     case 'ArrowUp':
     case 'ArrowDown': {
-      e.preventDefault()
-      const v = clamp(audio.volume + (e.code === 'ArrowUp' ? 0.08 : -0.08), 0, 1)
+      preventDefault?.()
+      const v = clamp(audio.volume + (code === 'ArrowUp' ? 0.08 : -0.08), 0, 1)
       audio.setVolume(v)
       walkman.setKnob(v)
       display.flash(volText(v), 700)
@@ -487,19 +497,40 @@ window.addEventListener('keydown', (e) => {
       toggleTape()
       break
     case 'KeyS':
-      doAction('stop', e)
+      doAction('stop', { preventDefault() {} })
       break
   }
-})
-window.addEventListener('keyup', (e) => {
-  if (e.code === 'ArrowRight') {
+  return true
+}
+
+function handleKeyUp(code) {
+  if (code === 'ArrowRight') {
     walkman.releaseVisual('ff')
     endHoldSeek()
+    return true
   }
-  if (e.code === 'ArrowLeft') {
+  if (code === 'ArrowLeft') {
     walkman.releaseVisual('rew')
     endHoldSeek()
+    return true
   }
+  return false
+}
+
+window.addEventListener('keydown', (e) => {
+  if (e.repeat) return
+  handleKeyDown(e.code, { preventDefault: () => e.preventDefault() })
+})
+window.addEventListener('keyup', (e) => {
+  handleKeyUp(e.code)
+})
+
+window.addEventListener('message', (e) => {
+  if (e.origin !== location.origin) return
+  const data = e.data
+  if (!data || data.type !== 'walkman-key' || typeof data.code !== 'string') return
+  if (data.event === 'keydown') handleKeyDown(data.code)
+  if (data.event === 'keyup') handleKeyUp(data.code)
 })
 
 // ---------- 主循环 ----------

@@ -1,12 +1,11 @@
 import Link from '@/components/Link'
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
-import { useColorTheme } from '@/components/ColorThemeProvider'
+import ThemePicker from '@/components/ThemePicker'
 import { useEffect, useState } from 'react'
 import { ArrowRight, Horse, List, X } from '@/components/icons'
 
 export default function SiteHeader() {
-  const { theme, setTheme, themes } = useColorTheme()
   const [navOpen, setNavOpen] = useState(false)
 
   useEffect(() => {
@@ -42,31 +41,7 @@ export default function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <div className="hidden items-center gap-2 xl:flex">
-            {themes.map((item) => (
-              <button
-                key={item.key}
-                type="button"
-                className={`theme-btn${theme === item.key ? ' active' : ''}`}
-                onClick={() => setTheme(item.key)}
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
-
-          <select
-            className="rounded-full border border-skin-border bg-skin-card px-3 py-2 text-sm xl:hidden"
-            value={theme}
-            onChange={(event) => setTheme(event.target.value as typeof theme)}
-            aria-label="切换主题"
-          >
-            {themes.map((item) => (
-              <option key={item.key} value={item.key}>
-                {item.label}
-              </option>
-            ))}
-          </select>
+          <ThemePicker />
 
           <Link
             href="/#contact"
@@ -113,6 +88,9 @@ export default function SiteHeader() {
               {link.title}
             </Link>
           ))}
+          <div className="mt-4">
+            <ThemePicker inline onPick={() => setNavOpen(false)} />
+          </div>
           <Link
             href="/#contact"
             className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-skin-dark px-5 py-4 text-base font-semibold text-white"

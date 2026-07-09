@@ -1,7 +1,70 @@
 import Link from '@/components/Link'
 import { heroContent, heroStats } from '@/data/homeData'
+import { useCallback, useEffect, useRef, useState } from 'react'
+
+const WALKMAN_KEYS = new Set([
+  'Space',
+  'ArrowRight',
+  'ArrowLeft',
+  'ArrowUp',
+  'ArrowDown',
+  'KeyE',
+  'KeyS',
+])
+
+const SHORTCUTS = [
+  { keys: ['空格'], label: '播放 / 暂停' },
+  { keys: ['←', '→'], label: '长按快退快进 · 短按切歌' },
+  { keys: ['E'], label: '弹出 / 插入磁带' },
+  { keys: ['↑', '↓'], label: '音量' },
+]
 
 export default function HomeHero() {
+  const iframeRef = useRef<HTMLIFrameElement>(null)
+  const panelRef = useRef<HTMLDivElement>(null)
+  const [active, setActive] = useState(false)
+
+  const postKey = useCallback((event: 'keydown' | 'keyup', code: string) => {
+    iframeRef.current?.contentWindow?.postMessage(
+      { type: 'walkman-key', event, code },
+      window.location.origin
+    )
+  }, [])
+
+  useEffect(() => {
+    if (!active) return
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.repeat || !WALKMAN_KEYS.has(e.code)) return
+      // 焦点已在 iframe 内时由 iframe 自己处理，避免重复触发
+      if (document.activeElement === iframeRef.current) return
+      e.preventDefault()
+      postKey('keydown', e.code)
+    }
+    const onKeyUp = (e: KeyboardEvent) => {
+      if (!WALKMAN_KEYS.has(e.code)) return
+      if (document.activeElement === iframeRef.current) return
+      postKey('keyup', e.code)
+    }
+
+    window.addEventListener('keydown', onKeyDown)
+    window.addEventListener('keyup', onKeyUp)
+    return () => {
+      window.removeEventListener('keydown', onKeyDown)
+      window.removeEventListener('keyup', onKeyUp)
+    }
+  }, [active, postKey])
+
+  useEffect(() => {
+    const onPointerDown = (e: MouseEvent) => {
+      if (!panelRef.current?.contains(e.target as Node)) {
+        setActive(false)
+      }
+    }
+    document.addEventListener('mousedown', onPointerDown)
+    return () => document.removeEventListener('mousedown', onPointerDown)
+  }, [])
+
   return (
     <section className="grain relative overflow-hidden bg-skin-hero">
       <div className="mx-auto max-w-site px-6 pb-14 pt-20">
@@ -31,17 +94,43 @@ export default function HomeHero() {
             </div>
           </div>
 
-          <div className="relative">
+          <div
+            ref={panelRef}
+            className="relative outline-none"
+            tabIndex={0}
+            onFocus={() => setActive(true)}
+            onPointerDown={() => setActive(true)}
+            aria-label="WALKMAN 播放器，点击后可使用键盘快捷键"
+          >
             <div className="spark left-[-30px] top-[-18px] scale-75" />
             <div className="spark bottom-[-14px] right-[-16px] scale-90" />
             <div className="walkman-frame relative aspect-[4/3] w-full overflow-hidden rounded-[30px] bg-[#0b0c10]">
               <iframe
+                ref={iframeRef}
                 src="/walkman/walkman.html?embed"
                 title="WALKMAN '26 · 交互式 3D 磁带随身听"
                 loading="lazy"
                 allow="autoplay"
                 className="absolute inset-0 h-full w-full border-0"
               />
+            </div>
+
+            <div
+              className={`mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] leading-none transition-opacity ${
+                active ? 'text-black/70' : 'text-black/45'
+              }`}
+            >
+              {SHORTCUTS.map((item) => (
+                <span key={item.label} className="inline-flex items-center gap-1.5">
+                  {item.keys.map((key) => (
+                    <kbd key={key} className="walkman-kbd">
+                      {key}
+                    </kbd>
+                  ))}
+                  <span>{item.label}</span>
+                </span>
+              ))}
+              <span className="text-black/35">点击播放器后生效 · 拖入 MP3 可换带</span>
             </div>
           </div>
         </div>
