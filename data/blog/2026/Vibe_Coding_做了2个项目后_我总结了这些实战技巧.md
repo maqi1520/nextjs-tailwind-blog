@@ -2,7 +2,7 @@
 title: Vibe Coding 做了2个项目后，我总结了这些实战技巧
 date: '2026/3/8'
 lastmod: '2026/3/8'
-tags: [公众号]
+tags: [AI 编程, 独立开发]
 draft: false
 summary: 'Vibe Coding 的效率天花板，不在你写 prompt 的能力，而在你给 AI 搭建的"工作环境"。'
 images:

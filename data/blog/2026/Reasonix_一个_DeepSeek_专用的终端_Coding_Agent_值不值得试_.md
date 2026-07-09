@@ -2,7 +2,7 @@
 title: Reasonix：一个 DeepSeek 专用的终端 Coding Agent，值不值得试？
 date: '2026/5/25'
 lastmod: '2026/5/25'
-tags: [公众号]
+tags: [AI 编程, 工具效能]
 draft: false
 summary: '昨天刷 Hacker News，看到一条讨论挺热闹：有人做了个叫 Reasonix 的终端 coding agent，专门对接 DeepSeek API，主打 prefix cache 命中率高、长会话成本低。帖子 500 多 upvote，评论 200 多条。我顺着链接点进去看了看，也翻了翻评论区...'
 images:

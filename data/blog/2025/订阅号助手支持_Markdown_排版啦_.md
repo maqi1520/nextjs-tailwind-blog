@@ -2,7 +2,7 @@
 title: 😍订阅号助手支持 Markdown 排版啦✨
 date: '2025/1/11'
 lastmod: '2025/1/11'
-tags: [公众号]
+tags: [工具效能, 创作工具]
 draft: false
 summary: '今天要给大家分享一个超棒的消息呀🎉 订阅号助手现在支持 Markdown 排版咯👏'
 images:

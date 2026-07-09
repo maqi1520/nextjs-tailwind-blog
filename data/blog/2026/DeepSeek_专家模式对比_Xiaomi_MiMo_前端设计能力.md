@@ -2,7 +2,7 @@
 title: DeepSeek 专家模式对比 Xiaomi MiMo 前端设计能力
 date: '2026/4/8'
 lastmod: '2026/4/8'
-tags: [公众号]
+tags: [AI 编程]
 draft: false
 summary: '我一直在找一个前端设计能力出色的国产大模型，想在产品中代替 gemini 3 模型，今天我们来的对比 Xiaomi MiMo-V2-Pro 和 DeepSeek 专家模式，简直让我惊呆了，其他能力暂且不论，就论前端设计能力，已经超出了我的心理预期，下面开始测评。'
 images:

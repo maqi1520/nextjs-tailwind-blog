@@ -2,7 +2,7 @@
 title: 当我问deepseek前端工程师失业后，如何挣钱时，我呆了
 date: '2025/2/5'
 lastmod: '2025/2/5'
-tags: [公众号]
+tags: [独立开发, AI 编程]
 draft: false
 summary: '真是把我能想到的，和想不到的都整理出来了，真的很佩服，只是没有这般执行力\[尴尬\]'
 images:

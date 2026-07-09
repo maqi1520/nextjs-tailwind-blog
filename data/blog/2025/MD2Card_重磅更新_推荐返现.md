@@ -2,7 +2,7 @@
 title: MD2Card 重磅更新，推荐返现
 date: '2025/6/20'
 lastmod: '2025/6/20'
-tags: [公众号]
+tags: [独立开发, 创作工具]
 draft: false
 summary: '你好，我是 小马，MD2Card 的作者。今天带来一个激动人心的更新！'
 images:

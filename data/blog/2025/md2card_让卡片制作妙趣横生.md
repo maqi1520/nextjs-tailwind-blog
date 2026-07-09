@@ -2,7 +2,7 @@
 title: md2card 让卡片制作妙趣横生
 date: '2025/5/26'
 lastmod: '2025/5/26'
-tags: [公众号]
+tags: [创作工具]
 draft: false
 summary: '在日常的知识整理和卡片笔记中，如何让内容更生动、更有趣？md2card 的贴纸功能，正是为此而生！'
 images:

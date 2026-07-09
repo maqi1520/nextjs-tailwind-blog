@@ -2,7 +2,7 @@
 title: 如何将知识卡片导出PDF，适配A4纸打印
 date: '2025/4/14'
 lastmod: '2025/4/14'
-tags: [公众号]
+tags: [创作工具]
 draft: false
 summary: '最近经常收到一些老师和同学的反馈，希望将知识自己整理 Markdown 文档制作成美观知识卡片，并且需要打印出来方便知识巩固和记录。'
 images:

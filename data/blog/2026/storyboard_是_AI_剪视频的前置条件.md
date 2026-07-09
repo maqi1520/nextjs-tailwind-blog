@@ -2,7 +2,7 @@
 title: storyboard 是 AI 剪视频的前置条件
 date: '2026/6/7'
 lastmod: '2026/6/7'
-tags: [公众号]
+tags: [创作工具, AI 编程]
 draft: false
 summary: '使用AI剪辑视频的步骤'
 images:

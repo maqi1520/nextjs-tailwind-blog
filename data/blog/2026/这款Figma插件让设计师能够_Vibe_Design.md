@@ -2,7 +2,7 @@
 title: 这款Figma插件让设计师能够 Vibe Design
 date: '2026/2/13'
 lastmod: '2026/2/13'
-tags: [公众号]
+tags: [AI 编程, 创作工具]
 draft: false
 summary: '嗨大家好，我是小马,  今天想和大家聊聊一个最近让我挺兴奋的产品——Vibe Design。'
 images:

@@ -2,7 +2,7 @@
 title: 如何使用Codex做出更有细节的网站
 date: '2026/5/24'
 lastmod: '2026/5/24'
-tags: [公众号]
+tags: [AI 编程]
 draft: false
 summary: '最近我在尝试用 Codex 做一个更好看的网页，发现一个比较实用的流程：不要一上来就让它照着某个网站直接生成页面，而是先让 GPT Image2 帮你把设计稿和素材准备好，再交给 Codex 去实现。'
 images:

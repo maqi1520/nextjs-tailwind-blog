@@ -2,7 +2,7 @@
 title: 如何在 Codex 中使用DeepSeek模型
 date: '2026/5/28'
 lastmod: '2026/5/28'
-tags: [公众号]
+tags: [AI 编程, 工具效能]
 draft: false
 summary: 'Codex token 限额之后，大家怎么办？等下一个 5 小时，还是升级 token plan？'
 images:

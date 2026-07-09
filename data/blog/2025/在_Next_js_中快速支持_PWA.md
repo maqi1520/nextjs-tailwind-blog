@@ -2,7 +2,7 @@
 title: 在 Next.js 中快速支持 PWA
 date: '2025/4/4'
 lastmod: '2025/4/4'
-tags: [公众号]
+tags: [全栈开发]
 draft: false
 summary: '使用 md2card 2分钟制作'
 images:

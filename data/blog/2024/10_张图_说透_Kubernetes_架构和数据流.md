@@ -2,7 +2,7 @@
 title: 10 张图，说透 Kubernetes 架构和数据流
 date: '2024/9/30'
 lastmod: '2024/9/30'
-tags: [公众号]
+tags: [云与部署]
 draft: false
 summary: '本文是通过插图详细解释每个 Kubernetes 组件。'
 images:

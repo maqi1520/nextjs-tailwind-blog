@@ -2,7 +2,7 @@
 title: 如何从零构建 Deep Research Agent ？
 date: '2025/5/5'
 lastmod: '2025/5/5'
-tags: [公众号]
+tags: [AI 编程]
 draft: false
 summary: 'Deep Research Agent 是什么？'
 images:

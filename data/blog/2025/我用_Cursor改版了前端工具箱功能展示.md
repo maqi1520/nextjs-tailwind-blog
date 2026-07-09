@@ -2,7 +2,7 @@
 title: 我用 Cursor改版了前端工具箱功能展示
 date: '2025/2/18'
 lastmod: '2025/2/18'
-tags: [公众号]
+tags: [AI 编程, 工具效能]
 draft: false
 summary: '这是一个一站式前端开发工具集合，旨在提升开发效率。'
 images:

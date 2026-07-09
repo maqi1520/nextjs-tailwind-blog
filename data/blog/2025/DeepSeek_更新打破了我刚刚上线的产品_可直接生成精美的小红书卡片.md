@@ -2,7 +2,7 @@
 title: DeepSeek 更新打破了我刚刚上线的产品，可直接生成精美的小红书卡片
 date: '2025/3/25'
 lastmod: '2025/3/25'
-tags: [公众号]
+tags: [独立开发, 创作工具]
 draft: false
 summary: '最近，我上线一款应用 md2crad 可以将 markdown 转变为知识卡片， 但是昨天DeepSeek的这次更新， 让我刚上线的产品就失去了价值。因为可以直接在 deepseek 中实现知识卡片的制作，并且UI审美也非常出色。'
 images:

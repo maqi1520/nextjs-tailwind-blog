@@ -2,7 +2,7 @@
 title: Codex 额度又超了，找人体验我的 VibeCoding 网站
 date: '2026/5/26'
 lastmod: '2026/5/26'
-tags: [公众号]
+tags: [独立开发, 创作工具]
 draft: false
 images: https://mmbiz.qpic.cn/mmbiz_jpg/NX8ZoYnTZlrEKicR2dkDQz4jpcvW057HYb2EExvVWxGgrVbKHJ4QkVnwjnFiceLUMSYKKk8FzvDgR99Igt6WJjiaibsl161OHpAkssMJo6ia1SaM/0?wx_fmt=jpeg
 summary: '最近把「纸笺工坊」又完善了一版，想找一些朋友帮忙体验一下。'

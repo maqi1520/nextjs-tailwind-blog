@@ -2,7 +2,7 @@
 title: MD2Card 支持移动端访问啦
 date: '2025/3/10'
 lastmod: '2025/3/10'
-tags: [公众号]
+tags: [独立开发, 创作工具]
 draft: false
 summary: '在V2EX 社区发了帖子推广，V2EX的氛围很不错，发帖半小时就有 70 的在线访问量，那是相当的不错了，可能大家对我提到的哪些是 AI 实现的比较感兴趣。'
 images:

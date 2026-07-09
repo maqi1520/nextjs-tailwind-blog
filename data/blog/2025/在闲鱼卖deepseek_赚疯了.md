@@ -2,7 +2,7 @@
 title: 在闲鱼卖deepseek 赚疯了
 date: '2025/2/7'
 lastmod: '2025/2/7'
-tags: [公众号]
+tags: [独立开发]
 draft: false
 summary: '打开闲鱼，随便看了下，销量还挺高，先有在闲鱼卖部署教程，后有卖 APIkey。'
 images:

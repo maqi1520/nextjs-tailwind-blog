@@ -2,7 +2,7 @@
 title: 如何将 docker 单节点部署应用改成集群部署？
 date: '2024/9/22'
 lastmod: '2024/9/22'
-tags: [公众号]
+tags: [云与部署]
 draft: false
 summary: '在项目开发中，Docker Compose 是一种常见的工具，能够帮助开发者在本地轻松启动多容器应用。然而，当应用扩展到生产环境，单节点的 Docker Compose 可能无法满足高可用性、容错和扩展需求。这时候，我们可以考虑将 Docker Compose 部署迁移到 Kubernetes 这样...'
 images:

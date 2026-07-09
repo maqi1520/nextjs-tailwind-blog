@@ -2,7 +2,7 @@
 title: 2 句对话，Ai 就帮我实现了图片剪裁工具
 date: '2025/2/19'
 lastmod: '2025/2/19'
-tags: [公众号]
+tags: [AI 编程, 工具效能]
 draft: false
 summary: '我使用的是 GitHub copilot'
 images:

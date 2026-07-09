@@ -5,13 +5,13 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 // 如果您使用的是外部服务，则可能需要在script-src中插入其他域
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app www.googletagmanager.com;
-  style-src 'self' 'unsafe-inline';
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app www.googletagmanager.com cdn.jsdelivr.net;
+  style-src 'self' 'unsafe-inline' fonts.googleapis.com;
   img-src * blob: data:;
-  media-src 'self';
+  media-src 'self' blob:;
   connect-src *;
-  font-src 'self';
-  frame-src giscus.app game.runjs.cool player.bilibili.com
+  font-src 'self' fonts.gstatic.com data:;
+  frame-src 'self' giscus.app game.runjs.cool player.bilibili.com
 `
 
 const securityHeaders = [
@@ -26,9 +26,10 @@ const securityHeaders = [
     value: 'strict-origin-when-cross-origin',
   },
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
+  // SAMEORIGIN：允许本站 iframe（如首页 Walkman），仍禁止跨域嵌套
   {
     key: 'X-Frame-Options',
-    value: 'DENY',
+    value: 'SAMEORIGIN',
   },
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options
   {

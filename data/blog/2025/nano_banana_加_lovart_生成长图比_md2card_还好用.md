@@ -2,7 +2,7 @@
 title: nano-banana 加 lovart 生成长图比 md2card 还好用
 date: '2025/8/31'
 lastmod: '2025/8/31'
-tags: [公众号]
+tags: [创作工具, AI 编程]
 draft: false
 summary: '今天看了赛博禅心的公众号文章，尝试了 lovart + nano-banana 生成长图的功能，简直太好用了。并且这2天使免费使用的。'
 images:

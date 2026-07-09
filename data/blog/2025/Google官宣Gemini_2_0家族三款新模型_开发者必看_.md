@@ -2,7 +2,7 @@
 title: 🌟 Google官宣Gemini 2.0家族三款新模型！开发者必看！
 date: '2025/2/6'
 lastmod: '2025/2/6'
-tags: [公众号]
+tags: [AI 编程]
 draft: false
 summary: '1\. Gemini 2.0 Flash'
 images:

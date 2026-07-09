@@ -2,7 +2,7 @@
 title: md2card 更新啦！组合纹理背景模式
 date: '2025/8/18'
 lastmod: '2025/8/18'
-tags: [公众号]
+tags: [创作工具, 独立开发]
 draft: false
 summary: '哈喽大家好，我是小马。今天要和大家分享 md2card 的最新功能更新，这次我们带来了两个非常实用的改进：'
 images:

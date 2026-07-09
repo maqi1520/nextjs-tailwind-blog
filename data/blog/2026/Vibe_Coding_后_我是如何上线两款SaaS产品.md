@@ -2,7 +2,7 @@
 title: Vibe Coding 后，我是如何上线两款SaaS产品
 date: '2026/2/25'
 lastmod: '2026/2/25'
-tags: [公众号]
+tags: [独立开发, AI 编程]
 draft: false
 summary: '使用 md2card 将文章转成了卡片形式'
 images:

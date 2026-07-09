@@ -2,7 +2,7 @@
 title: 使用 Codex 来做视频，来试试 HyperFrames
 date: '2026/5/8'
 lastmod: '2026/5/8'
-tags: [公众号]
+tags: [AI 编程, 创作工具]
 draft: false
 summary: '做视频不一定要用 Premiere 、剪映等剪辑软件了，'
 images:

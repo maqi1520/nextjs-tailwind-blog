@@ -2,7 +2,7 @@
 title: Claude Code 把 source map 开源了？
 date: '2026/3/31'
 lastmod: '2026/3/31'
-tags: [公众号]
+tags: [AI 编程]
 draft: false
 summary: '这不是一次黑客攻击，也不是内部员工泄密。'
 images:

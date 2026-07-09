@@ -2,7 +2,7 @@
 title: AI 写作用哪个 Agent skill 好？
 date: '2026/5/28'
 lastmod: '2026/5/28'
-tags: [公众号]
+tags: [AI 编程, 创作工具]
 draft: false
 summary: '现在大家都会用 AI 辅助写作，但 AI 写出来的内容有一个很明显的特征，就是特别像 Markdown 里的结构化文字。'
 images:

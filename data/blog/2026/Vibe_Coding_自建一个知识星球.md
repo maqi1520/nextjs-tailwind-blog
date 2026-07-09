@@ -2,7 +2,7 @@
 title: Vibe Coding 自建一个知识星球
 date: '2026/6/7'
 lastmod: '2026/6/7'
-tags: [公众号]
+tags: [AI 编程, 独立开发]
 draft: false
 images:
   [

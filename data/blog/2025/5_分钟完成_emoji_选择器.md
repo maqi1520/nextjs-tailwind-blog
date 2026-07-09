@@ -2,7 +2,7 @@
 title: 5 分钟完成 😛emoji 选择器
 date: '2025/4/8'
 lastmod: '2025/4/8'
-tags: [公众号]
+tags: [全栈开发, 工具效能]
 draft: false
 summary: '在 21st.dev 上找到组件，就可以直接通过 shadcn cli 集成到项目中。'
 images:

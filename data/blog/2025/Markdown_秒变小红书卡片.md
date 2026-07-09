@@ -2,7 +2,7 @@
 title: Markdown 秒变小红书卡片
 date: '2025/3/6'
 lastmod: '2025/3/6'
-tags: [公众号]
+tags: [创作工具, 独立开发]
 draft: false
 summary: '用 http://md2card.com 粘贴 Markdown，直接生成爆款卡片！'
 images:

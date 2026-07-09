@@ -2,7 +2,7 @@
 title: 用 Remotion 做产品宣传视频，我走过的坑和建议
 date: '2026/2/14'
 lastmod: '2026/2/14'
-tags: [公众号]
+tags: [创作工具, 全栈开发]
 draft: false
 summary: '最近我上线了我的新产品 vibe2design，然后就想——能不能自己做几个产品宣传视频？毕竟 remotion-best-practices 爆火，周安装量 89.0K。那咱就试试呗。'
 images:

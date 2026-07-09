@@ -2,7 +2,7 @@
 title: Mockups 宝藏网站，帮你生成惊艳产品宣传图
 date: '2025/2/22'
 lastmod: '2025/2/22'
-tags: [公众号]
+tags: [工具效能, 创作工具]
 draft: false
 summary: '来来来，给你们安利一个宝藏网站——Shots.so！这个网站简直就是前端设计的救星，让你轻松创建惊艳的Mockups，分分钟提升你的作品集质感！'
 images:
