@@ -1,6 +1,6 @@
 import Link from '@/components/Link'
 import { heroContent, heroStats } from '@/data/homeData'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 
 const WALKMAN_KEYS = new Set([
   'Space',
@@ -19,10 +19,14 @@ const SHORTCUTS = [
   { keys: ['↑', '↓'], label: '音量' },
 ]
 
+function isTypingTarget(target: EventTarget | null) {
+  if (!(target instanceof HTMLElement)) return false
+  const tag = target.tagName
+  return tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || target.isContentEditable
+}
+
 export default function HomeHero() {
   const iframeRef = useRef<HTMLIFrameElement>(null)
-  const panelRef = useRef<HTMLDivElement>(null)
-  const [active, setActive] = useState(false)
 
   const postKey = useCallback((event: 'keydown' | 'keyup', code: string) => {
     iframeRef.current?.contentWindow?.postMessage(
@@ -32,10 +36,9 @@ export default function HomeHero() {
   }, [])
 
   useEffect(() => {
-    if (!active) return
-
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.repeat || !WALKMAN_KEYS.has(e.code)) return
+      if (isTypingTarget(e.target)) return
       // 焦点已在 iframe 内时由 iframe 自己处理，避免重复触发
       if (document.activeElement === iframeRef.current) return
       e.preventDefault()
@@ -43,6 +46,7 @@ export default function HomeHero() {
     }
     const onKeyUp = (e: KeyboardEvent) => {
       if (!WALKMAN_KEYS.has(e.code)) return
+      if (isTypingTarget(e.target)) return
       if (document.activeElement === iframeRef.current) return
       postKey('keyup', e.code)
     }
@@ -53,17 +57,7 @@ export default function HomeHero() {
       window.removeEventListener('keydown', onKeyDown)
       window.removeEventListener('keyup', onKeyUp)
     }
-  }, [active, postKey])
-
-  useEffect(() => {
-    const onPointerDown = (e: MouseEvent) => {
-      if (!panelRef.current?.contains(e.target as Node)) {
-        setActive(false)
-      }
-    }
-    document.addEventListener('mousedown', onPointerDown)
-    return () => document.removeEventListener('mousedown', onPointerDown)
-  }, [])
+  }, [postKey])
 
   return (
     <section className="grain relative overflow-hidden bg-skin-hero">
@@ -94,14 +88,7 @@ export default function HomeHero() {
             </div>
           </div>
 
-          <div
-            ref={panelRef}
-            className="relative outline-none"
-            tabIndex={0}
-            onFocus={() => setActive(true)}
-            onPointerDown={() => setActive(true)}
-            aria-label="WALKMAN 播放器，点击后可使用键盘快捷键"
-          >
+          <div className="relative" aria-label="WALKMAN 播放器">
             <div className="spark left-[-30px] top-[-18px] scale-75" />
             <div className="spark bottom-[-14px] right-[-16px] scale-90" />
             <div className="walkman-frame relative aspect-[4/3] w-full overflow-hidden rounded-[30px] bg-[#0b0c10]">
@@ -115,11 +102,7 @@ export default function HomeHero() {
               />
             </div>
 
-            <div
-              className={`mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] leading-none transition-opacity ${
-                active ? 'text-black/70' : 'text-black/45'
-              }`}
-            >
+            <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] leading-none text-black/60">
               {SHORTCUTS.map((item) => (
                 <span key={item.label} className="inline-flex items-center gap-1.5">
                   {item.keys.map((key) => (
@@ -130,7 +113,7 @@ export default function HomeHero() {
                   <span>{item.label}</span>
                 </span>
               ))}
-              <span className="text-black/35">点击播放器后生效 · 拖入 MP3 可换带</span>
+              <span className="text-black/35">拖入 MP3 可换带</span>
             </div>
           </div>
         </div>
