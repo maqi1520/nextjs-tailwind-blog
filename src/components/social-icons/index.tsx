@@ -4,10 +4,12 @@ import Linkedin from './linkedin.svg'
 import Twitter from './twitter.svg'
 import Juejin from './juejin.svg'
 import Zhihu from './zhihu.svg'
+import XIcon from './x.svg'
 
 // Icons taken from: https://simpleicons.org/
 
 const components = {
+  x: XIcon,
   mail: Mail,
   github: Github,
   juejin: Juejin,

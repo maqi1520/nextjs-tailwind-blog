@@ -39,6 +39,7 @@ export default function SiteFooter() {
             </div>
             <div className="flex items-center gap-4">
               <SocialIcon kind="github" href={siteMetadata.github} size={5} />
+              <SocialIcon kind="x" href={siteMetadata.x} size={5} />
               <SocialIcon kind="juejin" href={siteMetadata.juejin} size={5} />
               <SocialIcon kind="zhihu" href={siteMetadata.zhihu} size={5} />
             </div>
