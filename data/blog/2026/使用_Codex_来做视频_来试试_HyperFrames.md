@@ -31,11 +31,24 @@ slug: 使用-codex-来做视频来试试-hyperframes
 
 做视频的核心流程：
 
-    init       # 脚手架新建项目capture    # 捕获一个网站，自动提取颜色、字体、素材preview    # 在浏览器里实时预览render     # 渲染成 MP4 或 WebMlint       # 检查 HTML 结构有没有问题validate   # 在无头 Chrome 里跑一遍，检查运行时错误snapshot   # 按时间点截 PNG 关键帧inspect    # 检查视觉布局，看有没有文字溢出重叠
+```text
+init       # 脚手架新建项目
+capture    # 捕获一个网站，自动提取颜色、字体、素材
+preview    # 在浏览器里实时预览
+render     # 渲染成 MP4 或 WebM
+lint       # 检查 HTML 结构有没有问题
+validate   # 在无头 Chrome 里跑一遍，检查运行时错误
+snapshot   # 按时间点截 PNG 关键帧
+inspect    # 检查视觉布局，看有没有文字溢出重叠
+```
 
 跟音视频相关的：
 
-    tts         # 文字转语音，本地跑 Kokoro-82M 模型transcribe  # 语音转文字时间戳，用的是 Whisperremove-background # 去背景，输出透明视频
+```text
+tts         # 文字转语音，本地跑 Kokoro-82M 模型
+transcribe  # 语音转文字时间戳，用的是 Whisper
+remove-background # 去背景，输出透明视频
+```
 
 这东西有意思的地方在于，**每个 composition 就是一个 HTML 文件**。你在浏览器里怎么调动画，渲染出来就是什么样。GSAP 时间线直接对应视频时间轴，`data-start`  和  `data-duration`  控制每段素材什么时候出现、播多久。
 
@@ -47,17 +60,29 @@ slug: 使用-codex-来做视频来试试-hyperframes
 
 命令长这样：
 
-    npx hyperframes tts SCRIPT.md --voice af_nova --output narration.wav
+```md
+npx hyperframes tts SCRIPT.md --voice af_nova --output narration.wav
+```
 
 不过内置 TTS 的中文效果我基本没法用，尤其是语气和断句，很难直接放进成片里。我后来换成火山引擎的豆包语音，先在外面生成音频，再把下载好的音频丢给 Codex，后面的转写、字幕和时间线都能继续接上。
 
 **转写**用的是 Whisper，不过是在本地跑的 whisper.cpp，数据不会上传。默认模型是  `small.en`，速度和准确率比较均衡。如果音频背景里有音乐，可以切到  `medium.en`。
 
-    npx hyperframes transcribe narration.wav
+```bash
+npx hyperframes transcribe narration.wav
+```
 
 出来的  `transcript.json`  是逐词时间戳，每个词都有开始和结束时间：
 
-    [  { "text": "Markdown", "start": 0.0, "end": 0.65 },  { "text": "不该", "start": 0.65, "end": 1.15 },  { "text": "只", "start": 1.15, "end": 1.38 },  { "text": "停在", "start": 1.38, "end": 1.9 },  { "text": "文档里", "start": 1.9, "end": 2.8 }]
+```json
+[
+  { "text": "Markdown", "start": 0.0, "end": 0.65 },
+  { "text": "不该", "start": 0.65, "end": 1.15 },
+  { "text": "只", "start": 1.15, "end": 1.38 },
+  { "text": "停在", "start": 1.38, "end": 1.9 },
+  { "text": "文档里", "start": 1.9, "end": 2.8 }
+]
+```
 
 这个时间戳文件很关键。它相当于整条视频的节奏骨架：每幕什么时候开始、什么时候结束，字幕怎么跟着语音走，都可以从这里取。
 
@@ -71,33 +96,19 @@ TTS、音频和转写时间戳的手绘流程图
 
 实际做一条视频，大概是 7 步：
 
-1
+1. **捕获网站**：如果是做产品宣传片，`npx hyperframes capture`  可以把网站截图、颜色、字体、素材都抓下来。
 
-**捕获网站**：如果是做产品宣传片，`npx hyperframes capture`  可以把网站截图、颜色、字体、素材都抓下来。
+2. **确定设计**：写一个  `DESIGN.md`，把品牌色、字体、组件风格固定住。
 
-2
+3. **写脚本**：先写旁白文案，因为文案会决定视频节奏。
 
-**确定设计**：写一个  `DESIGN.md`，把品牌色、字体、组件风格固定住。
+4. **写分镜**：拆成一幕一幕，规划每一幕的画面、动画、过渡、音效。
 
-3
+5. **生成配音**：用 TTS 生成  `narration.wav`，再转写成  `transcript.json`。
 
-**写脚本**：先写旁白文案，因为文案会决定视频节奏。
+6. **构建画面**：写 HTML + CSS + GSAP 动画，每一幕一个 composition。
 
-4
-
-**写分镜**：拆成一幕一幕，规划每一幕的画面、动画、过渡、音效。
-
-5
-
-**生成配音**：用 TTS 生成  `narration.wav`，再转写成  `transcript.json`。
-
-6
-
-**构建画面**：写 HTML + CSS + GSAP 动画，每一幕一个 composition。
-
-7
-
-**检查交付**：依次跑  `lint`、`validate`、`snapshot`、`preview`，确认没问题后再  `render`  成视频。
+7. **检查交付**：依次跑  `lint`、`validate`、`snapshot`、`preview`，确认没问题后再  `render`  成视频。
 
 我也试了用 Codex 里的 Website to HyperFrames 直接把网站做成视频。效果没有想象中那么强，离“丢一个网址进去就自动出片”还有距离，但拿来生成初版素材挺方便：截图、色彩、页面结构都能先铺出来，后面再手动改分镜和动画，省掉不少从零搭画面的时间。
 
@@ -109,7 +120,26 @@ HyperFrames 视频制作工作流手绘图
 
 一个典型项目目录大概长这样：
 
-    my-video/  DESIGN.md  SCRIPT.md  STORYBOARD.md  index.html  narration.wav  narration.txt  transcript.json  capture/    screenshots/    assets/    extracted/  compositions/    beat-1-hook.html    beat-2-proof.html    beat-3-close.html  snapshots/  renders/
+```text
+my-video/
+  DESIGN.md
+  SCRIPT.md
+  STORYBOARD.md
+  index.html
+  narration.wav
+  narration.txt
+  transcript.json
+  capture/
+    screenshots/
+    assets/
+    extracted/
+  compositions/
+    beat-1-hook.html
+    beat-2-proof.html
+    beat-3-close.html
+  snapshots/
+  renders/
+```
 
 ## 几个容易踩坑的细节
 
@@ -125,7 +155,9 @@ HyperFrames 常见坑位手绘图
 
 **Tailwind 可以直接用。**  新建项目时加上：
 
-    npx hyperframes init my-video --tailwind
+```bash
+npx hyperframes init my-video --tailwind
+```
 
 之后就可以在 composition 里写 Tailwind utility class。
 
