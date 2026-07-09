@@ -16,51 +16,52 @@ export default function SiteHeader() {
   }, [navOpen])
 
   return (
-    <header className="bg-skin-surface/95 sticky top-0 z-50 flex h-[74px] items-center border-b border-skin-border backdrop-blur">
-      <div className="mx-auto flex w-full max-w-site items-center justify-between gap-5 px-6">
-        <Link
-          href="/"
-          aria-label={siteMetadata.headerTitle}
-          className="flex shrink-0 items-center gap-3"
-        >
-          <div className="flex h-11 w-11 items-center justify-center rounded-full border border-skin-dark bg-skin-card">
-            <Horse size={28} weight="regular" />
-          </div>
-          <span className="text-2xl font-black tracking-tight">{siteMetadata.headerTitle}</span>
-        </Link>
-
-        <nav className="hidden items-center gap-6 text-[15px] font-medium lg:flex">
-          {headerNavLinks.map((link, index) => (
-            <span key={link.title} className="flex items-center gap-6">
-              {index > 0 ? <span className="text-black/25">|</span> : null}
-              <Link href={link.href} className="hover:opacity-60">
-                {link.title}
-              </Link>
-            </span>
-          ))}
-        </nav>
-
-        <div className="flex items-center gap-3">
-          <ThemePicker />
-
+    <>
+      <header className="bg-skin-surface/95 sticky top-0 z-50 flex h-[74px] items-center border-b border-skin-border backdrop-blur">
+        <div className="mx-auto flex w-full max-w-site items-center justify-between gap-5 px-6">
           <Link
-            href="/#contact"
-            className="hidden rounded-full bg-skin-dark px-5 py-3 text-sm font-semibold text-white sm:inline-flex"
+            href="/"
+            aria-label={siteMetadata.headerTitle}
+            className="flex shrink-0 items-center gap-3"
           >
-            联系咨询
+            <div className="flex h-11 w-11 items-center justify-center rounded-full border border-skin-dark bg-skin-card">
+              <Horse size={28} weight="regular" />
+            </div>
+            <span className="text-2xl font-black tracking-tight">{siteMetadata.headerTitle}</span>
           </Link>
 
-          <button
-            type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-skin-border bg-skin-card lg:hidden"
-            aria-label="打开菜单"
-            onClick={() => setNavOpen(true)}
-          >
-            <List size={22} />
-          </button>
-        </div>
-      </div>
+          <nav className="hidden items-center gap-6 text-[15px] font-medium lg:flex">
+            {headerNavLinks.map((link, index) => (
+              <span key={link.title} className="flex items-center gap-6">
+                {index > 0 ? <span className="text-black/25">|</span> : null}
+                <Link href={link.href} className="hover:opacity-60">
+                  {link.title}
+                </Link>
+              </span>
+            ))}
+          </nav>
 
+          <div className="flex items-center gap-3">
+            <ThemePicker />
+
+            <Link
+              href="/#contact"
+              className="hidden rounded-full bg-skin-dark px-5 py-3 text-sm font-semibold text-white sm:inline-flex"
+            >
+              联系咨询
+            </Link>
+
+            <button
+              type="button"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-skin-border bg-skin-card lg:hidden"
+              aria-label="打开菜单"
+              onClick={() => setNavOpen(true)}
+            >
+              <List size={22} />
+            </button>
+          </div>
+        </div>
+      </header>
       <div
         className={`fixed inset-0 z-[60] bg-skin-surface transition-transform duration-300 lg:hidden ${
           navOpen ? 'translate-x-0' : 'translate-x-full'
@@ -88,9 +89,6 @@ export default function SiteHeader() {
               {link.title}
             </Link>
           ))}
-          <div className="mt-4">
-            <ThemePicker inline onPick={() => setNavOpen(false)} />
-          </div>
           <Link
             href="/#contact"
             className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-skin-dark px-5 py-4 text-base font-semibold text-white"
@@ -101,6 +99,6 @@ export default function SiteHeader() {
           </Link>
         </nav>
       </div>
-    </header>
+    </>
   )
 }
