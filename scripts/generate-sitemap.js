@@ -7,52 +7,72 @@ const siteMetadata = require('../data/siteMetadata')
 ;(async () => {
   const prettierConfig = await prettier.resolveConfig('./.prettierrc.js')
   const pages = await globby([
-    'pages/*.js',
-    'pages/*.tsx',
+    'src/pages/*.js',
+    'src/pages/*.tsx',
     'data/blog/**/*.mdx',
     'data/blog/**/*.md',
     'public/tags/**/*.xml',
-    '!pages/_*.js',
-    '!pages/_*.tsx',
-    '!pages/api',
+    '!src/pages/_*.js',
+    '!src/pages/_*.tsx',
+    '!src/pages/api',
+    '!src/pages/404.js',
+    '!src/pages/404.tsx',
   ])
+
+  const urls = pages
+    .map((page) => {
+      let lastmod
+      // Exclude drafts and posts that declare an external canonical URL
+      if (/\.mdx?$/.test(page) && fs.existsSync(page)) {
+        const source = fs.readFileSync(page, 'utf8')
+        const fm = matter(source)
+        if (fm.data.draft) {
+          return
+        }
+        if (fm.data.canonicalUrl) {
+          return
+        }
+        const mod = fm.data.lastmod || fm.data.date
+        if (mod) {
+          lastmod = new Date(mod).toISOString().split('T')[0]
+        }
+      }
+
+      const routePath = page
+        .replace('src/pages/', '/')
+        .replace('data/blog', '/blog')
+        .replace('public/', '/')
+        .replace(/\.js$/, '')
+        .replace(/\.tsx$/, '')
+        .replace(/\.mdx$/, '')
+        .replace(/\.md$/, '')
+        .replace('/feed.xml', '')
+      const route = routePath === '/index' ? '' : routePath
+
+      if (page.includes('[') || page.includes(']')) {
+        return
+      }
+
+      const loc = `${siteMetadata.siteUrl}${encodeURI(route)}`
+      return lastmod
+        ? `
+                        <url>
+                            <loc>${loc}</loc>
+                            <lastmod>${lastmod}</lastmod>
+                        </url>
+                    `
+        : `
+                        <url>
+                            <loc>${loc}</loc>
+                        </url>
+                    `
+    })
+    .filter(Boolean)
 
   const sitemap = `
         <?xml version="1.0" encoding="UTF-8"?>
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-            ${pages
-              .map((page) => {
-                // Exclude drafts from the sitemap
-                if (page.search('.md') >= 1 && fs.existsSync(page)) {
-                  const source = fs.readFileSync(page, 'utf8')
-                  const fm = matter(source)
-                  if (fm.data.draft) {
-                    return
-                  }
-                  if (fm.data.canonicalUrl) {
-                    return
-                  }
-                }
-                const path = page
-                  .replace('pages/', '/')
-                  .replace('data/blog', '/blog')
-                  .replace('public/', '/')
-                  .replace('.js', '')
-                  .replace('.tsx', '')
-                  .replace('.mdx', '')
-                  .replace('.md', '')
-                  .replace('/feed.xml', '')
-                const route = path === '/index' ? '' : path
-                if (page.search('pages/404.') > -1 || page.search(`pages/blog/[...slug].`) > -1) {
-                  return
-                }
-                return `
-                        <url>
-                            <loc>${siteMetadata.siteUrl}${route}</loc>
-                        </url>
-                    `
-              })
-              .join('')}
+            ${urls.join('')}
         </urlset>
     `
 
@@ -61,6 +81,15 @@ const siteMetadata = require('../data/siteMetadata')
     parser: 'html',
   })
 
-  // eslint-disable-next-line no-sync
+  // Keep robots.txt in sync with the canonical site URL
+  const robots = `User-agent: *
+Allow: /
+Disallow: /bin/
+Disallow: /api/
+
+Sitemap: ${siteMetadata.siteUrl}/sitemap.xml
+`
+
   fs.writeFileSync('public/sitemap.xml', formatted)
+  fs.writeFileSync('public/robots.txt', robots)
 })()

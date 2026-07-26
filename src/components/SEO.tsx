@@ -15,27 +15,42 @@ interface CommonSEOProps {
         url: string
       }[]
   twImage: string
+  canonicalUrl?: string
 }
 
-const CommonSEO = ({ title, description, ogType, ogImage, twImage }: CommonSEOProps) => {
+const ogLocale = (siteMetadata.locale || 'zh-CN').replace('-', '_')
+
+const CommonSEO = ({
+  title,
+  description,
+  ogType,
+  ogImage,
+  twImage,
+  canonicalUrl,
+}: CommonSEOProps) => {
   const router = useRouter()
+  const path = router.asPath.split('?')[0].split('#')[0]
+  const canonical = canonicalUrl || `${siteMetadata.siteUrl}${path === '/' ? '' : path}`
+
   return (
     <Head>
       <title>{title}</title>
       <meta name="robots" content="follow, index" />
       <meta name="description" content={description} />
-      <meta property="og:url" content={`${siteMetadata.siteUrl}${router.asPath}`} />
+      <link rel="canonical" href={canonical} />
+      <meta property="og:url" content={canonical} />
       <meta property="og:type" content={ogType} />
       <meta property="og:site_name" content={siteMetadata.title} />
       <meta property="og:description" content={description} />
       <meta property="og:title" content={title} />
+      <meta property="og:locale" content={ogLocale} />
       {Array.isArray(ogImage) ? (
         ogImage.map(({ url }) => <meta property="og:image" content={url} key={url} />)
       ) : (
         <meta property="og:image" content={ogImage} key={ogImage} />
       )}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content={siteMetadata.twitter} />
+      {siteMetadata.twitter && <meta name="twitter:site" content={siteMetadata.twitter} />}
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={twImage} />
@@ -100,6 +115,7 @@ export const BlogSEO = ({
   lastmod,
   url,
   images = [],
+  canonicalUrl,
 }: BlogSeoProps) => {
   const publishedAt = new Date(date).toISOString()
   const modifiedAt = new Date(lastmod || date).toISOString()
@@ -165,6 +181,7 @@ export const BlogSEO = ({
         ogType="article"
         ogImage={featuredImages}
         twImage={twImageUrl}
+        canonicalUrl={canonicalUrl || url}
       />
       <Head>
         {date && <meta property="article:published_time" content={publishedAt} />}

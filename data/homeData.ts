@@ -30,7 +30,7 @@ export const metrics = {
   eyebrow: '创作与实践',
   title: '博客、项目、视频与合作，覆盖的是完整创作与技术实践',
   items: [
-    { value: '10年+', label: '前端经验' },
+    { value: '10年+', label: '全栈经验' },
     { value: '30+', label: '教程视频' },
     { value: '6K+', label: 'GitHub Stars' },
     { value: '10+', label: '常用技术栈' },

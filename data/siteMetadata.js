@@ -1,22 +1,23 @@
 const siteMetadata = {
-  title: '狂奔滴小马 | 前端工程师成长部落阁',
+  title: '狂奔滴小马 | 全栈工程师成长部落阁',
   author: '狂奔滴小马',
   headerTitle: '小马部落阁',
-  description: '分享 JavaScript 以及热门框架，记录前端工程师学习成长历程。',
-  language: 'en-us',
+  description:
+    '狂奔滴小马的技术博客：分享 JavaScript、React、Next.js、工程化与 AI 编程实践，记录全栈工程师的学习与成长。',
+  language: 'zh-CN',
   theme: 'system', // system, dark or light
   siteUrl: 'https://maqib.cn',
   siteRepo: 'https://github.com/maqi1520/nextjs-tailwind-blog',
-  siteLogo: '/static/images/logo.png',
+  siteLogo: '/static/images/avatar.png',
   image: '/static/images/avatar.png',
   socialBanner: '/static/images/twitter-card.png',
   email: 'maqi1520@163.com',
   github: 'https://github.com/maqi1520',
   x: 'https://x.com/maqibin',
+  twitter: '@maqibin',
   juejin: 'https://juejin.cn/user/2189882895384093',
   zhihu: 'https://www.zhihu.com/people/xiao-ma-15-3',
   locale: 'zh-CN',
-  welcome: '自在，轻盈，我本不想停留',
   analytics: {
     //如果要使用分析提供程序，则必须将其添加到。
     //`next.config.js`文件中的内容安全策略。

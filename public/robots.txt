@@ -1,4 +1,6 @@
 User-agent: *
-Disallow: 
+Allow: /
 Disallow: /bin/
-Sitemap: https://maqib.com/sitemap.xml
+Disallow: /api/
+
+Sitemap: https://maqib.cn/sitemap.xml

@@ -15,7 +15,14 @@ export default function AuthorLayout({ children, frontMatter }: Props) {
 
   return (
     <>
-      <PageSEO title={`关于 - ${name}`} description={`关于我 - ${name}`} />
+      <PageSEO
+        title={`关于 ${name} | ${occupation}`}
+        description={
+          company
+            ? `${name}，${occupation}。${company}`
+            : `${name}，${occupation}，分享技术实践与成长记录。`
+        }
+      />
       <SectionContainer>
         <div className="divide-y py-8">
           <div className="space-y-2 pb-8 pt-6 md:space-y-5">
